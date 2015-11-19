@@ -1,0 +1,15 @@
+web:
+  build: .
+  environment:
+    PORT: 4000
+    DATABASE_URL: ecto://mikker:@db/newspacks_dev
+  ports:
+    - 4000:4000
+  links:
+    - db
+db:
+  image: postgres:9.4
+  environment:
+    POSTGRES_USER: mikker
+    POSTGRES_PASSWORD: ''
+
