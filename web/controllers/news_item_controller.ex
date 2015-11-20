@@ -1,17 +1,3 @@
-defmodule Newspacks.Plugs.FindPackage do
-  import Plug.Conn
-
-  def init(default) do
-    IO.inspect default
-  end
-
-  def call(conn, default) do
-    IO.inspect conn
-    IO.inspect default
-    conn
-  end
-end
-
 defmodule Newspacks.NewsItemController do
   use Newspacks.Web, :controller
 
@@ -19,7 +5,12 @@ defmodule Newspacks.NewsItemController do
   alias Newspacks.Package
 
   plug :scrub_params, "news_item" when action in [:create, :update]
-  plug Newspacks.Plugs.FindPackage
+  plug :find_package
+
+  defp find_package(conn, _options) do
+    package = Repo.get! Package, conn.params["package_id"]
+    assign conn, :package, package
+  end
 
   # def index(conn, _params) do
   #   news_items = Repo.all(NewsItem)
@@ -32,18 +23,18 @@ defmodule Newspacks.NewsItemController do
   # end
 
   def create(conn, %{"news_item" => news_item_params, "package_id" => package_id}) do
-    # package = find_package! package_id
-    # attrs = Map.merge(news_item_params, %{package_id: package.id})
-    # changeset = NewsItem.changeset(%NewsItem{}, attrs)
+    package = conn.assigns.package
+    attrs = Map.merge(news_item_params, %{"package_id" => package.id})
+    changeset = NewsItem.changeset(%NewsItem{}, attrs)
 
-    # case Repo.insert(changeset) do
-    #   {:ok, _news_item} ->
-    #     conn
-    #     |> put_flash(:info, "News item created successfully.")
-    #     |> redirect(to: package_path(conn, :show, package.id))
-    #   {:error, changeset} ->
-    #     render(conn, "new.html", changeset: changeset)
-    # end
+    case Repo.insert(changeset) do
+      {:ok, _news_item} ->
+        conn
+        |> put_flash(:info, "News item created successfully.")
+        |> redirect(to: package_path(conn, :show, package.id))
+      {:error, changeset} ->
+        render(conn, "new.html", changeset: changeset)
+    end
   end
 
   # def show(conn, %{"id" => id}) do

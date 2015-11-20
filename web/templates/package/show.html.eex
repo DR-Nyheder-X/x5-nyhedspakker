@@ -1,10 +1,9 @@
-<h2>Show package</h2>
+<h2><%= @package.published_at %></h2>
 
 <ul>
-  <li>
-    <strong>Published at:</strong>
-    <%= @package.published_at %>
-  </li>
+  <%= for news_item <- @package.news_items do %>
+    <li><%= link news_item.title, to: package_news_item_path(@conn, :show, @package, news_item) %></li>
+  <% end %>
 </ul>
 
 <%= render Newspacks.NewsItemView, "form.html", changeset: @news_item_changeset, action: package_news_item_path(@conn, :create, @package) %>
