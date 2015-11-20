@@ -1,0 +1,35 @@
+defmodule Newspacks.Router do
+  use Newspacks.Web, :router
+
+  pipeline :browser do
+    plug :accepts, ["html"]
+    plug :fetch_session
+    plug :fetch_flash
+    plug :protect_from_forgery
+    plug :put_secure_browser_headers
+  end
+
+  pipeline :admin do
+  end
+
+  pipeline :api do
+    plug :accepts, ["json"]
+  end
+
+  scope "/", Newspacks do
+    pipe_through :browser
+    pipe_through :admin
+
+    resources "/packages", PackageController do
+      resources "/news_items", NewsItemController
+    end
+  end
+
+  scope "/", Newspacks do
+    pipe_through :browser # Use the default browser stack
+
+    resources "/news_items", NewsItemController, only: [:show]
+
+    get "/", PackageController, :index
+  end
+end
