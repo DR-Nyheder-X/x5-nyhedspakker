@@ -20,15 +20,20 @@ defmodule Newspacks.NewsItemControllerTest do
       news_item: @valid_attrs
     ])
 
-    assert redirected_to(conn) == package_news_item_path(conn, :index, package)
+    assert redirected_to(conn) == package_path(conn, :show, package)
     assert Repo.get_by(NewsItem, @valid_attrs)
   end
 
-  # test "does not create resource and renders errors when data is invalid", %{conn: conn} do
-  #   package = create_package
-  #   conn = post conn, package_news_item_path(conn, :create, package), news_item: @invalid_attrs
-  #   assert html_response(conn, 200) =~ "New news item"
-  # end
+  test "does not create resource and renders errors when data is invalid", %{conn: conn} do
+    package = create_package
+
+    conn = post(conn, package_news_item_path(conn, :create, package), [
+      package_id: package.id,
+      news_item: @invalid_attrs
+    ])
+
+    assert html_response(conn, 200) =~ "New news item"
+  end
 
   # test "shows chosen resource", %{conn: conn} do
   #   news_item = Repo.insert! %NewsItem{}
