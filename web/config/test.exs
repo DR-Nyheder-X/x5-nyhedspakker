@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :newspacks, Newspacks.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env["USER"],
+  password: "",
   database: "newspacks_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

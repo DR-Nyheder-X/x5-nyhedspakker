@@ -1,0 +1,13 @@
+<h2>Show package</h2>
+
+<ul>
+  <li>
+    <strong>Published at:</strong>
+    <%= @package.published_at %>
+  </li>
+</ul>
+
+<%= render Newspacks.NewsItemView, "form.html", changeset: @news_item_changeset, action: package_news_item_path(@conn, :create, @package) %>
+
+<%= link "Edit", to: package_path(@conn, :edit, @package) %>
+<%= link "Back", to: package_path(@conn, :index) %>

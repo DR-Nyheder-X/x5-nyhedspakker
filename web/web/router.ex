@@ -9,15 +9,27 @@ defmodule Newspacks.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :admin do
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
 
   scope "/", Newspacks do
+    pipe_through :browser
+    pipe_through :admin
+
+    resources "/packages", PackageController do
+      resources "/news_items", NewsItemController
+    end
+  end
+
+  scope "/", Newspacks do
     pipe_through :browser # Use the default browser stack
 
-    resources "/news_items", NewsItemController
+    resources "/news_items", NewsItemController, only: [:show]
 
-    get "/", NewsItemController, :index
+    get "/", PackageController, :index
   end
 end

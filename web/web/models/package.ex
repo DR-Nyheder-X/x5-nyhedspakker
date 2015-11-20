@@ -1,17 +1,15 @@
-defmodule Newspacks.NewsItem do
+defmodule Newspacks.Package do
   use Newspacks.Web, :model
 
-  schema "news_items" do
-    field :title, :string
-    field :body, :string
-    field :url, :string
+  schema "packages" do
+    field :published_at, Ecto.DateTime
 
-    belongs_to :package, Newspacks.Package
+    has_many :news_items, Newspacks.NewsItem
 
     timestamps
   end
 
-  @required_fields ~w(title body package_id url)
+  @required_fields ~w(published_at)
   @optional_fields ~w()
 
   @doc """
