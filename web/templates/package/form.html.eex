@@ -11,19 +11,11 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :title, "Title", class: "control-label" %>
-    <%= text_input f, :title, class: "form-control" %>
+    <%= label f, :published_at, "Published at", class: "control-label" %>
+    <%= datetime_select f, :published_at, class: "form-control", default: current_time %>
   </div>
 
   <div class="form-group">
-    <%= label f, :body, "Body", class: "control-label" %>
-    <%= textarea f, :body, class: "form-control", rows: 8 %>
+    <%= submit "Submit", class: "btn btn-primary" %>
   </div>
-
-  <div class="form-group">
-    <%= label f, :url, "Url", class: "control-label" %>
-    <%= text_input f, :url, class: "form-control" %>
-  </div>
-
-  <%= submit "Save" %>
 <% end %>
