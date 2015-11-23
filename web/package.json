@@ -1,12 +1,15 @@
 {
-  "repository": {
+  "private": true,
+  "scripts": {
+    "dev": "./node_modules/nodemon/bin/nodemon.js"
   },
   "dependencies": {
-    "brunch": "^1.8.5",
-    "babel-brunch": "^5.1.1",
-    "clean-css-brunch": ">= 1.0 < 1.8",
-    "css-brunch": ">= 1.0 < 1.8",
-    "javascript-brunch": ">= 1.0 < 1.8",
-    "uglify-js-brunch": ">= 1.0 < 1.8"
+    "babel": "^6.1.18",
+    "babel-preset-node5": "leebenson/babel-preset-node5",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.8.1"
   }
 }
