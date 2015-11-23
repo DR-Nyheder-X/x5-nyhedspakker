@@ -1,11 +1,8 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router'
+import React from 'react'
 
-export default class App extends Component {
-  render () {
-    return <div className='App'>
-      App!
-      <Link to='/kitchensink'>Kitchensink</Link>
-    </div>
-  }
+export default function App ({ children }) {
+  return <div className='App'>
+    <h1>Nyhedspakkelakker</h1>
+    {children}
+  </div>
 }
