@@ -1,0 +1,406 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		427821A51C033E9900199A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427821A41C033E9900199A22 /* AppDelegate.swift */; };
+		427821A71C033E9900199A22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427821A61C033E9900199A22 /* ViewController.swift */; };
+		427821AA1C033E9900199A22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 427821A81C033E9900199A22 /* Main.storyboard */; };
+		427821AC1C033E9900199A22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 427821AB1C033E9900199A22 /* Assets.xcassets */; };
+		427821AF1C033E9900199A22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 427821AD1C033E9900199A22 /* LaunchScreen.storyboard */; };
+		427821BA1C033E9900199A22 /* NyhedspakkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427821B91C033E9900199A22 /* NyhedspakkerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		427821B61C033E9900199A22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 427821991C033E9900199A22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 427821A01C033E9900199A22;
+			remoteInfo = Nyhedspakker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		427821A11C033E9900199A22 /* Nyhedspakker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nyhedspakker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		427821A41C033E9900199A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		427821A61C033E9900199A22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		427821A91C033E9900199A22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		427821AB1C033E9900199A22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		427821AE1C033E9900199A22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		427821B01C033E9900199A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		427821B51C033E9900199A22 /* NyhedspakkerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NyhedspakkerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		427821B91C033E9900199A22 /* NyhedspakkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyhedspakkerTests.swift; sourceTree = "<group>"; };
+		427821BB1C033E9900199A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4278219E1C033E9900199A22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		427821B21C033E9900199A22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		427821981C033E9900199A22 = {
+			isa = PBXGroup;
+			children = (
+				427821A31C033E9900199A22 /* Nyhedspakker */,
+				427821B81C033E9900199A22 /* NyhedspakkerTests */,
+				427821A21C033E9900199A22 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		427821A21C033E9900199A22 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				427821A11C033E9900199A22 /* Nyhedspakker.app */,
+				427821B51C033E9900199A22 /* NyhedspakkerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		427821A31C033E9900199A22 /* Nyhedspakker */ = {
+			isa = PBXGroup;
+			children = (
+				427821A41C033E9900199A22 /* AppDelegate.swift */,
+				427821A61C033E9900199A22 /* ViewController.swift */,
+				427821A81C033E9900199A22 /* Main.storyboard */,
+				427821AB1C033E9900199A22 /* Assets.xcassets */,
+				427821AD1C033E9900199A22 /* LaunchScreen.storyboard */,
+				427821B01C033E9900199A22 /* Info.plist */,
+			);
+			path = Nyhedspakker;
+			sourceTree = "<group>";
+		};
+		427821B81C033E9900199A22 /* NyhedspakkerTests */ = {
+			isa = PBXGroup;
+			children = (
+				427821B91C033E9900199A22 /* NyhedspakkerTests.swift */,
+				427821BB1C033E9900199A22 /* Info.plist */,
+			);
+			path = NyhedspakkerTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		427821A01C033E9900199A22 /* Nyhedspakker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 427821BE1C033E9900199A22 /* Build configuration list for PBXNativeTarget "Nyhedspakker" */;
+			buildPhases = (
+				4278219D1C033E9900199A22 /* Sources */,
+				4278219E1C033E9900199A22 /* Frameworks */,
+				4278219F1C033E9900199A22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nyhedspakker;
+			productName = Nyhedspakker;
+			productReference = 427821A11C033E9900199A22 /* Nyhedspakker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		427821B41C033E9900199A22 /* NyhedspakkerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 427821C11C033E9900199A22 /* Build configuration list for PBXNativeTarget "NyhedspakkerTests" */;
+			buildPhases = (
+				427821B11C033E9900199A22 /* Sources */,
+				427821B21C033E9900199A22 /* Frameworks */,
+				427821B31C033E9900199A22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				427821B71C033E9900199A22 /* PBXTargetDependency */,
+			);
+			name = NyhedspakkerTests;
+			productName = NyhedspakkerTests;
+			productReference = 427821B51C033E9900199A22 /* NyhedspakkerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		427821991C033E9900199A22 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "DR Nyheder";
+				TargetAttributes = {
+					427821A01C033E9900199A22 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = DDB8SQMXS9;
+					};
+					427821B41C033E9900199A22 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 427821A01C033E9900199A22;
+					};
+				};
+			};
+			buildConfigurationList = 4278219C1C033E9900199A22 /* Build configuration list for PBXProject "Nyhedspakker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 427821981C033E9900199A22;
+			productRefGroup = 427821A21C033E9900199A22 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				427821A01C033E9900199A22 /* Nyhedspakker */,
+				427821B41C033E9900199A22 /* NyhedspakkerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4278219F1C033E9900199A22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				427821AF1C033E9900199A22 /* LaunchScreen.storyboard in Resources */,
+				427821AC1C033E9900199A22 /* Assets.xcassets in Resources */,
+				427821AA1C033E9900199A22 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		427821B31C033E9900199A22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4278219D1C033E9900199A22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				427821A71C033E9900199A22 /* ViewController.swift in Sources */,
+				427821A51C033E9900199A22 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		427821B11C033E9900199A22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				427821BA1C033E9900199A22 /* NyhedspakkerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		427821B71C033E9900199A22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 427821A01C033E9900199A22 /* Nyhedspakker */;
+			targetProxy = 427821B61C033E9900199A22 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		427821A81C033E9900199A22 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				427821A91C033E9900199A22 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		427821AD1C033E9900199A22 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				427821AE1C033E9900199A22 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		427821BC1C033E9900199A22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		427821BD1C033E9900199A22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		427821BF1C033E9900199A22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Nyhedspakker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.dr.Nyhedspakker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		427821C01C033E9900199A22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Nyhedspakker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.dr.Nyhedspakker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		427821C21C033E9900199A22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NyhedspakkerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.dr.NyhedspakkerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nyhedspakker.app/Nyhedspakker";
+			};
+			name = Debug;
+		};
+		427821C31C033E9900199A22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NyhedspakkerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dk.dr.NyhedspakkerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nyhedspakker.app/Nyhedspakker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4278219C1C033E9900199A22 /* Build configuration list for PBXProject "Nyhedspakker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				427821BC1C033E9900199A22 /* Debug */,
+				427821BD1C033E9900199A22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		427821BE1C033E9900199A22 /* Build configuration list for PBXNativeTarget "Nyhedspakker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				427821BF1C033E9900199A22 /* Debug */,
+				427821C01C033E9900199A22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		427821C11C033E9900199A22 /* Build configuration list for PBXNativeTarget "NyhedspakkerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				427821C21C033E9900199A22 /* Debug */,
+				427821C31C033E9900199A22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 427821991C033E9900199A22 /* Project object */;
+}
