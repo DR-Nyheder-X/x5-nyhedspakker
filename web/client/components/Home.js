@@ -22,7 +22,7 @@ class Home extends Component {
     return <div className='Home'>
       <Link to='/kitchensink'>Kitchensink</Link>
       {posts.map(post => (
-        <li>{post.title}</li>
+        <li key={post.ID}>{post.title}</li>
       ))}
     </div>
   }
