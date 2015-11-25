@@ -1,6 +1,7 @@
 import reducer from './reducers'
 
 import thunk from 'redux-thunk'
+import createLogger from 'redux-logger'
 import { createStore, applyMiddleware, compose } from 'redux'
 
 import createBrowserHistory from 'history/lib/createBrowserHistory'
@@ -9,7 +10,10 @@ import { syncReduxAndRouter } from 'redux-simple-router'
 export const history = createBrowserHistory()
 
 export default function configureStore () {
-  const middleware = applyMiddleware(thunk)
+  const middleware = applyMiddleware(
+    thunk,
+    createLogger()
+  )
 
   const createStoreWithMiddleware = compose(middleware)
 
