@@ -15,12 +15,18 @@ if (!isProduction) {
   plugins.push(new webpack.HotModuleReplacementPlugin())
 } else {
   plugins.push(new webpack.optimize.OccurenceOrderPlugin())
+  plugins.push(new webpack.optimize.UglifyJsPlugin({
+    compressor: {
+      warnings: false
+    }
+  }))
 }
 
 var hotClient = 'webpack-hot-middleware/client'
 var entry = { index: './client/index.js' }
 
-const config = {
+module.exports = {
+  devtool: isProduction ? null : 'cheap-eval-source-map',
   entry: Object.keys(entry).reduce((entries, key) => {
     entries[key] = isProduction
       ? entry[key]
@@ -47,8 +53,3 @@ const config = {
   }
 }
 
-if (!isProduction) {
-  config.devtool = 'cheap-eval-source-map'
-}
-
-module.exports = config
