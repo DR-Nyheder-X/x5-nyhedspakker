@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  Nyhedspakker
-//
-//  Created by Mikkel Malmberg on 23/11/15.
-//  Copyright © 2015 DR Nyheder. All rights reserved.
-//
-
 import UIKit
 import WebKit
 
