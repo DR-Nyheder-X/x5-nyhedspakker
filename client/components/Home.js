@@ -9,7 +9,8 @@ const stateToProps = state => ({
 
 class Home extends Component {
   static propTypes = {
-    posts: PropTypes.arrayOf(PropTypes.object)
+    posts: PropTypes.arrayOf(PropTypes.object),
+    fetchPosts: PropTypes.func
   }
 
   componentDidMount () {
