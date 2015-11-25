@@ -13,7 +13,9 @@ class Home extends Component {
   }
 
   componentDidMount () {
-    this.props.fetchPosts()
+    if (this.props.posts.length === 0) {
+      this.props.fetchPosts()
+    }
   }
 
   render () {
@@ -21,8 +23,12 @@ class Home extends Component {
 
     return <div className='Home'>
       <Link to='/kitchensink'>Kitchensink</Link>
+
       {posts.map(post => (
-        <li key={post.ID}>{post.title}</li>
+        <div key={post.ID}>
+          <h1>{post.title}</h1>
+          <div dangerouslySetInnerHTML={{__html: post.content}} />
+        </div>
       ))}
     </div>
   }
