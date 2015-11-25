@@ -15,13 +15,8 @@ export default function proxyMiddleware (token) {
         return res.end(err)
       }
 
-      if (resp.statusCode < 200 || resp.statusCode > 299) {
-        console.error(resp.statusCode)
-        return res.end(body || '' + resp.statusCode)
-      }
-
-      res.end(body)
+      res.status(resp.statusCode)
+      res.end(body || `${resp.statusCode}`)
     })
   }
 }
-
