@@ -4,7 +4,7 @@
     "node": "5.1.x"
   },
   "scripts": {
-    "start": "NODE_ENV=production forever server/index.js",
+    "start": "NODE_ENV=production forever index.js",
     "dev": "NODE_ENV=development ./node_modules/nodemon/bin/nodemon.js -w server",
     "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js -p",
     "test": "NODE_ENV=test bin/test",
@@ -23,6 +23,7 @@
     "dotenv": "^1.2.0",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
+    "forever": "^0.15.1",
     "history": "^1.13.1",
     "isomorphic-fetch": "^2.2.0",
     "morgan": "^1.6.1",
