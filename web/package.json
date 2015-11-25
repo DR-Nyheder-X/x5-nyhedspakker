@@ -1,11 +1,15 @@
 {
   "private": true,
+  "engines": {
+    "node": "5.1.x"
+  },
   "scripts": {
-    "start": "NODE_ENV=production node server/index.js",
+    "start": "NODE_ENV=production forever server/index.js",
     "dev": "NODE_ENV=development ./node_modules/nodemon/bin/nodemon.js -w server",
     "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js -p",
     "test": "NODE_ENV=test bin/test",
-    "lint": "./node_modules/standard/bin/cmd.js"
+    "lint": "./node_modules/standard/bin/cmd.js",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "autoprefixer-loader": "^3.1.0",
@@ -13,7 +17,7 @@
     "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
     "babel-polyfill": "^6.2.0",
-    "babel-preset-node5": "leebenson/babel-preset-node5",
+    "babel-preset-node5": "github:leebenson/babel-preset-node5",
     "babel-preset-stage-0": "^6.1.18",
     "css-loader": "^0.23.0",
     "dotenv": "^1.2.0",
