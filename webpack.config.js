@@ -20,8 +20,7 @@ if (!isProduction) {
 var hotClient = 'webpack-hot-middleware/client'
 var entry = { index: './client/index.js' }
 
-module.exports = {
-  devtool: isProduction ? null : 'eval-sourcemaps',
+const config = {
   entry: Object.keys(entry).reduce((entries, key) => {
     entries[key] = isProduction
       ? entry[key]
@@ -42,9 +41,14 @@ module.exports = {
         exclude: path.resolve(__dirname, 'node_modules')
       }, {
         test: /\.s?css?$/,
-        loader: 'style!css?-minimize!autoprefixer!sass?includePaths[]=./node_modules'
+        loader: 'style!css!autoprefixer!sass?includePaths[]=./node_modules'
       }
     ]
   }
 }
 
+if (!isProduction) {
+  config.devtool = 'cheap-eval-source-map'
+}
+
+module.exports = config
