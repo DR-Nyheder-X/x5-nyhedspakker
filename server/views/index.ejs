@@ -6,6 +6,10 @@
   </head>
   <body>
     <div id="root"></div>
+    <script type="text/javascript">
+      window.CONTENTFUL_SPACE = '<%= CONTENTFUL_SPACE %>'
+      window.CONTENTFUL_ACCESS_TOKEN = '<%= CONTENTFUL_ACCESS_TOKEN %>'
+    </script>
     <%if (env === 'development') { %>
       <script src="/client/index.bundle.js"></script>
     <% } else { %>
