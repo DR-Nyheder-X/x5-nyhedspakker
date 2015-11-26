@@ -1,3 +1,4 @@
+/* global __DEVELOPMENT */
 import reducer from './reducers'
 
 import thunk from 'redux-thunk'
@@ -10,9 +11,11 @@ import { syncReduxAndRouter } from 'redux-simple-router'
 export const history = createBrowserHistory()
 
 export default function configureStore () {
-  const middleware = applyMiddleware(
+  const middleware = __DEVELOPMENT ? applyMiddleware(
     thunk,
     createLogger()
+  ) : applyMiddleware(
+    thunk
   )
 
   const createStoreWithMiddleware = compose(middleware)
