@@ -8,7 +8,7 @@ class ViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = NSURL(string: "http://localhost:8000")!
+        let url = NSURL(string: "http://np.drdinstem.me")!
         let req = NSURLRequest(URL: url)
         webView.loadRequest(req)
     }
