@@ -1,23 +1,15 @@
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
+import React, { PropTypes } from 'react'
+import Markdown from './Markdown'
 
-const stateToProps = state => ({
-  entries: state.entries.items
-})
-
-class Entry extends Component {
-  static propTypes = {
-    params: PropTypes.object,
-    entries: PropTypes.arrayOf(PropTypes.object)
-  }
-
-  render () {
-    const entry = this.props.entries.find(entry => entry.sys.id === this.props.params.id)
-
-    return <div>
-      <h1>{entry && entry.fields.title}</h1>
-    </div>
-  }
+export default function Entry ({ entry }) {
+  console.log(entry)
+  return <div className='Entry'>
+    <h2>{entry.fields.hashtag}</h2>
+    <h1>{entry.fields.title}</h1>
+    <Markdown text={entry.fields.body} />
+  </div>
 }
 
-export default connect(stateToProps)(Entry)
+Entry.propTypes = {
+  entry: PropTypes.object.isRequired
+}

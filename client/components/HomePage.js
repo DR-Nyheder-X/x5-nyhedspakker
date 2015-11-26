@@ -2,12 +2,13 @@ import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { fetchEntries } from '../actions'
+import Entry from './Entry'
 
 const stateToProps = state => ({
   entries: state.entries.items
 })
 
-class Home extends Component {
+class HomePage extends Component {
   static propTypes = {
     entries: PropTypes.arrayOf(PropTypes.object),
     fetchEntries: PropTypes.func
@@ -22,21 +23,14 @@ class Home extends Component {
   render () {
     const { entries } = this.props
 
-    return <div className='Home'>
+    return <div className='HomePage'>
       <Link to='/kitchensink'>Kitchensink</Link>
 
       {entries.map(entry => (
-        <div key={entry.sys.id}>
-          <h1>
-            <Link to={`/entries/${entry.sys.id}`}>
-              {entry.fields.title}
-            </Link>
-          </h1>
-          <div dangerouslySetInnerHTML={{__html: entry.fields.body}} />
-        </div>
+        <Entry key={entry.sys.id} entry={entry} />
       ))}
     </div>
   }
 }
 
-export default connect(stateToProps, { fetchEntries })(Home)
+export default connect(stateToProps, { fetchEntries })(HomePage)
