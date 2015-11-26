@@ -23,6 +23,8 @@
 		420ADA531C035AEB00C57143 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 420ADA521C035AEB00C57143 /* SystemConfiguration.framework */; };
 		420ADA551C035AF300C57143 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 420ADA541C035AF300C57143 /* libz.tbd */; };
 		420ADA571C035AFA00C57143 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 420ADA561C035AFA00C57143 /* libsqlite3.tbd */; };
+		42637BD81C07042900CAD202 /* Intercom.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 42637BD61C07042900CAD202 /* Intercom.bundle */; };
+		42637BD91C07042900CAD202 /* Intercom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42637BD71C07042900CAD202 /* Intercom.framework */; };
 		427821A51C033E9900199A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427821A41C033E9900199A22 /* AppDelegate.swift */; };
 		427821A71C033E9900199A22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427821A61C033E9900199A22 /* ViewController.swift */; };
 		427821AA1C033E9900199A22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 427821A81C033E9900199A22 /* Main.storyboard */; };
@@ -58,6 +60,8 @@
 		420ADA521C035AEB00C57143 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		420ADA541C035AF300C57143 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		420ADA561C035AFA00C57143 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		42637BD61C07042900CAD202 /* Intercom.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Intercom.bundle; sourceTree = "<group>"; };
+		42637BD71C07042900CAD202 /* Intercom.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Intercom.framework; sourceTree = "<group>"; };
 		427821A11C033E9900199A22 /* Nyhedspakker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nyhedspakker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		427821A41C033E9900199A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		427821A61C033E9900199A22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 				420ADA571C035AFA00C57143 /* libsqlite3.tbd in Frameworks */,
 				420ADA551C035AF300C57143 /* libz.tbd in Frameworks */,
 				420ADA531C035AEB00C57143 /* SystemConfiguration.framework in Frameworks */,
+				42637BD91C07042900CAD202 /* Intercom.framework in Frameworks */,
 				420ADA511C035AE300C57143 /* StoreKit.framework in Frameworks */,
 				420ADA4F1C035ADC00C57143 /* Security.framework in Frameworks */,
 				420ADA4D1C035AD600C57143 /* QuartzCore.framework in Frameworks */,
@@ -107,6 +112,8 @@
 		420ADA371C035A8A00C57143 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42637BD61C07042900CAD202 /* Intercom.bundle */,
+				42637BD71C07042900CAD202 /* Intercom.framework */,
 				420ADA441C035A9E00C57143 /* AudioToolbox.framework */,
 				420ADA381C035A8A00C57143 /* Bolts.framework */,
 				420ADA461C035AA600C57143 /* CFNetwork.framework */,
@@ -255,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42637BD81C07042900CAD202 /* Intercom.bundle in Resources */,
 				427821AF1C033E9900199A22 /* LaunchScreen.storyboard in Resources */,
 				427821AC1C033E9900199A22 /* Assets.xcassets in Resources */,
 				427821AA1C033E9900199A22 /* Main.storyboard in Resources */,
