@@ -16,9 +16,7 @@ if (!isProduction) {
 } else {
   plugins.push(new webpack.optimize.OccurenceOrderPlugin())
   plugins.push(new webpack.optimize.UglifyJsPlugin({
-    compressor: {
-      warnings: false
-    }
+    compressor: { warnings: false }
   }))
 }
 
