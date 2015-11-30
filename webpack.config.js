@@ -45,7 +45,7 @@ module.exports = {
         exclude: path.resolve(__dirname, 'node_modules')
       }, {
         test: /\.s?css?$/,
-        loader: 'style!css!autoprefixer!sass?includePaths[]=./node_modules'
+        loader: 'style!css!autoprefixer!sass?includePaths[]=./node_modules,./node_modules/normalize-scss/sass'
       }
     ]
   }

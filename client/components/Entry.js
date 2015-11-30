@@ -3,7 +3,6 @@ import Markdown from './Markdown'
 import { Link } from 'react-router'
 
 export default function Entry ({ entry }) {
-  console.log(entry)
   return <div className='Entry'>
     <h2>{entry.fields.hashtag}</h2>
     <h1>

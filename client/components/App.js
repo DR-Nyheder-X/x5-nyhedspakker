@@ -1,11 +1,24 @@
-import React from 'react'
-import { Link } from 'react-router'
+import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
+import { fetchEntries } from '../actions'
 
 import './App.scss'
 
-export default function App ({ children }) {
-  return <div className='App'>
-    <h1><Link to='/'>Nyhedspakkelakker</Link></h1>
-    {children}
-  </div>
+class App extends Component {
+  static propTypes = {
+    fetchEntries: PropTypes.func,
+    children: PropTypes.node
+  }
+
+  componentDidMount () {
+    this.props.fetchEntries()
+  }
+
+  render () {
+    return <div className='App'>
+      {this.props.children}
+    </div>
+  }
 }
+
+export default connect(null, { fetchEntries })(App)
