@@ -24,6 +24,7 @@ class HomePage extends Component {
 
   handleSlideChange (slider) {
     console.log('nav slide', slider.activeIndex)
+
     const { dispatch } = this.props
 
     if (slider.activeIndex === SLIDER_POSITIONS.index) {
@@ -88,6 +89,7 @@ function entryComponents (entries, selectedEntry) {
     {entries.map(entry => (
       <div key={entry.sys.id}>
         <Entry entry={entry} />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iubet igitur nos Pythius Apollo noscere nosmet ipsos. Hoc loco tenere se Triarius non potuit. Ait enim se, si uratur, Quam hoc suave! dicturum. Idemne potest esse dies saepius, qui semel fuit? Quis enim est, qui non videat haec esse in natura rerum tria?
       </div>
     ))}
   </SwiperComponent>

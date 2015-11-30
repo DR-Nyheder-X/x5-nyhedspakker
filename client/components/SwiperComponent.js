@@ -10,18 +10,20 @@ import classnames from 'classnames'
 
 import './SwiperComponent.scss'
 
+const defaultProps = {
+  autoHeight: false,
+  direction: 'horizontal',
+  initialSlide: 0,
+  spaceBetween: 0,
+  noSwiping: false
+}
+
 export default class SwiperComponent extends Component {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    initialSlide: PropTypes.number,
-    direction: PropTypes.oneOf(['horizontal', 'vertical'])
-  }
-
-  static defaultProps = {
-    initialSlide: 0,
-    direction: 'horizontal',
-    spaceBetween: 0
+    direction: PropTypes.oneOf(['horizontal', 'vertical']),
+    initialSlide: PropTypes.number
   }
 
   constructor (props) {
@@ -30,7 +32,7 @@ export default class SwiperComponent extends Component {
     const opts = swiperOptsFrom(props)
 
     this.swiperOpts =
-      Object.assign({}, SwiperComponent.defaultProps, opts)
+      Object.assign({}, defaultProps, opts)
   }
 
   componentDidMount () {
@@ -67,12 +69,6 @@ export default class SwiperComponent extends Component {
   }
 }
 
-const swiperOptions = [
-  'initialSlide',
-  'direction',
-  'onSlideChangeEnd'
-]
-
 function swiperOptsFrom (props) {
   props = Object.assign({}, props)
 
@@ -82,6 +78,6 @@ function swiperOptsFrom (props) {
   }
 
   return Object.keys(props)
-  .filter(key => swiperOptions.includes(key))
+  .filter(key => Object.keys(defaultProps).includes(key))
   .reduce((opts, key) => { opts[key] = props[key]; return opts }, {})
 }
