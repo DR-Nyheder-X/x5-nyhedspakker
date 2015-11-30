@@ -21,7 +21,7 @@ export default class SwiperComponent extends Component {
   static defaultProps = {
     initialSlide: 0,
     direction: 'horizontal',
-    spaceBetween: 50
+    spaceBetween: 0
   }
 
   constructor (props) {
@@ -40,6 +40,7 @@ export default class SwiperComponent extends Component {
   }
 
   componentWillUnmount () {
+    console.log('unmoutn')
     this.swiper.destroy()
   }
 
@@ -66,10 +67,14 @@ export default class SwiperComponent extends Component {
   }
 }
 
+const swiperOptions = [
+  'initialSlide',
+  'direction',
+  'onSlideChangeEnd'
+]
+
 function swiperOptsFrom (props) {
   props = Object.assign({}, props)
-
-  const keys = ['initialSlide', 'direction']
 
   if (props.slide) {
     props.initialSlide = props.slide
@@ -77,6 +82,6 @@ function swiperOptsFrom (props) {
   }
 
   return Object.keys(props)
-  .filter(key => keys.includes(key))
+  .filter(key => swiperOptions.includes(key))
   .reduce((opts, key) => { opts[key] = props[key]; return opts }, {})
 }
