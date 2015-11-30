@@ -38,10 +38,11 @@ class HomePage extends Component {
   }
 
   handleEntrySwipeChange (slider) {
+    console.log('entry swipe', slider.activeIndex)
+
     const nav = this.refs.nav.swiper
     if (nav.activeIndex === 0) return
 
-    console.log('entry swipe', slider.activeIndex)
     const { dispatch, entries } = this.props
     const entry = entries[slider.activeIndex]
     if (entry) dispatch(updatePath(`/entries/${entry.sys.id}`))

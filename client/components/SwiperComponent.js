@@ -15,7 +15,8 @@ const defaultProps = {
   direction: 'horizontal',
   initialSlide: 0,
   spaceBetween: 0,
-  noSwiping: false
+  noSwiping: false,
+  onSlideChangeEnd: null
 }
 
 export default class SwiperComponent extends Component {
@@ -23,7 +24,8 @@ export default class SwiperComponent extends Component {
     children: PropTypes.node,
     className: PropTypes.string,
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
-    initialSlide: PropTypes.number
+    initialSlide: PropTypes.number,
+    onSlideChangeEnd: PropTypes.func
   }
 
   constructor (props) {
@@ -42,18 +44,20 @@ export default class SwiperComponent extends Component {
   }
 
   componentWillUnmount () {
-    console.log('unmoutn')
+    console.log('unmount')
     this.swiper.destroy()
   }
 
   componentWillReceiveProps (newProps, oldProps) {
     if (this.swiper) {
-      this.swiper.update()
-
       if (newProps.slide !== oldProps.slide) {
         this.swiper.slideTo(newProps.slide)
       }
     }
+  }
+
+  componentDidUpdate () {
+    this.swiper.update()
   }
 
   render () {
