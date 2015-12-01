@@ -1,21 +1,7 @@
-@import '../vendor/normalize';
+@import '../utilities/base';
 
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-body {
-  background: #fff;
-  font-family: 'Helvetica Neue', sans-serif;
-  padding: 0;
-  margin: 0;
-}
-
+#root,
 .App {
-  background: white;
-}
-
-html, body, #root, .App {
   height: 100%;
   position: relative;
 }

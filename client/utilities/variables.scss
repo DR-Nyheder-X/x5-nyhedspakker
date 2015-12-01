@@ -16,3 +16,26 @@ $magenta:    #F954B3;
 $fontSize--small:  12px;
 $fontSize--medium: 15px;
 $fontSize--large:  17px;
+$fontSize: $fontSize--medium;
+
+// Type
+$fontColor: $black;
+$lineHeight: 1.4;
+
+// Font families
+$fontFamily--regular: sans-serif;
+$fontFamily--heading: sans-serif;
+$fontFamily: $fontFamily--regular;
+
+// Media query breakpoints
+$xSmallBreakpoint: 320px; // iPhone 5
+$smallBreakpoint: 375px; // iPhone 6
+$mediumBreakpoint: 414px; // iPhone 6+
+
+// Media queries
+$xSmallUp: "only screen";
+$xSmallOnly: "only screen and (max-width: #{$xSmallBreakpoint})";
+$smallUp: "only screen and (min-width: #{$smallBreakpoint})";
+$smallOnly: "only screen and (min-width: #{$xSmallBreakpoint}) and (max-width: #{$smallBreakpoint})";
+$mediumUp: "only screen and (min-width: #{$mediumBreakpoint})";
+$mediumOnly: "only screen and (min-width: #{$smallBreakpoint}) and (max-width: #{$mediumBreakpoint})";
