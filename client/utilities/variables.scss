@@ -13,29 +13,29 @@ $orange:     #FFBC17;
 $magenta:    #F954B3;
 
 // Font sizes
+$fontSize: 15px;
 $fontSize--small:  12px;
-$fontSize--medium: 15px;
+$fontSize--medium: $fontSize;
 $fontSize--large:  17px;
-$fontSize: $fontSize--medium;
 
 // Type
 $fontColor: $black;
 $lineHeight: 1.4;
 
 // Font families
-$fontFamily--regular: sans-serif;
+$fontFamily: sans-serif;
+$fontFamily--regular: $fontFamily;
 $fontFamily--heading: sans-serif;
-$fontFamily: $fontFamily--regular;
 
 // Media query breakpoints
-$xSmallBreakpoint: 320px; // iPhone 5
-$smallBreakpoint: 375px; // iPhone 6
-$mediumBreakpoint: 414px; // iPhone 6+
+$breakpoint--xSmall: 320px; // iPhone 5
+$breakpoint--small: 375px; // iPhone 6
+$breakpoint--medium: 414px; // iPhone 6+
 
 // Media queries
-$xSmallUp: "only screen";
-$xSmallOnly: "only screen and (max-width: #{$xSmallBreakpoint})";
-$smallUp: "only screen and (min-width: #{$smallBreakpoint})";
-$smallOnly: "only screen and (min-width: #{$xSmallBreakpoint}) and (max-width: #{$smallBreakpoint})";
-$mediumUp: "only screen and (min-width: #{$mediumBreakpoint})";
-$mediumOnly: "only screen and (min-width: #{$smallBreakpoint}) and (max-width: #{$mediumBreakpoint})";
+$mediaQuery--xSmallUp: "only screen";
+$mediaQuery--xSmallOnly: "only screen and (max-width: #{$breakpoint--xSmall})";
+$mediaQuery--smallUp: "only screen and (min-width: #{$breakpoint--small})";
+$mediaQuery--smallOnly: "only screen and (min-width: #{$breakpoint--xSmall}) and (max-width: #{$breakpoint--small})";
+$mediaQuery--mediumUp: "only screen and (min-width: #{$breakpoint--medium})";
+$mediaQuery--mediumOnly: "only screen and (min-width: #{$breakpoint--small}) and (max-width: #{$breakpoint--medium})";
