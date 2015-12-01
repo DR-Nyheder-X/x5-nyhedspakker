@@ -23,9 +23,13 @@ $fontColor: $black;
 $lineHeight: 1.4;
 
 // Font families
-$fontFamily: sans-serif;
+$fontFamily: 'avenir medium', sans-serif;
 $fontFamily--regular: $fontFamily;
-$fontFamily--heading: sans-serif;
+$fontFamily--heavy: 'avenir heavy condensed italic', sans-serif;
+$fontFamily--bold: 'avenir bold condensed italic', sans-serif;
+$fontFamily--demibold: 'avenir demibold condensed italic', sans-serif;
+$fontFamily--drRegular: 'gibson regular', sans-serif;
+$fontFamily--drSemibold: 'gibson semibold', sans-serif;
 
 // Media query breakpoints
 $breakpoint--xSmall: 320px; // iPhone 5
