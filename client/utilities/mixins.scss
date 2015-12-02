@@ -1,0 +1,18 @@
+@mixin backgroundImage($filename, $width:auto) {
+  background-image: url('/graphics/#{$filename}');
+  background-position: 0 0;
+  background-size: $width;
+  background-repeat: no-repeat;
+}
+
+@mixin backgroundImageReplacement($filename, $width:auto, $height:auto) {
+  background-image: url('/graphics/#{$filename}');
+  background-position: 0 0;
+  background-size: $width;
+  background-repeat: no-repeat;
+  width: $width;
+  height: $height;
+  text-indent: -999em;
+  overflow: hidden;
+  display: block;
+}

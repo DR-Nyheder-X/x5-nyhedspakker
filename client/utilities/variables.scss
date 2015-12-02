@@ -1,8 +1,13 @@
+// Grays
+$gray:          #A7A7A7;
+$gray--light:   #F1F1F1;
+$gray--darkest: #484848;
+
 // Colors
 $black:      #000;
 $blue:       #2A6DBB;
 $hotBlue:    #2384FF;
-$gree:       #50BF6B;
+$green:      #50BF6B;
 $seaGreen:   #24C19F;
 $red:        #FF4D4B;
 $hotRed:     #FF4B7B;
@@ -12,8 +17,21 @@ $teal:       #27D7C0;
 $orange:     #FFBC17;
 $magenta:    #F954B3;
 
+// Accent colors
+$blueAccent:       #E4FF53;
+$hotBlueAccent:    #DBFF53;
+$greenAccent:       #7DFF86;
+$seaGreenAccent:   #4BFFBD;
+$redAccent:        #FFFB73;
+$hotRedAccent:     #00FFDC;
+$purpleAccent:     #FF7BFC;
+$deepPurpleAccent: #6DF18D;
+$tealAccent:       #00FFDC;
+$orangeAccent:     #FFF436;
+$magentaAccent:    #36FFFC;
+
 // Font sizes
-$fontSize: 15px;
+$fontSize: 14.5px;
 $fontSize--small:  12px;
 $fontSize--medium: $fontSize;
 $fontSize--large:  17px;
@@ -30,6 +48,10 @@ $fontFamily--bold: 'avenir bold condensed italic', sans-serif;
 $fontFamily--demibold: 'avenir demibold condensed italic', sans-serif;
 $fontFamily--drRegular: 'gibson regular', sans-serif;
 $fontFamily--drSemibold: 'gibson semibold', sans-serif;
+
+// Layout
+$AppPadding--right: 20px;
+$AppPadding--left:  20px;
 
 // Media query breakpoints
 $breakpoint--xSmall: 320px; // iPhone 5

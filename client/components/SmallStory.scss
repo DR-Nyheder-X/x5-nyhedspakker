@@ -1,0 +1,75 @@
+@import '../utilities/mixins';
+@import '../utilities/variables';
+
+$SmallStory--minHeight:   105px;
+$SmallStory--borderWidth:   7px;
+
+%SmallStory {
+  @include backgroundImage('smallStoryShadow.png', 375px);
+  padding-top: 1em;
+  padding-right: $AppPadding--right;
+  padding-bottom: 1.35em;
+  padding-left: $AppPadding--left*1.2;
+  min-height: $SmallStory--minHeight;
+  position: relative;
+  background-color: #fff;
+
+  &:focus {
+    background-color: pink;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: $SmallStory--borderWidth;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $blue;
+  }
+
+  &:after {
+    @include backgroundImageReplacement('smallStoryBorderShadow.png', 7px, 20px);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .Tag { margin-bottom: .25em; }
+
+  @media #{$mediaQuery--smallUp} { padding-right: $AppPadding--right*3; }
+}
+
+%SmallStory--done {
+  background-color: $gray--light;
+  color: darken($gray, 5%);
+  &:before { background-color: $gray; }
+
+  .Tag {
+    color: $gray--darkest;
+    &:after {
+      content: "";
+      @include backgroundImageReplacement('tickmark.png', 14px, 13px);
+      position: absolute;
+      top: 1.25em;
+      right: $AppPadding--right*.85;
+    }
+  }
+}
+
+.SmallStory { @extend %SmallStory; }
+.SmallStory.SmallStory--blue:before       { background-color: $blue; }
+.SmallStory.SmallStory--hotBlue:before    { background-color: $hotBlue; }
+.SmallStory.SmallStory--red:before        { background-color: $red; }
+.SmallStory.SmallStory--hotRed:before     { background-color: $hotRed; }
+.SmallStory.SmallStory--green:before      { background-color: $green; }
+.SmallStory.SmallStory--seaGreen:before   { background-color: $seaGreen; }
+.SmallStory.SmallStory--purple:before     { background-color: $purple; }
+.SmallStory.SmallStory--deepPurple:before { background-color: $deepPurple; }
+.SmallStory.SmallStory--teal:before       { background-color: $teal; }
+.SmallStory.SmallStory--orange:before     { background-color: $orange; }
+.SmallStory.SmallStory--magenta:before    { background-color: $magenta; }
+
+.SmallStory.SmallStory--done { @extend %SmallStory--done; }

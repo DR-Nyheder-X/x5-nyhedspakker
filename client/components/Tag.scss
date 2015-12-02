@@ -1,0 +1,67 @@
+@import '../utilities/variables';
+
+$Tag--blockyHeight: 20px;
+
+%Tag {
+  text-transform: uppercase;
+  font-size: $fontSize--medium;
+  font-family: $fontFamily--heavy;
+  letter-spacing: .025em;
+  &:before { content: '#'; }
+}
+
+%Tag--blocky {
+  font-size: $fontSize--small;
+  font-family: $fontFamily--bold;
+  background: $blueAccent;
+  color: $black;
+  position: relative;
+  margin-right: 1em;
+  line-height: $Tag--blockyHeight;
+  height: $Tag--blockyHeight;
+  padding-left: $AppPadding--left;
+
+  // Angled end cap
+  &:after {
+    content: "I";
+    color: $blueAccent;
+    position: absolute;
+    right: -.125em;
+    font-size: 10em;
+    line-height: 0;
+    overflow: hidden;
+    height: $Tag--blockyHeight;
+  }
+}
+
+@mixin Tag--overrideBlockyColors($color:$blueAccent){
+  background: $color;
+  &:after { color: $color; }
+  color: $black;
+}
+
+.Tag { @extend %Tag; }
+.Tag.Tag--blue       { color: $blue; }
+.Tag.Tag--hotBlue    { color: $hotBlue; }
+.Tag.Tag--red        { color: $red; }
+.Tag.Tag--hotRed     { color: $hotRed; }
+.Tag.Tag--green      { color: $green; }
+.Tag.Tag--seaGreen   { color: $seaGreen; }
+.Tag.Tag--purple     { color: $purple; }
+.Tag.Tag--deepPurple { color: $deepPurple; }
+.Tag.Tag--teal       { color: $teal; }
+.Tag.Tag--orange     { color: $orange; }
+.Tag.Tag--magenta    { color: $magenta; }
+
+.Tag--blocky { @extend %Tag--blocky; }
+.Tag--blocky.Tag--blue       { @include Tag--overrideBlockyColors($blueAccent); }
+.Tag--blocky.Tag--hotBlue    { @include Tag--overrideBlockyColors($hotBlueAccent); }
+.Tag--blocky.Tag--red        { @include Tag--overrideBlockyColors($redAccent); }
+.Tag--blocky.Tag--hotRed     { @include Tag--overrideBlockyColors($hotRedAccent); }
+.Tag--blocky.Tag--green      { @include Tag--overrideBlockyColors($greenAccent); }
+.Tag--blocky.Tag--seaGreen   { @include Tag--overrideBlockyColors($seaGreenAccent); }
+.Tag--blocky.Tag--purple     { @include Tag--overrideBlockyColors($purpleAccent); }
+.Tag--blocky.Tag--deepPurple { @include Tag--overrideBlockyColors($deepPurpleAccent); }
+.Tag--blocky.Tag--teal       { @include Tag--overrideBlockyColors($tealAccent); }
+.Tag--blocky.Tag--orange     { @include Tag--overrideBlockyColors($orangeAccent); }
+.Tag--blocky.Tag--magenta    { @include Tag--overrideBlockyColors($magentaAccent); }
