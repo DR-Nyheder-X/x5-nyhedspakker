@@ -16,6 +16,11 @@ const stateToProps = state => ({
   lastUpdated: state.entries.lastUpdated
 })
 
+function stopPropagation (event) {
+  window.s = this
+  event.stopPropagation()
+}
+
 class HomePage extends Component {
   static propTypes = {
     entries: PropTypes.arrayOf(PropTypes.object),
@@ -26,18 +31,17 @@ class HomePage extends Component {
 
   componentDidMount () {
     this.swiper = findDOMNode(this).swiper
-
-    attachScrollTouchEventsTo(this.swiper)
+    this.swiper.slides.on('touchmove', stopPropagation)
   }
 
   handleSlideChange (swiper) {
-    console.log('nav slide', swiper.activeIndex)
-
-    const { dispatch } = this.props
+    // const { dispatch } = this.props
 
     if (swiper.activeIndex === SWIPER_POSITIONS.index) {
-      dispatch(updatePath('/'))
+      swiper.slides.off(stopPropagation)
+      // dispatch(updatePath('/'))
     } else if (swiper.activeIndex === SWIPER_POSITIONS.entry) {
+      swiper.slides.on('touchmove', stopPropagation)
     //   const { entries } = this.props
     //   const entrySwiper = this.refs.entries.swiper
     //   const entry = entries[entrySwiper.activeIndex]
@@ -72,11 +76,6 @@ class HomePage extends Component {
       </div>
     </SwiperComponent>
   }
-        // <TiledEntries
-        //   entries={entries}
-        //   onSwipe={e => { console.log(e) }}
-        //   selectedEntry={selectedEntry}
-        // />
 }
 
 class TiledEntries extends Component {
@@ -100,34 +99,6 @@ class TiledEntries extends Component {
       ))}
     </SwiperComponent>
   }
-}
-
-function attachScrollTouchEventsTo (swiper) {
-  let startScroll, touchStart, touchCurrent
-
-  swiper.slides.on('touchstart', function (event) {
-    startScroll = this.scrollTop
-    touchStart = event.targetTouches[0].pageY
-  }, true)
-
-  swiper.slides.on('touchmove', function (event) {
-    touchCurrent = event.targetTouches[0].pageY
-    const diff = touchCurrent - touchStart
-    const scrollable = this.scrollHeight >= this.offsetHeight
-    const heightDiff = this.scrollHeight - this.offsetHeight
-    const scrolling =
-      scrollable &&
-      (
-        (diff < 0 && startScroll === 0) ||
-        (diff > 0 && startScroll === heightDiff) ||
-        (startScroll > 0 && startScroll < heightDiff)
-      )
-    const isEntry = swiper.activeIndex === SWIPER_POSITIONS.entry
-
-    if (isEntry && scrolling) {
-      event.stopPropagation()
-    }
-  }, true)
 }
 
 export default connect(stateToProps)(HomePage)
