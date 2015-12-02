@@ -37,16 +37,16 @@ class HomePage extends Component {
   handleSlideChange (swiper) {
     // const { dispatch } = this.props
 
-    if (swiper.activeIndex === SWIPER_POSITIONS.index) {
-      swiper.slides.off(stopPropagation)
-      // dispatch(updatePath('/'))
-    } else if (swiper.activeIndex === SWIPER_POSITIONS.entry) {
-      swiper.slides.on('touchmove', stopPropagation)
+    // if (swiper.activeIndex === SWIPER_POSITIONS.index) {
+    //   swiper.slides.off('touchmove', stopPropagation)
+    //   // dispatch(updatePath('/'))
+    // } else if (swiper.activeIndex === SWIPER_POSITIONS.entry) {
+    //   swiper.slides.on('touchmove', stopPropagation)
     //   const { entries } = this.props
     //   const entrySwiper = this.refs.entries.swiper
     //   const entry = entries[entrySwiper.activeIndex]
     //   if (entry) dispatch(updatePath(`/entries/${entry.sys.id}`))
-    }
+    // }
   }
 
   render () {
@@ -63,6 +63,7 @@ class HomePage extends Component {
       direction='vertical'
       onSlideChangeEnd={handleSlideChange}
       slide={id ? SWIPER_POSITIONS.entry : SWIPER_POSITIONS.index}
+      slideClassName='top-most-slide'
     >
       <div key={SWIPER_POSITIONS.index}>
         {entries.map(entry => (
@@ -72,10 +73,11 @@ class HomePage extends Component {
         ))}
       </div>
       <div key={SWIPER_POSITIONS.entry}>
-        <TiledEntries entries={entries} selectedEntry={selectedEntry} />
+        {[0,1,2,3,4,5,6,7,8].map(i => <p key={i}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non interdum mi, et porttitor augue. Nullam enim massa, porta quis tortor sed, viverra molestie magna. Ut gravida mauris et orci porta, eu rutrum sem convallis. Duis maximus sem eu ipsum feugiat, quis dictum neque laoreet. Donec sed pretium eros. Pellentesque nec nunc in purus venenatis tincidunt eu nec dui. Aenean non sem eros. Suspendisse eleifend volutpat elit, sed posuere ipsum mollis eu. Morbi suscipit eu nunc in auctor. In imperdiet luctus finibus. Fusce quis lectus nec nisl dignissim placerat eget ac neque. Sed vel diam suscipit, tempor enim sit amet, lobortis diam. Suspendisse nec lorem tortor. Sed efficitur sed sapien non imperdiet. Nam id sapien eget est eleifend congue tempor vitae massa.</p>)}
       </div>
     </SwiperComponent>
   }
+        // <TiledEntries entries={entries} selectedEntry={selectedEntry} />
 }
 
 class TiledEntries extends Component {

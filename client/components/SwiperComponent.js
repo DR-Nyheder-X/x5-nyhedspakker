@@ -27,7 +27,8 @@ export default class SwiperComponent extends Component {
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
     key: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     onSlideChangeEnd: PropTypes.func,
-    slide: PropTypes.number
+    slide: PropTypes.number,
+    slideClassName: PropTypes.string
   }
 
   constructor (props) {
@@ -46,15 +47,14 @@ export default class SwiperComponent extends Component {
   }
 
   componentWillUnmount () {
-    console.log('unmount')
     this.swiper.destroy()
   }
 
   componentWillReceiveProps (newProps, oldProps) {
-    if (this.swiper) {
-      if (newProps.slide !== oldProps.slide) {
-        this.swiper.slideTo(newProps.slide)
-      }
+    if (!this.swiper) { return }
+
+    if (newProps.slide !== oldProps.slide) {
+      this.swiper.slideTo(newProps.slide)
     }
   }
 
@@ -68,9 +68,11 @@ export default class SwiperComponent extends Component {
 
     return <div className={cls}>
       <div className='swiper-wrapper'>
-        {Children.map(this.props.children, node => (
-          cloneElement(node, { className: 'swiper-slide' })
-        ))}
+        {Children.map(this.props.children, node => {
+          return cloneElement(node, {
+            className: classnames('swiper-slide', this.props.slideClassName)
+          })
+        })}
       </div>
     </div>
   }

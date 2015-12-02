@@ -1,13 +1,6 @@
 @import 'variables';
 @import 'fonts';
 
-html,
-body {
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
 html {
   font-family: $fontFamily;
   -ms-text-size-adjust: 100%;
