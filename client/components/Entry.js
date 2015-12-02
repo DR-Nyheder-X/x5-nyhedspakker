@@ -11,6 +11,13 @@ export default function Entry ({ entry }) {
       </Link>
     </h1>
     <Markdown text={entry.fields.body} />
+    <Markdown text={entry.fields.body} />
+    <Markdown text={entry.fields.body} />
+    <Markdown text={entry.fields.body} />
+    <Markdown text={entry.fields.body} />
+    <Markdown text={entry.fields.body} />
+    <Markdown text={entry.fields.body} />
+    <Markdown text={entry.fields.body} />
   </div>
 }
 

@@ -24,8 +24,9 @@ export default class SwiperComponent extends Component {
     children: PropTypes.node,
     className: PropTypes.string,
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
-    initialSlide: PropTypes.number,
-    onSlideChangeEnd: PropTypes.func
+    key: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    onSlideChangeEnd: PropTypes.func,
+    slide: PropTypes.number
   }
 
   constructor (props) {
@@ -57,7 +58,8 @@ export default class SwiperComponent extends Component {
   }
 
   componentDidUpdate () {
-    this.swiper.update()
+    this.swiper.updateContainerSize()
+    this.swiper.updateSlidesSize()
   }
 
   render () {
