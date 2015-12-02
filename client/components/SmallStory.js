@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import classnames from 'classnames'
 import formatClassModifiers from '../utilities/formatClassModifiers'
-import Tag from './Tag'
 import './SmallStory.scss'
 
 export default class SmallStory extends Component {
@@ -12,8 +11,10 @@ export default class SmallStory extends Component {
   }
 
   render () {
-    const baseClass = 'SmallStory'
-    const cls = classnames(baseClass, this.props.className, formatClassModifiers(baseClass, this.props.modifier))
+    const cls = classnames(
+      formatClassModifiers('SmallStory', this.props.modifier),
+      this.props.className
+    )
 
     return <div className={cls} {...this.props}>
       {this.props.children}

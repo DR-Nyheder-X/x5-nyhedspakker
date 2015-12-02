@@ -11,8 +11,10 @@ export default class Tag extends Component {
   }
 
   render () {
-    const baseClass = 'Tag'
-    const cls = classnames(baseClass, this.props.className, formatClassModifiers(baseClass, this.props.modifier))
+    const cls = classnames(
+      formatClassModifiers('Tag', this.props.modifier),
+      this.props.className
+    )
 
     return <div className={cls} {...this.props}>
       {this.props.children}
