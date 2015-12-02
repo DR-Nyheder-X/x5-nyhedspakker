@@ -7,40 +7,40 @@ export default class Kitchensink extends Component {
   render () {
     return <div className='Kitchensink'>
       <h2 className='Kitchensink-sectionHeading'>Tag</h2>
-      <Tag modifier='blue'>Blue</Tag>
-      <Tag modifier='hotBlue'>Hot blue</Tag>
-      <Tag modifier='green'>Green</Tag>
-      <Tag modifier='seaGreen'>Seagreen</Tag>
-      <Tag modifier='red'>Red</Tag>
-      <Tag modifier='hotRed'>Hot red</Tag>
-      <Tag modifier='purple'>Purple</Tag>
-      <Tag modifier='deepPurple'>Deep purple</Tag>
-      <Tag modifier='teal'>Teal</Tag>
-      <Tag modifier='orange'>Orange</Tag>
-      <Tag modifier='magenta'>Magenta</Tag>
+      <Tag modifiers='blue'>Blue</Tag>
+      <Tag modifiers='hotBlue'>Hot blue</Tag>
+      <Tag modifiers='green'>Green</Tag>
+      <Tag modifiers='seaGreen'>Seagreen</Tag>
+      <Tag modifiers='red'>Red</Tag>
+      <Tag modifiers='hotRed'>Hot red</Tag>
+      <Tag modifiers='purple'>Purple</Tag>
+      <Tag modifiers='deepPurple'>Deep purple</Tag>
+      <Tag modifiers='teal'>Teal</Tag>
+      <Tag modifiers='orange'>Orange</Tag>
+      <Tag modifiers='magenta'>Magenta</Tag>
 
       <h2 className='Kitchensink-sectionHeading'>Tag--blocky</h2>
-      <Tag modifier='blocky blue'>Blue</Tag>
-      <Tag modifier='blocky hotBlue'>Hot blue</Tag>
-      <Tag modifier='blocky green'>Green</Tag>
-      <Tag modifier='blocky seaGreen'>Seagreen</Tag>
-      <Tag modifier='blocky red'>Red</Tag>
-      <Tag modifier='blocky hotRed'>Hot red</Tag>
-      <Tag modifier='blocky purple'>Purple</Tag>
-      <Tag modifier='blocky deepPurple'>Deep purple</Tag>
-      <Tag modifier='blocky teal'>Teal</Tag>
-      <Tag modifier='blocky orange'>Orange</Tag>
-      <Tag modifier='blocky magenta'>Magenta</Tag>
+      <Tag modifiers='blocky blue'>Blue</Tag>
+      <Tag modifiers='blocky hotBlue'>Hot blue</Tag>
+      <Tag modifiers='blocky green'>Green</Tag>
+      <Tag modifiers='blocky seaGreen'>Seagreen</Tag>
+      <Tag modifiers='blocky red'>Red</Tag>
+      <Tag modifiers='blocky hotRed'>Hot red</Tag>
+      <Tag modifiers='blocky purple'>Purple</Tag>
+      <Tag modifiers='blocky deepPurple'>Deep purple</Tag>
+      <Tag modifiers='blocky teal'>Teal</Tag>
+      <Tag modifiers='blocky orange'>Orange</Tag>
+      <Tag modifiers='blocky magenta'>Magenta</Tag>
 
       <h2 className='Kitchensink-sectionHeading'>SmallStory</h2>
-      <SmallStory modifier='hotRed'>
-        <Tag modifier='hotRed'>Tranebær</Tag>
+      <SmallStory modifiers='hotRed'>
+        <Tag modifiers='hotRed'>Tranebær</Tag>
         Tranebær er skyld i galdestensudbrud i Gambias hovedstad, Banjul
       </SmallStory>
 
       <h2 className='Kitchensink-sectionHeading'>SmallStory--done</h2>
-      <SmallStory modifier='done'>
-        <Tag modifier='blue'>Done</Tag>
+      <SmallStory modifiers='done'>
+        <Tag modifiers='blue'>Done</Tag>
         Forskere afviser vands gavnende effekt på mennesker og planter
       </SmallStory>
 

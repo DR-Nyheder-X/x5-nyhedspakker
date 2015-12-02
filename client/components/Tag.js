@@ -7,12 +7,12 @@ export default class Tag extends Component {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    modifier: PropTypes.string
+    modifiers: PropTypes.string
   }
 
   render () {
     const cls = classnames(
-      formatClassModifiers('Tag', this.props.modifier),
+      formatClassModifiers('Tag', this.props.modifiers),
       this.props.className
     )
 

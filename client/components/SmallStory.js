@@ -7,12 +7,12 @@ export default class SmallStory extends Component {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    modifier: PropTypes.string
+    modifiers: PropTypes.string
   }
 
   render () {
     const cls = classnames(
-      formatClassModifiers('SmallStory', this.props.modifier),
+      formatClassModifiers('SmallStory', this.props.modifiers),
       this.props.className
     )
 
