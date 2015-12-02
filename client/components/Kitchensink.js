@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Tag from './Tag'
+import SmallStory from './SmallStory'
 
 export default class Kitchensink extends Component {
   render () {
@@ -29,6 +30,12 @@ export default class Kitchensink extends Component {
       <Tag modifier='blocky teal'>Teal</Tag>
       <Tag modifier='blocky orange'>Orange</Tag>
       <Tag modifier='blocky magenta'>Magenta</Tag>
+
+      <h2>SmallStory</h2>
+      <SmallStory modifier='blue'>
+        <Tag modifier='blue'>Tranebær</Tag>
+        Tranebær er skyld i galdestensudbrud i Gambias hovedstad, Banjul
+      </SmallStory>
     </div>
   }
 }
