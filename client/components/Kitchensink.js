@@ -36,6 +36,10 @@ export default class Kitchensink extends Component {
         <Tag modifier='blue'>Tranebær</Tag>
         Tranebær er skyld i galdestensudbrud i Gambias hovedstad, Banjul
       </SmallStory>
+      <SmallStory modifier='done'>
+        <Tag modifier='blue'>Done</Tag>
+        Forskere afviser vands gavnende effekt på mennesker og planter
+      </SmallStory>
     </div>
   }
 }

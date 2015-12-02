@@ -5,13 +5,18 @@ $SmallStory--minHeight:   105px;
 $SmallStory--borderWidth:   7px;
 
 %SmallStory {
-  @include backgroundImage('SmallStoryShadow.png', 375px);
+  @include backgroundImage('smallStoryShadow.png', 375px);
   padding-top: 1em;
   padding-right: $AppPadding--right;
   padding-bottom: 1.35em;
   padding-left: $AppPadding--left*1.2;
   min-height: $SmallStory--minHeight;
   position: relative;
+  background-color: #fff;
+
+  &:focus {
+    background-color: pink;
+  }
 
   &:before {
     content: "";
@@ -25,7 +30,7 @@ $SmallStory--borderWidth:   7px;
   }
 
   &:after {
-    @include backgroundImageReplacement('SmallStoryBorderShadow.png', 7px, 20px);
+    @include backgroundImageReplacement('smallStoryBorderShadow.png', 7px, 20px);
     content: "";
     position: absolute;
     top: 0;
@@ -33,10 +38,25 @@ $SmallStory--borderWidth:   7px;
   }
 
   .Tag { margin-bottom: .25em; }
+
+  @media #{$mediaQuery--smallUp} { padding-right: $AppPadding--right*3; }
 }
 
 %SmallStory--done {
+  background-color: $gray--light;
+  color: darken($gray, 5%);
+  &:before { background-color: $gray; }
 
+  .Tag {
+    color: $gray--darkest;
+    &:after {
+      content: "";
+      @include backgroundImageReplacement('tickmark.png', 14px, 13px);
+      position: absolute;
+      top: 1.25em;
+      right: $AppPadding--right*.85;
+    }
+  }
 }
 
 .SmallStory { @extend %SmallStory; }
@@ -51,3 +71,5 @@ $SmallStory--borderWidth:   7px;
 .SmallStory.SmallStory--teal:before       { background-color: $teal; }
 .SmallStory.SmallStory--orange:before     { background-color: $orange; }
 .SmallStory.SmallStory--magenta:before    { background-color: $magenta; }
+
+.SmallStory.SmallStory--done { @extend %SmallStory--done; }
