@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import './Kitchensink.scss'
 import Tag from './Tag'
 import SmallStory from './SmallStory'
 
 export default class Kitchensink extends Component {
   render () {
-    return <div>
-      <h2>Tag</h2>
+    return <div className='Kitchensink'>
+      <h2 className='Kitchensink-sectionHeading'>Tag</h2>
       <Tag modifier='blue'>Blue</Tag>
       <Tag modifier='hotBlue'>Hot blue</Tag>
       <Tag modifier='green'>Green</Tag>
@@ -18,7 +19,7 @@ export default class Kitchensink extends Component {
       <Tag modifier='orange'>Orange</Tag>
       <Tag modifier='magenta'>Magenta</Tag>
 
-      <h2>Tag--blocky</h2>
+      <h2 className='Kitchensink-sectionHeading'>Tag--blocky</h2>
       <Tag modifier='blocky blue'>Blue</Tag>
       <Tag modifier='blocky hotBlue'>Hot blue</Tag>
       <Tag modifier='blocky green'>Green</Tag>
@@ -31,15 +32,19 @@ export default class Kitchensink extends Component {
       <Tag modifier='blocky orange'>Orange</Tag>
       <Tag modifier='blocky magenta'>Magenta</Tag>
 
-      <h2>SmallStory</h2>
-      <SmallStory modifier='blue'>
-        <Tag modifier='blue'>Tranebær</Tag>
+      <h2 className='Kitchensink-sectionHeading'>SmallStory</h2>
+      <SmallStory modifier='hotRed'>
+        <Tag modifier='hotRed'>Tranebær</Tag>
         Tranebær er skyld i galdestensudbrud i Gambias hovedstad, Banjul
       </SmallStory>
+
+      <h2 className='Kitchensink-sectionHeading'>SmallStory--done</h2>
       <SmallStory modifier='done'>
         <Tag modifier='blue'>Done</Tag>
         Forskere afviser vands gavnende effekt på mennesker og planter
       </SmallStory>
+
+      <h2 className='Kitchensink-sectionHeading'>StoryList</h2>
     </div>
   }
 }
