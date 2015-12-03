@@ -12,12 +12,10 @@ import './SwiperComponent.scss'
 
 const defaultProps = {
   runCallbacksOnInit: true,
-  touchMoveStopPropagation: false,
-  // autoHeight: false,
   direction: 'horizontal',
   initialSlide: 0,
-  spaceBetween: 0,
-  onSlideChangeEnd: null
+  onSlideChangeEnd: null,
+  onlyExternal: false
 }
 
 export default class SwiperComponent extends Component {
@@ -28,7 +26,8 @@ export default class SwiperComponent extends Component {
     key: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     onSlideChangeEnd: PropTypes.func,
     slide: PropTypes.number,
-    slideClassName: PropTypes.string
+    slideClassName: PropTypes.string,
+    allowScroll: PropTypes.bool
   }
 
   constructor (props) {
@@ -61,6 +60,8 @@ export default class SwiperComponent extends Component {
   componentDidUpdate () {
     this.swiper.updateContainerSize()
     this.swiper.updateSlidesSize()
+
+    this.swiper.slides.on('touchmove', stopPropagation)
   }
 
   render () {
@@ -70,12 +71,18 @@ export default class SwiperComponent extends Component {
       <div className='swiper-wrapper'>
         {Children.map(this.props.children, node => {
           return cloneElement(node, {
-            className: classnames('swiper-slide', this.props.slideClassName)
+            className: classnames('swiper-slide', this.props.slideClassName, {
+              ['overflow-scroll']: this.props.allowScroll
+            })
           })
         })}
       </div>
     </div>
   }
+}
+
+function stopPropagation (event) {
+  event.stopPropagation()
 }
 
 function swiperOptsFrom (props) {

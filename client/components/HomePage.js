@@ -58,6 +58,7 @@ class HomePage extends Component {
       onSlideChangeEnd={handleSlideChange}
       slide={id ? SWIPER_POSITIONS.entry : SWIPER_POSITIONS.index}
       slideClassName='top-most-slide'
+      onlyExternal
     >
       <div key={SWIPER_POSITIONS.index}>
         {entries.map(entry => (
@@ -78,9 +79,11 @@ function TiledEntries ({ entries, onSwipe, selectedEntry }) {
     className='TiledEntries'
     slide={entries.indexOf(selectedEntry)}
     onSlideChangeEnd={onSwipe}
+    allowScroll
     >
     {entries.map(entry => (
       <div key={entry.sys.id}>
+        <Link to='/'>INDEX</Link>
         <Entry entry={entry} />
       </div>
     ))}
