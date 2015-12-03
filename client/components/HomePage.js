@@ -1,15 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
-import SwiperComponent from './SwiperComponent'
-import Entry from './Entry'
-import { updatePath } from 'redux-simple-router'
-import { findDOMNode } from 'react-dom'
-
-const SWIPER_POSITIONS = {
-  index: 0,
-  entry: 1
-}
 
 const stateToProps = state => ({
   entries: state.entries.items,
@@ -18,10 +9,7 @@ const stateToProps = state => ({
 
 class HomePage extends Component {
   static propTypes = {
-    entries: PropTypes.arrayOf(PropTypes.object),
-    fetchEntries: PropTypes.func,
-    params: PropTypes.object,
-    dispatch: PropTypes.func
+    entries: PropTypes.arrayOf(PropTypes.object)
   }
 
   render () {
