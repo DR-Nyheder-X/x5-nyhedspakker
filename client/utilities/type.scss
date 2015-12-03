@@ -1,0 +1,9 @@
+%headingBaseStyles {
+  font-family: $fontFamily--heavy;
+  text-transform: uppercase;
+  color: $black;
+}
+
+%heading--huge {
+  @extend %headingBaseStyles;
+}

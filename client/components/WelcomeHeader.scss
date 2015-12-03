@@ -1,0 +1,38 @@
+@import '../utilities/variables';
+@import '../utilities/type';
+
+$WelcomeHeader--baseClass: 'WelcomeHeader';
+$WelcomeHeader--height: 280px;
+$WelcomeHeader--tilt: 8.35deg;
+$WelcomeHeader--stretchMargin: 0;
+
+.#{$WelcomeHeader--baseClass} {
+  overflow: hidden;
+  background-color: pink;
+  height: $WelcomeHeader--height;
+  position: relative;
+}
+
+.#{$WelcomeHeader--baseClass}-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotate($WelcomeHeader--tilt);
+  height: $WelcomeHeader--height*1.1;
+  position: absolute;
+  bottom: 34px;
+  left: -18px;
+  right: -28px;
+}
+
+.#{$WelcomeHeader--baseClass}-inner {
+  width: 500px;
+  position: relative;
+  top: 0;
+  margin-right: -$WelcomeHeader--stretchMargin;
+  margin-left: -$WelcomeHeader--stretchMargin;
+}
+
+.#{$WelcomeHeader--baseClass}-heading,
+.#{$WelcomeHeader--baseClass}-play {
+
+}

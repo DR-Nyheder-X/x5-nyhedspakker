@@ -1,14 +1,11 @@
 @import '../utilities/mixins';
 @import '../utilities/variables';
 
-.Kitchensink {
+.Kitchensink-sectionHeading {
   padding-right: $AppPadding--right;
   padding-left: $AppPadding--left;
-}
-
-.Kitchensink-sectionHeading {
   font-family: $fontFamily--demibold;
-  // text-transform: uppercase;
+  font-size: 1.251em;
   margin-top: 2em;
   margin-bottom: .5em;
 }
