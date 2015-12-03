@@ -37,6 +37,7 @@
     "node-sass": "^3.4.2",
     "normalize-scss": "^4.0.3",
     "react": "^0.14.3",
+    "react-addons-css-transition-group": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",
     "react-router": "^1.0.0",

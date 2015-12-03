@@ -19,7 +19,9 @@ class EntryPage extends Component {
     const { id } = this.props.params
     const entry = entries.find(entry => entry.sys.id === id)
 
-    return <TiledEntries entries={entries} selectedEntry={entry} />
+    return <div className='EntryPage'>
+      <TiledEntries entries={entries} selectedEntry={entry} />
+    </div>
   }
 }
 

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { fetchEntries } from '../actions'
+import RouteCSSTransitionGroup from './RouteCSSTransitionGroup'
 
 import './App.scss'
 
@@ -15,8 +16,16 @@ class App extends Component {
   }
 
   render () {
+    const duration = 250
+
     return <div className='App'>
-      {this.props.children}
+      <RouteCSSTransitionGroup
+        component='div' transitionName='page-transition'
+        transitionEnterTimeout={duration}
+        transitionLeaveTimeout={duration}
+      >
+        {this.props.children}
+      </RouteCSSTransitionGroup>
     </div>
   }
 }
