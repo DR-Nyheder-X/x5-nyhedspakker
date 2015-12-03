@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import Entry from './Entry'
 import SwiperComponent from './SwiperComponent'
 import { Link } from 'react-router'
+import './EntryPage.scss'
+import { updatePath } from 'redux-simple-router'
 
 const stateToProps = state => ({
   entries: state.entries.items
@@ -11,16 +13,28 @@ const stateToProps = state => ({
 class EntryPage extends Component {
   static propTypes = {
     params: PropTypes.object,
-    entries: PropTypes.arrayOf(PropTypes.object)
+    entries: PropTypes.arrayOf(PropTypes.object),
+    dispatch: PropTypes.func
+  }
+
+  handleSwipe (swiper) {
+    const { entries, dispatch } = this.props
+    const entry = entries[swiper.activeIndex]
+    dispatch(updatePath(`/entries/${entry.sys.id}`))
   }
 
   render () {
     const { entries } = this.props
     const { id } = this.props.params
     const entry = entries.find(entry => entry.sys.id === id)
+    const handleSwipe = this.handleSwipe.bind(this)
 
     return <div className='EntryPage'>
-      <TiledEntries entries={entries} selectedEntry={entry} />
+      <TiledEntries
+        entries={entries}
+        selectedEntry={entry}
+        onSwipe={handleSwipe}
+      />
     </div>
   }
 }
@@ -28,13 +42,15 @@ class EntryPage extends Component {
 function TiledEntries ({ entries, onSwipe, selectedEntry }) {
   return <SwiperComponent
     className='TiledEntries'
-    slide={entries.indexOf(selectedEntry)}
     onSlideChangeEnd={onSwipe}
-    allowScroll
+    runCallbacksOnInit={false}
+    slide={entries.indexOf(selectedEntry)}
     >
     {entries.map(entry => (
       <div key={entry.sys.id}>
-        <Link to='/'>INDEX</Link>
+        <div className='BackButton'>
+          <Link to='/'>INDEX</Link>
+        </div>
         <Entry entry={entry} />
       </div>
     ))}

@@ -2,8 +2,13 @@
 
 #root,
 .App,
-.App > div {
+.App > div,
+.App > div > div {
   height: 100%;
+}
+
+.App {
+  overflow: hidden;
 }
 
 .page-transition-enter {

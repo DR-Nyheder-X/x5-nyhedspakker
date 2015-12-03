@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
+import SmallStory from './SmallStory'
+import Tag from './Tag'
 
 const stateToProps = state => ({
   entries: state.entries.items,
@@ -18,7 +20,10 @@ class HomePage extends Component {
     return <div className='HomePage'>
       {entries.map(entry => (
         <Link to={`/entries/${entry.sys.id}`} key={entry.sys.id}>
-          <li>{entry.fields.title}</li>
+          <SmallStory modifiers='hotRed'>
+            <Tag modifiers='hotRed'>{entry.fields.hashtag}</Tag>
+            {entry.fields.title}
+          </SmallStory>
         </Link>
       ))}
     </div>
