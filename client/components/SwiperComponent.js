@@ -11,7 +11,7 @@ import classnames from 'classnames'
 import './SwiperComponent.scss'
 
 const defaultProps = {
-  runCallbacksOnInit: false,
+  runCallbacksOnInit: true,
   touchMoveStopPropagation: false,
   // autoHeight: false,
   direction: 'horizontal',

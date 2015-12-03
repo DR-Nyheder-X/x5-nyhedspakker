@@ -16,11 +16,6 @@ const stateToProps = state => ({
   lastUpdated: state.entries.lastUpdated
 })
 
-function stopPropagation (event) {
-  window.s = this
-  event.stopPropagation()
-}
-
 class HomePage extends Component {
   static propTypes = {
     entries: PropTypes.arrayOf(PropTypes.object),
@@ -31,7 +26,6 @@ class HomePage extends Component {
 
   componentDidMount () {
     this.swiper = findDOMNode(this).swiper
-    this.swiper.slides.on('touchmove', stopPropagation)
   }
 
   handleSlideChange (swiper) {
@@ -73,34 +67,30 @@ class HomePage extends Component {
         ))}
       </div>
       <div key={SWIPER_POSITIONS.entry}>
-        {[0,1,2,3,4,5,6,7,8].map(i => <p key={i}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non interdum mi, et porttitor augue. Nullam enim massa, porta quis tortor sed, viverra molestie magna. Ut gravida mauris et orci porta, eu rutrum sem convallis. Duis maximus sem eu ipsum feugiat, quis dictum neque laoreet. Donec sed pretium eros. Pellentesque nec nunc in purus venenatis tincidunt eu nec dui. Aenean non sem eros. Suspendisse eleifend volutpat elit, sed posuere ipsum mollis eu. Morbi suscipit eu nunc in auctor. In imperdiet luctus finibus. Fusce quis lectus nec nisl dignissim placerat eget ac neque. Sed vel diam suscipit, tempor enim sit amet, lobortis diam. Suspendisse nec lorem tortor. Sed efficitur sed sapien non imperdiet. Nam id sapien eget est eleifend congue tempor vitae massa.</p>)}
+        <TiledEntries entries={entries} selectedEntry={selectedEntry} />
       </div>
     </SwiperComponent>
   }
-        // <TiledEntries entries={entries} selectedEntry={selectedEntry} />
 }
 
-class TiledEntries extends Component {
-  static propTypes = {
-    entries: PropTypes.arrayOf(PropTypes.object),
-    onSwipe: PropTypes.func,
-    selectedEntry: PropTypes.object
-  }
-
-  render () {
-    const { entries, selectedEntry } = this.props
-
-    return <SwiperComponent
-      slide={entries.indexOf(selectedEntry)}
-      onSlideChangeEnd={this.props.onSwipe}
+function TiledEntries ({ entries, onSwipe, selectedEntry }) {
+  return <SwiperComponent
+    className='TiledEntries'
+    slide={entries.indexOf(selectedEntry)}
+    onSlideChangeEnd={onSwipe}
     >
     {entries.map(entry => (
       <div key={entry.sys.id}>
         <Entry entry={entry} />
       </div>
-      ))}
-    </SwiperComponent>
-  }
+    ))}
+  </SwiperComponent>
+}
+
+TiledEntries.propTypes = {
+  entries: PropTypes.arrayOf(PropTypes.object),
+  onSwipe: PropTypes.func,
+  selectedEntry: PropTypes.object
 }
 
 export default connect(stateToProps)(HomePage)

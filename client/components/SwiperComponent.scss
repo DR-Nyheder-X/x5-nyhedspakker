@@ -7,6 +7,14 @@
 
 .swiper-slide {
   height: 100%;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  background: rgba(pink, .5);
 }
+
+.HomePage {
+  box-shadow: inset 8px 8px rgba(red, 1), inset -8px -8px rgba(red, 1);
+}
+
+.TiledEntries {
+  box-shadow: inset 4px 4px rgba(teal, 1), inset -4px -4px rgba(teal, 1);
+}
+
