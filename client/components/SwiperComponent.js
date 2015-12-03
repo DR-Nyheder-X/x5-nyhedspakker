@@ -66,9 +66,7 @@ export default class SwiperComponent extends Component {
       <div className='swiper-wrapper'>
         {Children.map(this.props.children, node => {
           return cloneElement(node, {
-            className: classnames('swiper-slide', this.props.slideClassName, {
-              ['overflow-scroll']: this.props.allowScroll
-            })
+            className: 'swiper-slide'
           })
         })}
       </div>
