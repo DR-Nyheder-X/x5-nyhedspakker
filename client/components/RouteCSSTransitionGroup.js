@@ -36,7 +36,9 @@ class RouteCSSTransitionGroup extends Component {
 
   componentDidUpdate () {
     if (this.state.previousPathname) {
+      /* eslint-disable react/no-did-update-set-state */
       this.setState({ previousPathname: null })
+      /* eslint-enable react/no-did-update-set-state */
     }
   }
 
