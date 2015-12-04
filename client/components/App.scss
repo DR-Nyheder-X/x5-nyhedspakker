@@ -8,11 +8,12 @@
 }
 
 .App {
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .page-transition-enter {
   position: absolute;
+  width: 100%;
   transform: translateY(50px);
   opacity: 0.01;
 }
