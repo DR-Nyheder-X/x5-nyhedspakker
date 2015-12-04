@@ -7,7 +7,6 @@ $Tag--blockyHeight: 20px;
   font-size: $fontSize--medium;
   font-family: $fontFamily--heavy;
   letter-spacing: .025em;
-  &:before { content: '#'; }
 }
 
 %Tag--blocky {
