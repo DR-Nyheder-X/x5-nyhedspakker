@@ -92,7 +92,22 @@ $WelcomeHeader--playHeight: 47px;
 
 // Morning theme
 .WelcomeHeader--morning {
-  .WelcomeHeader-image { background: $gradient--diagonalPurpleToOrange; }
+  .WelcomeHeader-image {
+    background: $gradient--diagonalPurpleToOrange;
+    background-size: cover;
+  }
   .WelcomeHeader-greeting { color: $tealAccent; }
   .WelcomeHeader-play a:hover { background-color: $tealAccent; }
+}
+
+// Done theme (when all news stories are read)
+.WelcomeHeader--done {
+  .WelcomeHeader-image {
+    background: $gradient--diagonalGrayToDarkGray;
+    background-size: cover;
+    filter: grayscale(100%);
+  }
+  .WelcomeHeader-heading {
+    padding-right: 2em;
+  }
 }

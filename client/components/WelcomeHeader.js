@@ -9,6 +9,7 @@ export default class WelcomeHeader extends Component {
     modifier: PropTypes.string,
     greeting: PropTypes.string,
     title: PropTypes.string,
+    ctaLabel: PropTypes.string,
     duration: PropTypes.string,
     backgroundImageFilename: PropTypes.string
   }
@@ -25,7 +26,7 @@ export default class WelcomeHeader extends Component {
           <span className={`${baseClass}-title`}>{this.props.title}</span>
         </h1>
         <div className={`${baseClass}-play`}>
-          <p>Læsetid: <em>{this.props.duration}</em></p>
+          <p>{this.props.ctaLabel} <em>{this.props.duration}</em></p>
           <a href='#'>Play <i></i></a>
         </div>
       </div>

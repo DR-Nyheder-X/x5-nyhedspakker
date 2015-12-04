@@ -46,9 +46,9 @@ export default class Kitchensink extends Component {
       </SmallStory>
 
       <h2 className='Kitchensink-sectionHeading'>WelcomeHeader</h2>
-      <WelcomeHeader greeting='Godaften' title='Her er dagens nyheder' duration='3m 34s' backgroundImageFilename='blueToRedWelcomeHeader.jpg' />
-      <WelcomeHeader modifier='morning' greeting='Godmorgen' title='Her er nattens nyheder' duration='3m 34s' backgroundImageFilename='purpleToOrangeWelcomeHeader.jpg' />
-      <WelcomeHeader greeting='Godmorgen' title='Her er nattens nyheder' duration='3m 34s' backgroundImageFilename='blueToRedWelcomeHeader.jpg' />
+      <WelcomeHeader greeting='Godaften' title='Her er dagens nyheder' ctaLabel='Læsetid:' duration='3m 34s' backgroundImageFilename='blueToRedWelcomeHeader.jpg' />
+      <WelcomeHeader modifier='morning' greeting='Godmorgen' title='Her er nattens nyheder' ctaLabel='Læsetid:' duration='3m 34s' backgroundImageFilename='purpleToOrangeWelcomeHeader.jpg' />
+      <WelcomeHeader modifier='done' title='Det var dagens nyheder' ctaLabel='Læs igen' backgroundImageFilename='blueToRedWelcomeHeader.jpg' />
     </div>
   }
 }
