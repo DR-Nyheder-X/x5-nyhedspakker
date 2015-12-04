@@ -18,9 +18,9 @@ class EntryPage extends Component {
   }
 
   handleSwipe (swiper) {
-    const { entries, dispatch } = this.props
-    const entry = entries[swiper.activeIndex]
-    dispatch(updatePath(`/entries/${entry.sys.id}`))
+    // const { entries, dispatch } = this.props
+    // const entry = entries[swiper.activeIndex]
+    // dispatch(updatePath(`/entries/${entry.sys.id}`))
   }
 
   render () {
