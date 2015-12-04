@@ -31,11 +31,14 @@ $orangeAccent:     #FFF436;
 $magentaAccent:    #36FFFC;
 
 // Gradient colors
-$gradientColor--blue: #0094FF;
-$gradientColor--red:  #EB1D53;
+$gradientColor--blue:   #0094FF;
+$gradientColor--red:    #EB1D53;
+$gradientColor--purple: #C92DC6;
+$gradientColor--orange: #FFA900;
 
 // Gradients
-$gradient--diagonalBlueToRed: linear-gradient(135deg, #{$gradientColor--blue} 0%, #{$gradientColor--red} 100%);
+$gradient--diagonalBlueToRed:      linear-gradient(135deg, #{$gradientColor--blue} 0%, #{$gradientColor--red} 100%);
+$gradient--diagonalPurpleToOrange: linear-gradient(135deg, #{$gradientColor--purple} 0%, #{$gradientColor--orange} 100%);
 
 // Font sizes
 $fontSize: 14.5px;

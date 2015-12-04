@@ -89,3 +89,10 @@ $WelcomeHeader--playHeight: 47px;
 
   }
 }
+
+// Morning theme
+.WelcomeHeader--morning {
+  .WelcomeHeader-image { background: $gradient--diagonalPurpleToOrange; }
+  .WelcomeHeader-greeting { color: $tealAccent; }
+  .WelcomeHeader-play a:hover { background-color: $tealAccent; }
+}
