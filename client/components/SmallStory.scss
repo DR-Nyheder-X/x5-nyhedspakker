@@ -7,9 +7,9 @@ $SmallStory--borderWidth:   7px;
 %SmallStory {
   @include backgroundImage('smallStoryShadow.png', 375px);
   padding-top: 1em;
-  padding-right: $AppPadding--right;
+  padding-right: $appPadding--right;
   padding-bottom: 1.35em;
-  padding-left: $AppPadding--left*1.2;
+  padding-left: $appPadding--left*1.2;
   min-height: $SmallStory--minHeight;
   position: relative;
   background-color: #fff;
@@ -39,7 +39,7 @@ $SmallStory--borderWidth:   7px;
 
   .Tag { margin-bottom: .25em; }
 
-  @media #{$mediaQuery--smallUp} { padding-right: $AppPadding--right*3; }
+  @media #{$mediaQuery--smallUp} { padding-right: $appPadding--right*3; }
 }
 
 %SmallStory--done {
@@ -54,7 +54,7 @@ $SmallStory--borderWidth:   7px;
       @include backgroundImageReplacement('tickmark.png', 14px, 13px);
       position: absolute;
       top: 1.25em;
-      right: $AppPadding--right*.85;
+      right: $appPadding--right*.85;
     }
   }
 }

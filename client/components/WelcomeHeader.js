@@ -25,8 +25,8 @@ export default class WelcomeHeader extends Component {
           <span className={`${baseClass}-title`}>{this.props.title}</span>
         </h1>
         <div className={`${baseClass}-play`}>
-          <span>Læsetid: {this.props.duration}</span>
-          <a href='#'>Play</a>
+          <p>Læsetid: <em>{this.props.duration}</em></p>
+          <a href='#'>Play <i></i></a>
         </div>
       </div>
     </header>

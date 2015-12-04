@@ -30,6 +30,13 @@ $tealAccent:       #00FFDC;
 $orangeAccent:     #FFF436;
 $magentaAccent:    #36FFFC;
 
+// Gradient colors
+$gradientColor--blue: #0094FF;
+$gradientColor--red:  #EB1D53;
+
+// Gradients
+$gradient--diagonalBlueToRed: linear-gradient(135deg, #{$gradientColor--blue} 0%, #{$gradientColor--red} 100%);
+
 // Font sizes
 $fontSize: 14.5px;
 $fontSize--small:  12px;
@@ -50,8 +57,9 @@ $fontFamily--drRegular: 'gibson regular', sans-serif;
 $fontFamily--drSemibold: 'gibson semibold', sans-serif;
 
 // Layout
-$AppPadding--right: 20px;
-$AppPadding--left:  20px;
+$appPadding--top: 30px;
+$appPadding--right: 20px;
+$appPadding--left:  20px;
 
 // Media query breakpoints
 $breakpoint--xSmall: 320px; // iPhone 5

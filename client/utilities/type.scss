@@ -6,4 +6,16 @@
 
 %heading--huge {
   @extend %headingBaseStyles;
+  font-size: 38px;
+  line-height: .9;
+  letter-spacing: -.01em;
+  @media #{$mediaQuery--smallUp} { font-size: 46px; }
+  @media #{$mediaQuery--mediumUp} { font-size: 50px; }
+}
+
+%smallUppercase {
+  font-family: $fontFamily--demibold;
+  font-size: $fontSize*.875;
+  letter-spacing: .02em;
+  text-transform: uppercase;
 }

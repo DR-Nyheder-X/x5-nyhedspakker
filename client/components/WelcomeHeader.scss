@@ -1,38 +1,91 @@
 @import '../utilities/variables';
+@import '../utilities/mixins';
 @import '../utilities/type';
 
-$WelcomeHeader--baseClass: 'WelcomeHeader';
 $WelcomeHeader--height: 280px;
 $WelcomeHeader--tilt: 8.35deg;
 $WelcomeHeader--stretchMargin: 0;
+$WelcomeHeader--playHeight: 47px;
 
-.#{$WelcomeHeader--baseClass} {
+.WelcomeHeader {
   overflow: hidden;
-  background-color: pink;
   height: $WelcomeHeader--height;
   position: relative;
+  z-index: 999;
 }
 
-.#{$WelcomeHeader--baseClass}-image {
+.WelcomeHeader-image {
+  // background-image is set in WelcomeHeader.js
+  background: $gradient--diagonalBlueToRed;
   background-repeat: no-repeat;
   background-size: cover;
   transform: rotate($WelcomeHeader--tilt);
   height: $WelcomeHeader--height*1.1;
   position: absolute;
-  bottom: 34px;
-  left: -18px;
   right: -28px;
+  bottom: 25px;
+  left: -18px;
+
+  @media #{$mediaQuery--smallUp}{  bottom: 29px; }
+  @media #{$mediaQuery--mediumUp}{ bottom: 32px; }
 }
 
-.#{$WelcomeHeader--baseClass}-inner {
-  width: 500px;
+.WelcomeHeader-inner {
   position: relative;
-  top: 0;
-  margin-right: -$WelcomeHeader--stretchMargin;
-  margin-left: -$WelcomeHeader--stretchMargin;
+  height: $WelcomeHeader--height;
+  padding-top: $appPadding--top;
+  padding-right: $appPadding--right;
+  padding-left: $appPadding--left;
 }
 
-.#{$WelcomeHeader--baseClass}-heading,
-.#{$WelcomeHeader--baseClass}-play {
+.WelcomeHeader-heading {
+  @extend %heading--huge;
+  color: #fff;
+}
 
+.WelcomeHeader-greeting {
+  display: block;
+  color: $magentaAccent;
+}
+
+.WelcomeHeader-play {
+  height: $WelcomeHeader--playHeight;
+  position: absolute;
+  bottom: 32px;
+  right: $appPadding--right;
+
+  // Label
+  p {
+    @extend %smallUppercase;
+    color: #fff;
+    line-height: $WelcomeHeader--playHeight;
+    padding-right: .75em;
+    display: inline-block;
+  }
+
+  // Duration
+  p em { text-transform: none; }
+
+  a {
+    background-color: #fff;
+    display: block;
+    text-indent: -999em;
+    overflow: hidden;
+    font-size: 0;
+    width: $WelcomeHeader--playHeight;
+    height: $WelcomeHeader--playHeight;
+    border: 3px solid $black;
+    border-radius: 100%;
+    position: relative;
+    float: right;
+    &:hover { background-color: $magentaAccent; }
+  }
+
+  a > i {
+    @include backgroundImageReplacement('play.png', 15px, 18px);
+    position: absolute;
+    top: 12.5px;
+    left: 15px;
+
+  }
 }
