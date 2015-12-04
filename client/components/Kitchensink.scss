@@ -1,6 +1,11 @@
 @import '../utilities/mixins';
 @import '../utilities/variables';
 
+.Kitchensink {
+  max-width: $breakpoint--medium;
+  margin: 0 auto;
+}
+
 .Kitchensink-sectionHeading {
   padding-right: $appPadding--right;
   padding-left: $appPadding--left;
