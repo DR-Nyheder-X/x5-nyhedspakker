@@ -3,11 +3,27 @@ import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import SmallStory from './SmallStory'
 import Tag from './Tag'
+import WelcomeHeader from './WelcomeHeader'
+import { sample } from 'lodash'
 
 const stateToProps = state => ({
   entries: state.entries.items,
   lastUpdated: state.entries.lastUpdated
 })
+
+const colors = [
+  'blue',
+  'hotBlue',
+  'red',
+  'hotRed',
+  'green',
+  'seaGreen',
+  'purple',
+  'deepPurple',
+  'teal',
+  'orange',
+  'magenta'
+]
 
 class HomePage extends Component {
   static propTypes = {
@@ -18,14 +34,19 @@ class HomePage extends Component {
     const { entries } = this.props
 
     return <div className='HomePage'>
-      {entries.map(entry => (
-        <Link to={`/entries/${entry.sys.id}`} key={entry.sys.id}>
-          <SmallStory modifiers='hotRed'>
-            <Tag modifiers='hotRed'>{entry.fields.hashtag}</Tag>
+      <WelcomeHeader greeting='Godaften' title='Her er dagens nyheder' ctaLabel='Læsetid:' duration='3m 34s' backgroundImageFilename='blueToRedWelcomeHeader.jpg' />
+      {entries.map(entry => {
+        const color = sample(colors)
+        return <Link
+          to={`/entries/${entry.sys.id}`}
+          key={entry.sys.id}
+        >
+          <SmallStory modifiers={color}>
+            <Tag modifiers={color}>{entry.fields.hashtag}</Tag>
             {entry.fields.title}
           </SmallStory>
         </Link>
-      ))}
+      })}
     </div>
   }
 }
