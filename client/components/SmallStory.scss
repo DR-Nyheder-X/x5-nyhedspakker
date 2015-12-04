@@ -5,7 +5,7 @@ $SmallStory--minHeight:   105px;
 $SmallStory--borderWidth:   7px;
 
 %SmallStory {
-  @include backgroundImage('smallStoryShadow.png', 375px);
+  @include backgroundImage('SmallStoryShadow.png', 375px);
   padding-top: 1em;
   padding-right: $appPadding--right;
   padding-bottom: 1.35em;
@@ -30,7 +30,7 @@ $SmallStory--borderWidth:   7px;
   }
 
   &:after {
-    @include backgroundImageReplacement('smallStoryBorderShadow.png', 7px, 20px);
+    @include backgroundImageReplacement('SmallStoryBorderShadow.png', 7px, 20px);
     content: "";
     position: absolute;
     top: 0;
