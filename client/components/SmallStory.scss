@@ -14,11 +14,7 @@ $SmallStory--borderWidth:   7px;
   min-height: $SmallStory--minHeight;
   position: relative;
   background-color: #fff;
-
-  &:focus {
-    background-color: pink;
-  }
-
+  
   &:before {
     content: "";
     display: block;
