@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Kitchensink.scss'
 import Tag from './Tag'
 import SmallStory from './SmallStory'
+import SmallStoryList from './SmallStoryList'
 import WelcomeHeader from './WelcomeHeader'
 
 export default class Kitchensink extends Component {
@@ -44,6 +45,9 @@ export default class Kitchensink extends Component {
         <Tag modifiers='blue'>Done</Tag>
         Forskere afviser vands gavnende effekt på mennesker og planter
       </SmallStory>
+
+      <h2 className='Kitchensink-sectionHeading'>SmallStoryList</h2>
+      <SmallStoryList />
 
       <h2 className='Kitchensink-sectionHeading'>WelcomeHeader</h2>
       <WelcomeHeader greeting='Godaften' title='Her er dagens nyheder' ctaLabel='Læsetid:' duration='3m 34s' backgroundImageFilename='blueToRedWelcomeHeader.jpg' />

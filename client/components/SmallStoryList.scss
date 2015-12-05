@@ -1,0 +1,40 @@
+@import '../utilities/mixins';
+@import '../utilities/variables';
+@import './SmallStory';
+
+@mixin smallStoryListItemColor($color:$blue){
+  &:before { background-color: $color; } // Border
+  .Tag { color: $color }
+}
+
+.SmallStoryList {
+  // Assign colors to list items according to order
+  .SmallStory:nth-child(1)  { @include smallStoryListItemColor($blue); }
+  .SmallStory:nth-child(2)  { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(3)  { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(4)  { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(5)  { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(6)  { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(7)  { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(8)  { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(9)  { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(10) { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(11) { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(12) { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(13) { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(14) { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(15) { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(16) { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(17) { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(18) { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(19) { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(20) { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(21) { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(22) { @include smallStoryListItemColor($hotRed); }
+
+  // Adjust the layout of the top story to make it fit with the WelcomeHeader
+  // TODO
+  .SmallStory:nth-child(1)  {
+    background-image: none;
+  }
+}//.SmallStoryList
