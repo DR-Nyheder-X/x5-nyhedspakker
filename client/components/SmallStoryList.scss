@@ -11,26 +11,29 @@
   // Assign colors to list items according to order
   .SmallStory:nth-child(1)  { @include smallStoryListItemColor($blue); }
   .SmallStory:nth-child(2)  { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(3)  { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(4)  { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(5)  { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(6)  { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(7)  { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(8)  { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(9)  { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(10) { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(11) { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(12) { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(13) { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(14) { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(15) { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(16) { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(17) { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(18) { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(19) { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(20) { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(21) { @include smallStoryListItemColor($hotRed); }
-  .SmallStory:nth-child(22) { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(3)  { @include smallStoryListItemColor($teal); }
+  .SmallStory:nth-child(4)  { @include smallStoryListItemColor($orange); }
+  .SmallStory:nth-child(5)  { @include smallStoryListItemColor($deepPurple); }
+  .SmallStory:nth-child(6)  { @include smallStoryListItemColor($seaGreen); }
+  .SmallStory:nth-child(7)  { @include smallStoryListItemColor($magenta); }
+  .SmallStory:nth-child(8)  { @include smallStoryListItemColor($hotBlue); }
+  .SmallStory:nth-child(9)  { @include smallStoryListItemColor($purple); }
+  .SmallStory:nth-child(10) { @include smallStoryListItemColor($green); }
+  .SmallStory:nth-child(11) { @include smallStoryListItemColor($red); }
+
+  // Repeat the color order for the next 11 items
+  .SmallStory:nth-child(12)  { @include smallStoryListItemColor($blue); }
+  .SmallStory:nth-child(13)  { @include smallStoryListItemColor($hotRed); }
+  .SmallStory:nth-child(14)  { @include smallStoryListItemColor($teal); }
+  .SmallStory:nth-child(15)  { @include smallStoryListItemColor($orange); }
+  .SmallStory:nth-child(16)  { @include smallStoryListItemColor($deepPurple); }
+  .SmallStory:nth-child(17)  { @include smallStoryListItemColor($seaGreen); }
+  .SmallStory:nth-child(18)  { @include smallStoryListItemColor($magenta); }
+  .SmallStory:nth-child(19)  { @include smallStoryListItemColor($hotBlue); }
+  .SmallStory:nth-child(20)  { @include smallStoryListItemColor($purple); }
+  .SmallStory:nth-child(21)  { @include smallStoryListItemColor($green); }
+  .SmallStory:nth-child(22)  { @include smallStoryListItemColor($red); }
+
 
   // Adjust the layout of the top story to make it fit with the WelcomeHeader
   // TODO
