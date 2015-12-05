@@ -15,4 +15,5 @@
   text-indent: -999em;
   overflow: hidden;
   display: block;
+  content: ""; // In case of pseudo elements
 }

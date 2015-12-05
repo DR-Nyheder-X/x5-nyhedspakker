@@ -4,7 +4,6 @@
 
 $WelcomeHeader--height: 280px;
 $WelcomeHeader--tilt: 8.35deg;
-$WelcomeHeader--stretchMargin: 0;
 $WelcomeHeader--playHeight: 47px;
 
 .WelcomeHeader {
@@ -12,6 +11,10 @@ $WelcomeHeader--playHeight: 47px;
   height: $WelcomeHeader--height;
   position: relative;
   z-index: 999;
+  @include backgroundImage('welcomeHeaderShadow.png', 375px);
+  background-position: 0 232px;
+  @media #{$mediaQuery--smallUp} { background-position-y: 224px; }
+  @media #{$mediaQuery--mediumUp} { background-position-y: 218px; }
 }
 
 .WelcomeHeader-image {
