@@ -36,8 +36,12 @@
 
 
   // Adjust the layout of the top story to make it fit with the WelcomeHeader
-  // TODO
   .SmallStory:nth-child(1)  {
+    // Remove shadows
     background-image: none;
+    &:after { background-image: none; }
+
+    padding-top: 70px;
+    margin-top: -62px;
   }
 }//.SmallStoryList
