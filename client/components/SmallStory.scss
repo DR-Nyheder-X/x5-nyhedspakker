@@ -6,6 +6,7 @@ $SmallStory--borderWidth:   7px;
 
 %SmallStory {
   @include backgroundImage('SmallStoryShadow.png', 375px);
+  background-position: -50px 0;
   padding-top: 1em;
   padding-right: $appPadding--right;
   padding-bottom: 1.35em;
@@ -39,7 +40,10 @@ $SmallStory--borderWidth:   7px;
 
   .Tag { margin-bottom: .25em; }
 
-  @media #{$mediaQuery--smallUp} { padding-right: $appPadding--right*3; }
+  @media #{$mediaQuery--smallUp} {
+    padding-right: $appPadding--right*3;
+    background-position: 0 0;
+  }
 }
 
 %SmallStory--done {
