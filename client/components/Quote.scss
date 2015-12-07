@@ -1,0 +1,39 @@
+@import '../utilities/variables';
+@import '../utilities/mixins';
+@import '../utilities/type';
+
+%Quote {
+  padding-right: $appPadding--right;
+  padding-left: $appPadding--left;
+
+  p {
+    position: relative;
+    font-family: $fontFamily--heavy;
+    font-size: $fontSize--large*1.2;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: $blue;
+    padding-left: 2.15em;
+
+    // Quote graphic
+    &:before {
+      @include backgroundImageReplacement('quote.png', 40px, 26px);
+      position: absolute;
+      top: .175em;
+      left: -.2em;
+    }
+  }
+
+  cite {
+    font-family: $fontFamily--demibold;
+    font-style: normal;
+    font-size: $fontSize--small;
+    text-transform: uppercase;
+    letter-spacing: .015em;
+    line-height: 1.2;
+    display: block;
+    margin-bottom: .25em;
+  }
+}
+
+.Quote { @extend %Quote; }
