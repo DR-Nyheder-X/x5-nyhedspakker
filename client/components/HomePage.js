@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import SmallStory from './SmallStory'
 import Tag from './Tag'
 import WelcomeHeader from './WelcomeHeader'
-import { sample } from 'lodash'
 
 const stateToProps = state => ({
   entries: state.entries.items,
@@ -35,8 +34,8 @@ class HomePage extends Component {
 
     return <div className='HomePage'>
       <WelcomeHeader greeting='Godaften' title='Her er dagens nyheder' ctaLabel='Læsetid:' duration='3m 34s' backgroundImageFilename='blueToRedWelcomeHeader.jpg' />
-      {entries.map(entry => {
-        const color = sample(colors)
+      {entries.map((entry, i) => {
+        const color = colors[i]
         return <Link
           to={`/entries/${entry.sys.id}`}
           key={entry.sys.id}
