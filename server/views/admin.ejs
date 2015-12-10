@@ -1,0 +1,22 @@
+<h1>Entries</h1>
+
+<% Object.keys(entries).forEach(function (date) { %>
+  <h2><%= date %></h2>
+  <% Object.keys(entries[date]).forEach(function (package) { %>
+    <h3><%= package %></h3>
+    <ul>
+      <% entries[date][package].forEach(function (entry) { %>
+        <li>
+          <%= entry.fields.title %>
+        </li>
+      <% }) %>
+    </ul>
+  <% }) %>
+<% }) %>
+
+<h1>Push</h1>
+
+<form action="/admin/send" method="post">
+  <input type="text" class="text" value="" name="alert">
+  <button type="submit">Send</button>
+</form>

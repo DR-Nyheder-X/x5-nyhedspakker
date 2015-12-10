@@ -11,7 +11,8 @@ export default class WelcomeHeader extends Component {
     title: PropTypes.string,
     ctaLabel: PropTypes.string,
     duration: PropTypes.string,
-    backgroundImageFilename: PropTypes.string
+    backgroundImageFilename: PropTypes.string,
+    onPlayButtonClick: PropTypes.func
   }
 
   render () {
@@ -27,7 +28,7 @@ export default class WelcomeHeader extends Component {
         </h1>
         <div className={`${baseClass}-play`}>
           <p>{this.props.ctaLabel} <em>{this.props.duration}</em></p>
-          <a href='#'>Play <i></i></a>
+          <a onClick={this.props.onPlayButtonClick}>Play <i></i></a>
         </div>
       </div>
     </header>

@@ -4,7 +4,6 @@ import Entry from './Entry'
 import SwiperComponent from './SwiperComponent'
 import { Link } from 'react-router'
 import './EntryPage.scss'
-import { updatePath } from 'redux-simple-router'
 
 const stateToProps = state => ({
   entries: state.entries.items
@@ -17,23 +16,15 @@ class EntryPage extends Component {
     dispatch: PropTypes.func
   }
 
-  handleSwipe (swiper) {
-    // const { entries, dispatch } = this.props
-    // const entry = entries[swiper.activeIndex]
-    // dispatch(updatePath(`/entries/${entry.sys.id}`))
-  }
-
   render () {
     const { entries } = this.props
     const { id } = this.props.params
     const entry = entries.find(entry => entry.sys.id === id)
-    const handleSwipe = this.handleSwipe.bind(this)
 
     return <div className='EntryPage'>
       <TiledEntries
         entries={entries}
         selectedEntry={entry}
-        onSwipe={handleSwipe}
       />
     </div>
   }
