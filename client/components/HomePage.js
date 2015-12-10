@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
+import SmallStoryList from './SmallStoryList'
 import SmallStory from './SmallStory'
 import Tag from './Tag'
 import WelcomeHeader from './WelcomeHeader'
@@ -34,18 +35,16 @@ class HomePage extends Component {
 
     return <div className='HomePage'>
       <WelcomeHeader greeting='Godaften' title='Her er dagens nyheder' ctaLabel='Læsetid:' duration='3m 34s' backgroundImageFilename='blueToRedWelcomeHeader.jpg' />
-      {entries.map((entry, i) => {
-        const color = colors[i]
-        return <Link
-          to={`/entries/${entry.sys.id}`}
-          key={entry.sys.id}
-        >
-          <SmallStory modifiers={color}>
-            <Tag modifiers={color}>{entry.fields.hashtag}</Tag>
-            {entry.fields.title}
+      <SmallStoryList>
+        {entries.map(entry => (
+          <SmallStory key={entry.sys.id}>
+            <Link to={`/entries/${entry.sys.id}`}>
+              <Tag>{entry.fields.hashtag}</Tag>
+              {entry.fields.title}
+            </Link>
           </SmallStory>
-        </Link>
-      })}
+        ))}
+      </SmallStoryList>
     </div>
   }
 }

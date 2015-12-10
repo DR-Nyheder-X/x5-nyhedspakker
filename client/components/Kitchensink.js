@@ -49,7 +49,20 @@ export default class Kitchensink extends Component {
       </SmallStory>
 
       <h2 className='Kitchensink-sectionHeading'>SmallStoryList</h2>
-      <SmallStoryList />
+      <SmallStoryList>
+        <SmallStory modifiers='hotRed'>
+          <Tag modifiers='hotRed'>Tranebær</Tag>
+          Tranebær er skyld i galdestensudbrud i Gambias hovedstad, Banjul
+        </SmallStory>
+        <SmallStory modifiers='hotRed'>
+          <Tag modifiers='hotRed'>Tranebær</Tag>
+          Tranebær er skyld i galdestensudbrud i Gambias hovedstad, Banjul
+        </SmallStory>
+        <SmallStory modifiers='hotRed'>
+          <Tag modifiers='hotRed'>Tranebær</Tag>
+          Tranebær er skyld i galdestensudbrud i Gambias hovedstad, Banjul
+        </SmallStory>
+      </SmallStoryList>
 
       <h2 className='Kitchensink-sectionHeading'>WelcomeHeader</h2>
       <WelcomeHeader greeting='Godaften' title='Her er dagens nyheder' ctaLabel='Læsetid:' duration='3m 34s' backgroundImageFilename='blueToRedWelcomeHeader.jpg' />
