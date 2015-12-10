@@ -12,20 +12,6 @@ const stateToProps = state => ({
   lastUpdated: state.entries.lastUpdated
 })
 
-const colors = [
-  'blue',
-  'hotBlue',
-  'red',
-  'hotRed',
-  'green',
-  'seaGreen',
-  'purple',
-  'deepPurple',
-  'teal',
-  'orange',
-  'magenta'
-]
-
 class HomePage extends Component {
   static propTypes = {
     entries: PropTypes.arrayOf(PropTypes.object),
