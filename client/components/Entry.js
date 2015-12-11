@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 import Tag from './Tag'
 
 export default function Entry ({ entry }) {
+  console.log(entry)
   return <div className='Entry'>
     <Tag>{entry.fields.hashtag}</Tag>
     <h1>
