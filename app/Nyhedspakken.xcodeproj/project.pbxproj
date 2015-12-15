@@ -62,14 +62,14 @@
 		420ADA561C035AFA00C57143 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		42637BD61C07042900CAD202 /* Intercom.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Intercom.bundle; sourceTree = "<group>"; };
 		42637BD71C07042900CAD202 /* Intercom.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Intercom.framework; sourceTree = "<group>"; };
-		427821A11C033E9900199A22 /* Nyhedspakker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nyhedspakker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		427821A11C033E9900199A22 /* Nyhedspakken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nyhedspakken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		427821A41C033E9900199A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		427821A61C033E9900199A22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		427821A91C033E9900199A22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		427821AB1C033E9900199A22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		427821AE1C033E9900199A22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		427821B01C033E9900199A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		427821B51C033E9900199A22 /* NyhedspakkerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NyhedspakkerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		427821B51C033E9900199A22 /* Nyhedspakken.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nyhedspakken.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		427821B91C033E9900199A22 /* NyhedspakkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyhedspakkerTests.swift; sourceTree = "<group>"; };
 		427821BB1C033E9900199A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,8 +146,8 @@
 		427821A21C033E9900199A22 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				427821A11C033E9900199A22 /* Nyhedspakker.app */,
-				427821B51C033E9900199A22 /* NyhedspakkerTests.xctest */,
+				427821A11C033E9900199A22 /* Nyhedspakken.app */,
+				427821B51C033E9900199A22 /* Nyhedspakken.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,9 +178,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		427821A01C033E9900199A22 /* Nyhedspakker */ = {
+		427821A01C033E9900199A22 /* Nyhedspakken */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 427821BE1C033E9900199A22 /* Build configuration list for PBXNativeTarget "Nyhedspakker" */;
+			buildConfigurationList = 427821BE1C033E9900199A22 /* Build configuration list for PBXNativeTarget "Nyhedspakken" */;
 			buildPhases = (
 				4278219D1C033E9900199A22 /* Sources */,
 				4278219E1C033E9900199A22 /* Frameworks */,
@@ -190,14 +190,14 @@
 			);
 			dependencies = (
 			);
-			name = Nyhedspakker;
+			name = Nyhedspakken;
 			productName = Nyhedspakker;
-			productReference = 427821A11C033E9900199A22 /* Nyhedspakker.app */;
+			productReference = 427821A11C033E9900199A22 /* Nyhedspakken.app */;
 			productType = "com.apple.product-type.application";
 		};
-		427821B41C033E9900199A22 /* NyhedspakkerTests */ = {
+		427821B41C033E9900199A22 /* NyhedspakkenTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 427821C11C033E9900199A22 /* Build configuration list for PBXNativeTarget "NyhedspakkerTests" */;
+			buildConfigurationList = 427821C11C033E9900199A22 /* Build configuration list for PBXNativeTarget "NyhedspakkenTests" */;
 			buildPhases = (
 				427821B11C033E9900199A22 /* Sources */,
 				427821B21C033E9900199A22 /* Frameworks */,
@@ -208,9 +208,9 @@
 			dependencies = (
 				427821B71C033E9900199A22 /* PBXTargetDependency */,
 			);
-			name = NyhedspakkerTests;
+			name = NyhedspakkenTests;
 			productName = NyhedspakkerTests;
-			productReference = 427821B51C033E9900199A22 /* NyhedspakkerTests.xctest */;
+			productReference = 427821B51C033E9900199A22 /* Nyhedspakken.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -238,7 +238,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4278219C1C033E9900199A22 /* Build configuration list for PBXProject "Nyhedspakker" */;
+			buildConfigurationList = 4278219C1C033E9900199A22 /* Build configuration list for PBXProject "Nyhedspakken" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -251,8 +251,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				427821A01C033E9900199A22 /* Nyhedspakker */,
-				427821B41C033E9900199A22 /* NyhedspakkerTests */,
+				427821A01C033E9900199A22 /* Nyhedspakken */,
+				427821B41C033E9900199A22 /* NyhedspakkenTests */,
 			);
 		};
 /* End PBXProject section */
@@ -301,7 +301,7 @@
 /* Begin PBXTargetDependency section */
 		427821B71C033E9900199A22 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 427821A01C033E9900199A22 /* Nyhedspakker */;
+			target = 427821A01C033E9900199A22 /* Nyhedspakken */;
 			targetProxy = 427821B61C033E9900199A22 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -422,7 +422,7 @@
 				INFOPLIST_FILE = Nyhedspakker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.dr.Nyhedspakker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Nyhedspakken;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -440,7 +440,7 @@
 				INFOPLIST_FILE = Nyhedspakker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.dr.Nyhedspakker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Nyhedspakken;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -452,8 +452,8 @@
 				INFOPLIST_FILE = NyhedspakkerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.dr.NyhedspakkerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nyhedspakker.app/Nyhedspakker";
+				PRODUCT_NAME = Nyhedspakken;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nyhedspakken.app/Nyhedspakken";
 			};
 			name = Debug;
 		};
@@ -464,15 +464,15 @@
 				INFOPLIST_FILE = NyhedspakkerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.dr.NyhedspakkerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nyhedspakker.app/Nyhedspakker";
+				PRODUCT_NAME = Nyhedspakken;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nyhedspakken.app/Nyhedspakken";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4278219C1C033E9900199A22 /* Build configuration list for PBXProject "Nyhedspakker" */ = {
+		4278219C1C033E9900199A22 /* Build configuration list for PBXProject "Nyhedspakken" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				427821BC1C033E9900199A22 /* Debug */,
@@ -481,7 +481,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		427821BE1C033E9900199A22 /* Build configuration list for PBXNativeTarget "Nyhedspakker" */ = {
+		427821BE1C033E9900199A22 /* Build configuration list for PBXNativeTarget "Nyhedspakken" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				427821BF1C033E9900199A22 /* Debug */,
@@ -490,7 +490,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		427821C11C033E9900199A22 /* Build configuration list for PBXNativeTarget "NyhedspakkerTests" */ = {
+		427821C11C033E9900199A22 /* Build configuration list for PBXNativeTarget "NyhedspakkenTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				427821C21C033E9900199A22 /* Debug */,
