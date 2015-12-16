@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import classnames from 'classnames'
 import formatClassModifiers from '../utilities/formatClassModifiers'
 import './ArticleHeader.scss'
+import Tag from './Tag'
+import Pager from './Pager'
 
 export default class ArticleHeader extends Component {
   static propTypes = {
@@ -18,6 +20,11 @@ export default class ArticleHeader extends Component {
     return <header className={cls} {...this.props}>
       <div className={`${baseClass}-image`} style={{backgroundImage: `url(/dummy-content/${this.props.backgroundImageFilename})`}}></div>
       <div className={`${baseClass}-inner`}>
+        <div className={`${baseClass}-tagAndPager`}>
+          <Tag modifiers='blocky hotRed'>Boulderbashing</Tag>
+          <Pager />
+        </div>
+        
         <h1 className={`${baseClass}-heading`}>
           {this.props.title}
         </h1>

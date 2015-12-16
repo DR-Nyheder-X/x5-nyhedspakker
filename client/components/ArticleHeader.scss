@@ -29,7 +29,34 @@ $ArticleHeader--tilt: 8.35deg;
   right: -28px;
   bottom: 25px;
   left: -18px;
+  z-index: 1;
 
   @media #{$mediaQuery--smallUp} {  bottom: 29px; }
   @media #{$mediaQuery--mediumUp} { bottom: 32px; }
+}
+
+// Put these things on top of the image
+.ArticleHeader .Tag,
+.ArticleHeader .Pager,
+.ArticleHeader .Pager i {
+  z-index: 2;
+}
+
+.ArticleHeader-tagAndPager {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ArticleHeader .Tag {
+  width: 50%;
+  margin-top: $appPadding--top;
+  @media #{$mediaQuery--smallUp} {  width: 45%; }
+}
+
+.ArticleHeader .Pager {
+  width: 50%;
+  padding-right: $appPadding--right;
+  padding-left: 3%;
+  margin-top: $appPadding--top;
+  @media #{$mediaQuery--smallUp} {  width: 55%; }
 }
