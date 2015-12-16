@@ -2,6 +2,10 @@
 @import '../utilities/mixins';
 @import '../utilities/type';
 
+@mixin quoteStyle($color) {
+  p { color: $color }
+}
+
 %Quote {
   padding-right: $appPadding--right;
   padding-left: $appPadding--left;
@@ -38,3 +42,15 @@
 }
 
 .Quote { @extend %Quote; }
+
+.Quote.Quote--blue       { @include quoteStyle($blue); }
+.Quote.Quote--hotRed     { @include quoteStyle($hotRed); }
+.Quote.Quote--teal       { @include quoteStyle($teal); }
+.Quote.Quote--orange     { @include quoteStyle($orange); }
+.Quote.Quote--deepPurple { @include quoteStyle($deepPurple); }
+.Quote.Quote--seaGreen   { @include quoteStyle($seaGreen); }
+.Quote.Quote--magenta    { @include quoteStyle($magenta); }
+.Quote.Quote--hotBlue    { @include quoteStyle($hotBlue); }
+.Quote.Quote--purple     { @include quoteStyle($purple); }
+.Quote.Quote--green      { @include quoteStyle($green); }
+.Quote.Quote--red        { @include quoteStyle($red); }
