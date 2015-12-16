@@ -1,0 +1,46 @@
+@import '../utilities/variables';
+@import '../utilities/mixins';
+@import '../utilities/type';
+
+@mixin figureStyle($color) {
+  .Figure-figure { color: $color }
+}
+
+%Figure {
+  @include figureStyle($blue);
+  padding-right: $appPadding--right;
+  padding-left: $appPadding--left;
+  margin-bottom: 2em;
+  text-align: center;
+
+  .Figure-figure {
+    font-size: 46px;
+    font-family: $fontFamily--heavy;
+  }
+
+  .Figure-description {
+    font-family: $fontFamily--demibold;
+    font-style: normal;
+    font-size: $fontSize--small;
+    text-transform: uppercase;
+    letter-spacing: .015em;
+    line-height: 1.2;
+    max-width: 235px;
+    margin: 0 auto;
+    margin-top: -.35em;
+  }
+}
+
+.Figure { @extend %Figure; }
+
+.Figure.Figure--blue       { @include figureStyle($blue); }
+.Figure.Figure--hotRed     { @include figureStyle($hotRed); }
+.Figure.Figure--teal       { @include figureStyle($teal); }
+.Figure.Figure--orange     { @include figureStyle($orange); }
+.Figure.Figure--deepPurple { @include figureStyle($deepPurple); }
+.Figure.Figure--seaGreen   { @include figureStyle($seaGreen); }
+.Figure.Figure--magenta    { @include figureStyle($magenta); }
+.Figure.Figure--hotBlue    { @include figureStyle($hotBlue); }
+.Figure.Figure--purple     { @include figureStyle($purple); }
+.Figure.Figure--green      { @include figureStyle($green); }
+.Figure.Figure--red        { @include figureStyle($red); }

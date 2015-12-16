@@ -7,6 +7,7 @@ import WelcomeHeader from './WelcomeHeader'
 import ArticleHeader from './ArticleHeader'
 import Quote from './Quote'
 import Paragraph from './Paragraph'
+import Figure from './Figure'
 
 export default class Kitchensink extends Component {
   render () {
@@ -76,9 +77,13 @@ export default class Kitchensink extends Component {
       <h2 className='Kitchensink-sectionHeading'>Quote</h2>
       <Quote cite='Thomas Edison, CEO at Macrohard'>If you don't have anything to say, at least make sure you have a lot of money. And preferably tits.</Quote>
       <h2 className='Kitchensink-sectionHeading'>Paragraph</h2>
-      <Paragraph>
+      <Paragraph modifier='blue'>
         This is something else. And you never <a href='#'>know what you</a> will get if you don't ask. Or something. This might not be what you felt like eating. If you feel like snacking, don't go cracking as my golden retriever, Shamzonite, always said.
       </Paragraph>
+      <h2 className='Kitchensink-sectionHeading'>Figure</h2>
+      <Figure modifier='hotRed' description='tandlæger ved ikke hvor Marocco ligger i vinterhalvåret'>
+        34.000
+      </Figure>
 
     </div>
   }
