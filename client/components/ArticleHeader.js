@@ -24,7 +24,7 @@ export default class ArticleHeader extends Component {
           <Tag modifiers='blocky hotRed'>Boulderbashing</Tag>
           <Pager />
         </div>
-        
+
         <h1 className={`${baseClass}-heading`}>
           {this.props.title}
         </h1>

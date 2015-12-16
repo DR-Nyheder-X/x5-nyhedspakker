@@ -4,6 +4,10 @@
 
 // TODO: This component is not done at all
 
+@mixin articleHeaderHeadingStyle($color) {
+  em { color: $color }
+}
+
 $ArticleHeader--minHeight: 280px;
 $ArticleHeader--tilt: 8.35deg;
 
@@ -36,6 +40,7 @@ $ArticleHeader--tilt: 8.35deg;
 }
 
 // Put these things on top of the image
+.ArticleHeader .ArticleHeader-heading,
 .ArticleHeader .Tag,
 .ArticleHeader .Pager,
 .ArticleHeader .Pager i {
@@ -60,3 +65,28 @@ $ArticleHeader--tilt: 8.35deg;
   margin-top: $appPadding--top;
   @media #{$mediaQuery--smallUp} {  width: 55%; }
 }
+
+.ArticleHeader-heading {
+  position: relative;
+  @extend %heading--huge;
+  padding-top: .65em;
+  padding-right: $appPadding--right;
+  padding-left: $appPadding--left;
+  color: #fff;
+
+  // Highlights with accent color
+  em { color: $blueAccent }
+}
+
+// Accent colors for the heading hightlight
+.ArticleHeader.ArticleHeader--blue       .ArticleHeader-heading { @include articleHeaderHeadingStyle($blueAccent); }
+.ArticleHeader.ArticleHeader--hotRed     .ArticleHeader-heading { @include articleHeaderHeadingStyle($hotRedAccent); }
+.ArticleHeader.ArticleHeader--teal       .ArticleHeader-heading { @include articleHeaderHeadingStyle($tealAccent); }
+.ArticleHeader.ArticleHeader--orange     .ArticleHeader-heading { @include articleHeaderHeadingStyle($orangeAccent); }
+.ArticleHeader.ArticleHeader--deepPurple .ArticleHeader-heading { @include articleHeaderHeadingStyle($deepPurpleAccent); }
+.ArticleHeader.ArticleHeader--seaGreen   .ArticleHeader-heading { @include articleHeaderHeadingStyle($seaGreenAccent); }
+.ArticleHeader.ArticleHeader--magenta    .ArticleHeader-heading { @include articleHeaderHeadingStyle($magentaAccent); }
+.ArticleHeader.ArticleHeader--hotBlue    .ArticleHeader-heading { @include articleHeaderHeadingStyle($hotBlueAccent); }
+.ArticleHeader.ArticleHeader--purple     .ArticleHeader-heading { @include articleHeaderHeadingStyle($purpleAccent); }
+.ArticleHeader.ArticleHeader--green      .ArticleHeader-heading { @include articleHeaderHeadingStyle($greenAccent); }
+.ArticleHeader.ArticleHeader--red        .ArticleHeader-heading { @include articleHeaderHeadingStyle($redAccent); }
