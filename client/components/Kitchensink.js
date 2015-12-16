@@ -75,13 +75,13 @@ export default class Kitchensink extends Component {
       <ArticleHeader title='Spanske grantræsproducenter advarer om muligt bananflueangreb' backgroundImageFilename='blueToRedWelcomeHeader.jpg' />
 
       <h2 className='Kitchensink-sectionHeading'>Quote</h2>
-      <Quote cite='Thomas Edison, CEO at Macrohard'>If you don't have anything to say, at least make sure you have a lot of money. And preferably tits.</Quote>
+      <Quote cite='Thomas Edison, CEO at Macrohard' modifiers='blue'>If you don't have anything to say, at least make sure you have a lot of money. And preferably tits.</Quote>
       <h2 className='Kitchensink-sectionHeading'>Paragraph</h2>
-      <Paragraph modifier='blue'>
+      <Paragraph modifiers='seaGreen'>
         This is something else. And you never <a href='#'>know what you</a> will get if you don't ask. Or something. This might not be what you felt like eating. If you feel like snacking, don't go cracking as my golden retriever, Shamzonite, always said.
       </Paragraph>
       <h2 className='Kitchensink-sectionHeading'>Figure</h2>
-      <Figure modifier='hotRed' description='tandlæger ved ikke hvor Marocco ligger i vinterhalvåret'>
+      <Figure modifiers='hotRed' description='tandlæger ved ikke hvor Marocco ligger i vinterhalvåret'>
         34.000
       </Figure>
 
