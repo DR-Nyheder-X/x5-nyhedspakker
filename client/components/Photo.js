@@ -8,7 +8,8 @@ export default class Photo extends Component {
     children: PropTypes.node,
     className: PropTypes.string,
     modifiers: PropTypes.string,
-    imageUrl: PropTypes.string
+    imageUrl: PropTypes.string,
+    caption: PropTypes.string
   }
 
   render () {
