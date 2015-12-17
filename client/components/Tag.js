@@ -1,23 +1,19 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 import formatClassModifiers from '../utilities/formatClassModifiers'
 import './Tag.scss'
 
-export default class Tag extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    modifiers: PropTypes.string
-  }
+export default function Tag ({ children, className, modifiers }) {
+  const cls = classnames(
+    formatClassModifiers('Tag', modifiers),
+    className
+  )
 
-  render () {
-    const cls = classnames(
-      formatClassModifiers('Tag', this.props.modifiers),
-      this.props.className
-    )
+  return <div className={cls}>{children}</div>
+}
 
-    return <div className={cls} {...this.props}>
-      {this.props.children}
-    </div>
-  }
+Tag.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  modifiers: PropTypes.string
 }

@@ -10,6 +10,7 @@ import Paragraph from './Paragraph'
 import Figure from './Figure'
 import Next from './Next'
 import Photo from './Photo'
+import Pager from './Pager'
 
 export default class Kitchensink extends Component {
   render () {
@@ -73,8 +74,11 @@ export default class Kitchensink extends Component {
       <WelcomeHeader modifier='morning' greeting='Godmorgen' title='Her er nattens nyheder' ctaLabel='Læsetid:' duration='3m 34s' backgroundImageFilename='purpleToOrangeWelcomeHeader.jpg' />
       <WelcomeHeader modifier='done' title='Det var dagens nyheder' ctaLabel='Læs igen' backgroundImageFilename='blueToRedWelcomeHeader.jpg' />
 
+      <h2 className='Kitchensink-sectionHeading'>Pager</h2>
+      <Pager total={9} page={0} />
+
       <h2 className='Kitchensink-sectionHeading'>ArticleHeader</h2>
-      <ArticleHeader title='Spanske bønder advarer om mulige bananfluer' subTitle='Bananfluer har ikke tidligere været et problem i Nordspanien, men efter kemisk lækage i Nørretranders er situationen forværret.' backgroundImageFilename='' />
+      <ArticleHeader title='Spanske bønder advarer om mulige bananfluer' subTitle='Bananfluer har ikke tidligere været et problem i Nordspanien, men efter kemisk lækage i Nørretranders er situationen forværret.' backgroundImageFilename='' pos={{ total: 4, page: 0 }} />
 
       <h2 className='Kitchensink-sectionHeading'>Quote</h2>
       <Quote cite='Thomas Edison, CEO at Macrohard' modifiers='blue'>If you don't have anything to say, at least make sure you have a lot of money. And preferably tits.</Quote>

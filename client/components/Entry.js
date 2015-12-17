@@ -1,21 +1,35 @@
 import React, { PropTypes } from 'react'
 import Markdown from './Markdown'
-import { Link } from 'react-router'
-import Tag from './Tag'
+import ArticleHeader from './ArticleHeader'
+import Figure from './Figure'
+import Paragraph from './Paragraph'
 
-export default function Entry ({ entry }) {
+export default function Entry ({ entry, pos, modifiers }) {
   console.log(entry)
+
+  const { title, body, hashtag, nyhedensTal, nyhedensTalBeskrivelse, readMore, tekstafsnit2 } = entry.fields
+
   return <div className='Entry'>
-    <Tag>{entry.fields.hashtag}</Tag>
-    <h1>
-      <Link to={`/entries/${entry.sys.id}`}>
-        {entry.fields.title}
-      </Link>
-    </h1>
-    <Markdown text={entry.fields.body} />
+    <ArticleHeader title={title} backgroundImageFilename='blueToRedWelcomeHeader.jpg' pos={pos} hashtag={hashtag} modifiers={modifiers} />
+    <Markdown text={body} />
+    {nyhedensTal && (
+      <Figure
+        description={nyhedensTalBeskrivelse}
+        modifiers={modifiers}>
+        {nyhedensTal}
+      </Figure>
+    )}
+    {tekstafsnit2 && (
+      <Markdown text={tekstafsnit2} />
+    )}
+    <Paragraph modifiers={modifiers}>
+      <a href={readMore}>Læs mere på DR.dk</a>
+    </Paragraph>
   </div>
 }
 
 Entry.propTypes = {
-  entry: PropTypes.object.isRequired
+  entry: PropTypes.object.isRequired,
+  pos: PropTypes.object.isRequired,
+  modifiers: PropTypes.string
 }
