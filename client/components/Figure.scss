@@ -19,12 +19,7 @@
   }
 
   .Figure-description {
-    font-family: $fontFamily--demibold;
-    font-style: normal;
-    font-size: $fontSize--small;
-    text-transform: uppercase;
-    letter-spacing: .015em;
-    line-height: 1.2;
+    @extend %smallUppercase;
     max-width: 235px;
     margin: 0 auto;
     margin-top: -.35em;

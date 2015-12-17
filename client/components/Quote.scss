@@ -12,11 +12,8 @@
   margin-bottom: 2em;
 
   p {
+    @extend %heading--medium;
     position: relative;
-    font-family: $fontFamily--heavy;
-    font-size: $fontSize--large*1.2;
-    text-transform: uppercase;
-    line-height: 1.1;
     color: $blue;
     padding-left: 2.15em;
 
@@ -30,12 +27,7 @@
   }
 
   cite {
-    font-family: $fontFamily--demibold;
-    font-style: normal;
-    font-size: $fontSize--small;
-    text-transform: uppercase;
-    letter-spacing: .015em;
-    line-height: 1.2;
+    @extend %smallUppercase;
     display: block;
     margin-bottom: .25em;
   }

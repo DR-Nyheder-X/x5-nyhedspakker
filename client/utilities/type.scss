@@ -13,9 +13,18 @@
   @media #{$mediaQuery--mediumUp} { font-size: 50px; }
 }
 
+%heading--medium {
+  @extend %headingBaseStyles;
+  font-size: $fontSize--large*1.2;
+  line-height: 1.1;
+}
+
 %smallUppercase {
   font-family: $fontFamily--demibold;
   font-size: $fontSize*.875;
   letter-spacing: .02em;
   text-transform: uppercase;
+  font-style: normal;
+  letter-spacing: .015em;
+  line-height: 1.2;
 }
