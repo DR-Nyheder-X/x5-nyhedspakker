@@ -1,0 +1,88 @@
+@import '../utilities/variables';
+@import '../utilities/mixins';
+@import '../utilities/type';
+
+@mixin photoProgressBarStyle($color){
+  > div em { background-color: $color; }
+}
+
+%Photo {
+  overflow: hidden;
+  min-height: 400px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .Photo-close {
+    display: inline-block;
+    height: 44px;
+    text-align: right;
+    padding-top: $appPadding--right;
+    padding-right: $appPadding--right;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .Photo-caption {
+    font-size: $fontSize--small;
+    padding-top: 1em;
+    padding-bottom: 1.25em;
+    background-color: $black;
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+
+    img {
+      width: 104%;
+      position: absolute;
+      top: -18px;
+      left: -2%;
+      right: 0;
+    }
+
+    p {
+      padding-right: $appPadding--right;
+      padding-left: $appPadding--left;
+    }
+  }
+}
+
+%Photo-progressBar {
+  background-color: $black;
+  height: 10px;
+  padding: 3px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  > div {
+    background-color: #fff;
+    // border-bottom-left-radius: 2px;
+    // border-bottom-right-radius: 2px;
+    // overflow: hidden;
+  }
+
+  // Progress bar
+  > div em {
+    height: 4px;
+    transition: width .2s ease;
+    display: block;
+  }
+}
+
+.Photo { @extend %Photo; }
+
+// Progress bar color variations
+.Photo-progressBar                    { @extend %Photo-progressBar; @include photoProgressBarStyle($blue); }
+.Photo--blue       .Photo-progressBar { @include photoProgressBarStyle($blue); }
+.Photo--hotRed     .Photo-progressBar { @include photoProgressBarStyle($hotRed); }
+.Photo--teal       .Photo-progressBar { @include photoProgressBarStyle($teal); }
+.Photo--orange     .Photo-progressBar { @include photoProgressBarStyle($orange); }
+.Photo--deepPurple .Photo-progressBar { @include photoProgressBarStyle($deepPurple); }
+.Photo--seaGreen   .Photo-progressBar { @include photoProgressBarStyle($seaGreen); }
+.Photo--magenta    .Photo-progressBar { @include photoProgressBarStyle($magenta); }
+.Photo--hotBlue    .Photo-progressBar { @include photoProgressBarStyle($hotBlue); }
+.Photo--purple     .Photo-progressBar { @include photoProgressBarStyle($purple); }
+.Photo--green      .Photo-progressBar { @include photoProgressBarStyle($green); }
+.Photo--red        .Photo-progressBar { @include photoProgressBarStyle($red); }

@@ -9,6 +9,7 @@ import Quote from './Quote'
 import Paragraph from './Paragraph'
 import Figure from './Figure'
 import Next from './Next'
+import Photo from './Photo'
 
 export default class Kitchensink extends Component {
   render () {
@@ -87,6 +88,9 @@ export default class Kitchensink extends Component {
       </Figure>
       <h2 className='Kitchensink-sectionHeading'>Next story</h2>
       <Next modifiers='blue' backgroundImageFilename='blueWelcomeHeader.jpg'>Spaniens katteværn anklages for underslæb</Next>
+
+      <h2 className='Kitchensink-sectionHeading'>Photo</h2>
+      <Photo imageUrl='/dummy-content/photo-1.jpg' caption='This is the caption that will blow your mind out of the water and change your life forever.' modifiers='hotRed' />
     </div>
   }
 }
