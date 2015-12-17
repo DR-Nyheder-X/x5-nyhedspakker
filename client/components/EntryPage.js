@@ -37,12 +37,12 @@ function TiledEntries ({ entries, onSwipe, selectedEntry }) {
     runCallbacksOnInit={false}
     slide={entries.indexOf(selectedEntry)}
     >
-    {entries.map(entry => (
+    {entries.map((entry, i) => (
       <div key={entry.sys.id}>
         <div className='BackButton'>
           <Link to='/'>INDEX</Link>
         </div>
-        <Entry entry={entry} />
+        <Entry entry={entry} pos={{total: entries.length, page: i}} />
       </div>
     ))}
   </SwiperComponent>

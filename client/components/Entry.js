@@ -1,18 +1,23 @@
 import React, { PropTypes } from 'react'
 import Markdown from './Markdown'
-import { Link } from 'react-router'
-import Tag from './Tag'
+import ArticleHeader from './ArticleHeader'
+import Figure from './Figure'
 
-export default function Entry ({ entry }) {
+export default function Entry ({ entry, pos }) {
   console.log(entry)
+
+  const { title, body, hashtag, nyhedensTal, nyhedensTalBeskrivelse, readMore, tekstafsnit2 } = entry.fields
+
   return <div className='Entry'>
-    <Tag>{entry.fields.hashtag}</Tag>
-    <h1>
-      <Link to={`/entries/${entry.sys.id}`}>
-        {entry.fields.title}
-      </Link>
-    </h1>
-    <Markdown text={entry.fields.body} />
+    <ArticleHeader title={title} backgroundImageFilename='blueToRedWelcomeHeader.jpg' pos={pos} hashtag={hashtag} />
+    <Markdown text={body} />
+    {nyhedensTal && (
+      <Figure description={nyhedensTalBeskrivelse}>{nyhedensTal}</Figure>
+    )}
+    {tekstafsnit2 && (
+      <Markdown text={tekstafsnit2} />
+    )}
+    <p><a href={readMore}>Læs mere på DR.dk</a></p>
   </div>
 }
 

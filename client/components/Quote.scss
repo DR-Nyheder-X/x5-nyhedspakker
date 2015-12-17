@@ -41,7 +41,7 @@
   }
 }
 
-.Quote { @extend %Quote; }
+blockquote, .Quote { @extend %Quote; }
 
 .Quote.Quote--blue       { @include quoteStyle($blue); }
 .Quote.Quote--hotRed     { @include quoteStyle($hotRed); }

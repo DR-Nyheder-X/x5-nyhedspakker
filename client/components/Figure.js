@@ -1,25 +1,22 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 import formatClassModifiers from '../utilities/formatClassModifiers'
 import './Figure.scss'
 
-export default class Figure extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    modifiers: PropTypes.string,
-    description: PropTypes.string
-  }
+export default function Figure ({ children, className, modifiers, description }) {
+  const cls = classnames(
+    'Figure', className, formatClassModifiers(modifiers))
 
-  render () {
-    const cls = classnames(
-      formatClassModifiers('Figure', this.props.modifiers),
-      this.props.className
-    )
-
-    return <div className={cls} {...this.props}>
-      <div className='Figure-figure'>{this.props.children}</div>
-      <p className='Figure-description'>{this.props.description}</p>
-    </div>
-  }
+  return <div className={cls}>
+    <div className='Figure-figure'>{children}</div>
+    <p className='Figure-description'>{description}</p>
+  </div>
 }
+
+Figure.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  modifiers: PropTypes.string,
+  description: PropTypes.string
+}
+

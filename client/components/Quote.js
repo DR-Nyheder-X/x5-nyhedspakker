@@ -1,25 +1,23 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 import formatClassModifiers from '../utilities/formatClassModifiers'
 import './Quote.scss'
 
-export default class Quote extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    modifiers: PropTypes.string,
-    cite: PropTypes.string
-  }
+export default function Quote ({ children, className, modifiers, cite }) {
+  const cls = classnames(
+    formatClassModifiers('Quote', modifiers),
+    className
+  )
 
-  render () {
-    const cls = classnames(
-      formatClassModifiers('Quote', this.props.modifiers),
-      this.props.className
-    )
+  return <blockquote className={cls}>
+    <cite>{cite}</cite>
+    <p>{children}</p>
+  </blockquote>
+}
 
-    return <blockquote className={cls} {...this.props}>
-      <cite>{this.props.cite}</cite>
-      <p>{this.props.children}</p>
-    </blockquote>
-  }
+Quote.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  modifiers: PropTypes.string,
+  cite: PropTypes.string
 }
