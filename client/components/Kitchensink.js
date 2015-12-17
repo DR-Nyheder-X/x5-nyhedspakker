@@ -74,7 +74,7 @@ export default class Kitchensink extends Component {
       <WelcomeHeader modifier='done' title='Det var dagens nyheder' ctaLabel='Læs igen' backgroundImageFilename='blueToRedWelcomeHeader.jpg' />
 
       <h2 className='Kitchensink-sectionHeading'>ArticleHeader</h2>
-      <ArticleHeader title='Spanske bønder advarer om mulige bananfluer' backgroundImageFilename='blueToRedWelcomeHeader.jpg' />
+      <ArticleHeader title='Spanske bønder advarer om mulige bananfluer' subTitle='Bananfluer har ikke tidligere været et problem i Nordspanien, men efter kemisk lækage i Nørretranders er situationen forværret.' backgroundImageFilename='' />
 
       <h2 className='Kitchensink-sectionHeading'>Quote</h2>
       <Quote cite='Thomas Edison, CEO at Macrohard' modifiers='blue'>If you don't have anything to say, at least make sure you have a lot of money. And preferably tits.</Quote>

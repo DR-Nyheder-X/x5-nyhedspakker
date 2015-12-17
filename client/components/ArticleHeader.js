@@ -10,6 +10,7 @@ export default class ArticleHeader extends Component {
     className: PropTypes.string,
     modifier: PropTypes.string,
     title: PropTypes.string,
+    subTitle: PropTypes.string,
     backgroundImageFilename: PropTypes.string
   }
 
@@ -28,6 +29,10 @@ export default class ArticleHeader extends Component {
         <h1 className={`${baseClass}-heading`}>
           {this.props.title}
         </h1>
+        <h2 className={`${baseClass}-subHeading`}>
+          {this.props.subTitle}
+        </h2>
+
       </div>
     </header>
   }

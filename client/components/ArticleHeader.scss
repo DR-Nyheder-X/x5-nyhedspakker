@@ -4,12 +4,13 @@
 
 // TODO: This component is not done at all
 
-@mixin articleHeaderHeadingStyle($color) {
-  em { color: $color }
-}
-
-$ArticleHeader--minHeight: 280px;
+$ArticleHeader--minHeight: 500px;
 $ArticleHeader--tilt: 8.35deg;
+
+@mixin articleHeaderHeadingStyle($color, $accentColor) {
+  background-color: $color;
+  .ArticleHeader-heading em { color: $accentColor; }
+}
 
 .ArticleHeader {
   overflow: hidden;
@@ -24,7 +25,6 @@ $ArticleHeader--tilt: 8.35deg;
 
 .ArticleHeader-image {
   // background-image is set in ArticleHeader.js
-  background: $gradient--diagonalBlueToRed;
   background-repeat: no-repeat;
   background-size: cover;
   transform: rotate($ArticleHeader--tilt);
@@ -73,20 +73,26 @@ $ArticleHeader--tilt: 8.35deg;
   padding-right: $appPadding--right;
   padding-left: $appPadding--left;
   color: #fff;
-
-  // Highlights with accent color
-  em { color: $blueAccent }
 }
 
-// Accent colors for the heading hightlight
-.ArticleHeader.ArticleHeader--blue       .ArticleHeader-heading { @include articleHeaderHeadingStyle($blueAccent); }
-.ArticleHeader.ArticleHeader--hotRed     .ArticleHeader-heading { @include articleHeaderHeadingStyle($hotRedAccent); }
-.ArticleHeader.ArticleHeader--teal       .ArticleHeader-heading { @include articleHeaderHeadingStyle($tealAccent); }
-.ArticleHeader.ArticleHeader--orange     .ArticleHeader-heading { @include articleHeaderHeadingStyle($orangeAccent); }
-.ArticleHeader.ArticleHeader--deepPurple .ArticleHeader-heading { @include articleHeaderHeadingStyle($deepPurpleAccent); }
-.ArticleHeader.ArticleHeader--seaGreen   .ArticleHeader-heading { @include articleHeaderHeadingStyle($seaGreenAccent); }
-.ArticleHeader.ArticleHeader--magenta    .ArticleHeader-heading { @include articleHeaderHeadingStyle($magentaAccent); }
-.ArticleHeader.ArticleHeader--hotBlue    .ArticleHeader-heading { @include articleHeaderHeadingStyle($hotBlueAccent); }
-.ArticleHeader.ArticleHeader--purple     .ArticleHeader-heading { @include articleHeaderHeadingStyle($purpleAccent); }
-.ArticleHeader.ArticleHeader--green      .ArticleHeader-heading { @include articleHeaderHeadingStyle($greenAccent); }
-.ArticleHeader.ArticleHeader--red        .ArticleHeader-heading { @include articleHeaderHeadingStyle($redAccent); }
+.ArticleHeader-subHeading {
+  color: #fff;
+  padding-right: $appPadding--right;
+  padding-left: $appPadding--left;
+  margin-top: 1.35em;
+  @media #{$mediaQuery--mediumUp} {  font-size: $fontSize--large; }
+}
+
+// Accent colors for the heading hightlight and bg color
+.ArticleHeader { @include articleHeaderHeadingStyle($blue, $blueAccent); }
+.ArticleHeader.ArticleHeader--blue       { @include articleHeaderHeadingStyle($blue, $blueAccent); }
+.ArticleHeader.ArticleHeader--hotRed     { @include articleHeaderHeadingStyle($hotRed, $hotRedAccent); }
+.ArticleHeader.ArticleHeader--teal       { @include articleHeaderHeadingStyle($teal, $tealAccent); }
+.ArticleHeader.ArticleHeader--orange     { @include articleHeaderHeadingStyle($orange, $orangeAccent); }
+.ArticleHeader.ArticleHeader--deepPurple { @include articleHeaderHeadingStyle($deepPurple, $deepPurpleAccent); }
+.ArticleHeader.ArticleHeader--seaGreen   { @include articleHeaderHeadingStyle($seaGreen, $seaGreenAccent); }
+.ArticleHeader.ArticleHeader--magenta    { @include articleHeaderHeadingStyle($magenta, $magentaAccent); }
+.ArticleHeader.ArticleHeader--hotBlue    { @include articleHeaderHeadingStyle($hotBlue, $hotBlueAccent); }
+.ArticleHeader.ArticleHeader--purple     { @include articleHeaderHeadingStyle($purple, $purpleAccent); }
+.ArticleHeader.ArticleHeader--green      { @include articleHeaderHeadingStyle($green, $greenAccent); }
+.ArticleHeader.ArticleHeader--red        { @include articleHeaderHeadingStyle($red, $redAccent); }
