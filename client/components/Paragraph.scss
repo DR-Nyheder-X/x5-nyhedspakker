@@ -16,7 +16,7 @@
   @include paragraphLinkStyle($blue);
 }
 
-p, .Paragraph { @extend %Paragraph; }
+.Paragraph { @extend %Paragraph; }
 
 .Paragraph.Paragraph--blue       { @include paragraphLinkStyle($blueLinkColor); }
 .Paragraph.Paragraph--hotRed     { @include paragraphLinkStyle($hotRedLinkColor); }
