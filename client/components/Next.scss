@@ -1,0 +1,49 @@
+@import '../utilities/variables';
+@import '../utilities/mixins';
+@import '../utilities/type';
+
+@mixin nextStyle($color) {
+  h2 { color: $color; }
+  svg path { fill: $color; }
+}
+
+%Next {
+  @include nextStyle(#fff);
+  display: block;
+  padding-right: $appPadding--right;
+  padding-left: $appPadding--left;
+  padding-top: 2.1em;
+  padding-bottom: 2em;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  h2 {
+    padding-right: $appPadding--right*2;
+    padding-left: $appPadding--left*2;
+    @extend %heading--medium;
+    text-align: center;
+  }
+
+  .Next-arrowRight {
+    position: absolute;
+    right: $appPadding--right;
+    top: 50%;
+    margin-top: -11px;
+  }
+}
+
+.Next { @extend %Next; }
+
+.Next--blue       { @include nextStyle($blueAccent); }
+.Next--hotRed     { @include nextStyle($hotRedAccent); }
+.Next--teal       { @include nextStyle($tealAccent); }
+.Next--orange     { @include nextStyle($orangeAccent); }
+.Next--deepPurple { @include nextStyle($deepPurpleAccent); }
+.Next--seaGreen   { @include nextStyle($seaGreenAccent); }
+.Next--magenta    { @include nextStyle($magentaAccent); }
+.Next--hotBlue    { @include nextStyle($hotBlueAccent); }
+.Next--purple     { @include nextStyle($purpleAccent); }
+.Next--green      { @include nextStyle($greenAccent); }
+.Next--red        { @include nextStyle($redAccent); }

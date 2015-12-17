@@ -8,6 +8,7 @@ import ArticleHeader from './ArticleHeader'
 import Quote from './Quote'
 import Paragraph from './Paragraph'
 import Figure from './Figure'
+import Next from './Next'
 
 export default class Kitchensink extends Component {
   render () {
@@ -84,7 +85,8 @@ export default class Kitchensink extends Component {
       <Figure modifiers='hotRed' description='tandlæger ved ikke hvor Marocco ligger i vinterhalvåret'>
         34.000
       </Figure>
-
+      <h2 className='Kitchensink-sectionHeading'>Next story</h2>
+      <Next modifiers='blue' backgroundImageFilename='blueWelcomeHeader.jpg'>Spaniens katteværn anklages for underslæb</Next>
     </div>
   }
 }
