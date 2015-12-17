@@ -10,7 +10,8 @@ export default function ArticleHeader ({
   hashtag,
   modifiers,
   pos,
-  title
+  title,
+  subTitle
 }) {
   const baseClass = 'ArticleHeader'
   const cls = formatClassModifiers(baseClass, modifiers, className)
@@ -26,6 +27,10 @@ export default function ArticleHeader ({
       <h1 className={`${baseClass}-heading`}>
         {title}
       </h1>
+
+      <h2 className={`${baseClass}-subHeading`}>
+        {subTitle}
+      </h2>
     </div>
   </header>
 }
