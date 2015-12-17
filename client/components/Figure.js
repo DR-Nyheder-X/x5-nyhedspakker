@@ -1,11 +1,10 @@
 import React, { PropTypes } from 'react'
-import classnames from 'classnames'
 import formatClassModifiers from '../utilities/formatClassModifiers'
 import './Figure.scss'
 
 export default function Figure ({ children, className, modifiers, description }) {
-  const cls = classnames(
-    'Figure', className, formatClassModifiers(modifiers))
+  const cls = formatClassModifiers('Figure', modifiers, className)
+  console.log(cls)
 
   return <div className={cls}>
     <div className='Figure-figure'>{children}</div>

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Entry from './Entry'
 import SwiperComponent from './SwiperComponent'
 import { Link } from 'react-router'
+import colorOrder from '../utilities/colorOrder'
 import './EntryPage.scss'
 
 const stateToProps = state => ({
@@ -42,7 +43,11 @@ function TiledEntries ({ entries, onSwipe, selectedEntry }) {
         <div className='BackButton'>
           <Link to='/'>INDEX</Link>
         </div>
-        <Entry entry={entry} pos={{total: entries.length, page: i}} />
+        <Entry
+          entry={entry}
+          pos={{total: entries.length, page: i}}
+          modifiers={colorOrder[i]}
+        />
       </div>
     ))}
   </SwiperComponent>
