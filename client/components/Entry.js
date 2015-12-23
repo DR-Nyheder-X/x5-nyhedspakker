@@ -18,14 +18,14 @@ export default function Entry ({ entry, pos, modifiers }) {
         modifiers={modifiers}
       >{quote}</Quote>
     )}
+    {tekstafsnit2 && (
+      <Paragraph modifiers={modifiers}>{tekstafsnit2}</Paragraph>
+    )}
     {nyhedensTal && (
       <Figure
         description={nyhedensTalBeskrivelse}
         modifiers={modifiers}
       >{nyhedensTal}</Figure>
-    )}
-    {tekstafsnit2 && (
-      <Paragraph modifiers={modifiers}>{tekstafsnit2}</Paragraph>
     )}
   </div>
 }
