@@ -8,7 +8,7 @@ $ArticleHeader--minHeight: 500px;
 $ArticleHeader--tilt: 8.35deg;
 
 @mixin articleHeaderHeadingStyle($color, $accentColor) {
-  background-color: $color;
+  .ArticleHeader-tiltedCropper { background-color: $color; }
   .ArticleHeader-heading em { color: $accentColor; }
 }
 
@@ -17,26 +17,32 @@ $ArticleHeader--tilt: 8.35deg;
   height: $ArticleHeader--minHeight;
   position: relative;
   z-index: 999;
-  @include backgroundImage('welcomeHeaderShadow.png', 375px);
-  background-position: 0 232px;
-  @media #{$mediaQuery--smallUp} { background-position-y: 224px; }
-  @media #{$mediaQuery--mediumUp} { background-position-y: 218px; }
+}
+
+.ArticleHeader-tiltedCropper {
+  height: $ArticleHeader--minHeight;
+  overflow: hidden;
+  position: absolute;
+  top: -40px;
+  right: -100px;
+  bottom: 0px;
+  left: -100px;
+  transform: rotate($ArticleHeader--tilt);
 }
 
 .ArticleHeader-image {
   // background-image is set in ArticleHeader.js
   background-repeat: no-repeat;
   background-size: cover;
-  transform: rotate($ArticleHeader--tilt);
   height: $ArticleHeader--minHeight*1.1;
   position: absolute;
-  right: -28px;
-  bottom: 25px;
-  left: -18px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 100px;
   z-index: 1;
-
-  @media #{$mediaQuery--smallUp} {  bottom: 29px; }
-  @media #{$mediaQuery--mediumUp} { bottom: 32px; }
+  transform: rotate(-$ArticleHeader--tilt);
+  max-width: $breakpoint--medium;
 }
 
 // Put these things on top of the image
