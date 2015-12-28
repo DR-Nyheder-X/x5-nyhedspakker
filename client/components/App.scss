@@ -5,6 +5,8 @@
 .App > div,
 .App > div > div {
   height: 100%;
+  max-width: $breakpoint--medium;
+  margin: 0 auto;
 }
 
 .App {
@@ -32,4 +34,3 @@
   transform: translateY(50px);
   transition: all 250ms ease;
 }
-

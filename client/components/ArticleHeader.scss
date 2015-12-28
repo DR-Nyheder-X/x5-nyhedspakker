@@ -54,7 +54,6 @@ $ArticleHeader--tilt: 8.35deg;
 
 .ArticleHeader .Tag {
   width: 50%;
-  margin-top: $appPadding--top;
   @media #{$mediaQuery--smallUp} {  width: 45%; }
 }
 
@@ -62,7 +61,6 @@ $ArticleHeader--tilt: 8.35deg;
   width: 50%;
   padding-right: $appPadding--right;
   padding-left: 3%;
-  margin-top: $appPadding--top;
   @media #{$mediaQuery--smallUp} {  width: 55%; }
 }
 

@@ -40,9 +40,6 @@ function TiledEntries ({ entries, onSwipe, selectedEntry }) {
     >
     {entries.map((entry, i) => (
       <div key={entry.sys.id}>
-        <div className='BackButton'>
-          <Link to='/'>INDEX</Link>
-        </div>
         <Entry
           entry={entry}
           pos={{total: entries.length, page: i}}
