@@ -94,3 +94,16 @@ $ArticleHeader--tilt: 8.35deg;
 .ArticleHeader.ArticleHeader--purple     { @include articleHeaderHeadingStyle($purple, $purpleAccent); }
 .ArticleHeader.ArticleHeader--green      { @include articleHeaderHeadingStyle($green, $greenAccent); }
 .ArticleHeader.ArticleHeader--red        { @include articleHeaderHeadingStyle($red, $redAccent); }
+
+.ArticleHeader .DownButton {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -21px;
+}
+
+.ArticleHeader .GalleryButton {
+  position: absolute;
+  bottom: 10px;
+  right: 8px;
+}

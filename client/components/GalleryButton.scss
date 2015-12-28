@@ -1,0 +1,20 @@
+%GalleryButton {
+  z-index: 999;
+  position: relative;
+  width: 42px;
+  height: 42px;
+  text-align: center;
+
+  a {
+    display: block;
+    width: 42px;
+    height: 42px;
+  }
+
+  svg {
+    position: relative;
+    top: 10px;
+  }
+}
+
+.GalleryButton { @extend %GalleryButton; }
