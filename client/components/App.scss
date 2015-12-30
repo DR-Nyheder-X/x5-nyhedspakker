@@ -6,9 +6,9 @@
 .App > div > div {
   height: 100%;
   margin: 0 auto;
-  width: $breakpoint--xSmall;
-  @media #{$mediaQuery--smallUp} { width: $breakpoint--small; }
-  @media #{$mediaQuery--mediumUp} { width: $breakpoint--medium; }  
+  width: $breakpoint--widthXSmall;
+  @media #{$mediaQuery--smallUp}  { width: $breakpoint--widthSmall; }
+  @media #{$mediaQuery--mediumUp} { width: $breakpoint--widthMedium; }
 }
 
 .App {

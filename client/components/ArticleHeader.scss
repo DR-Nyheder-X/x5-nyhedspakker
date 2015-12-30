@@ -42,7 +42,7 @@ $ArticleHeader--tilt: 8.35deg;
   left: 100px;
   z-index: 1;
   transform: rotate(-$ArticleHeader--tilt);
-  max-width: $breakpoint--medium;
+  max-width: $breakpoint--widthMedium;
 }
 
 // Put these things on top of the image

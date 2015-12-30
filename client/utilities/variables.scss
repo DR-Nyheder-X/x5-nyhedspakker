@@ -82,14 +82,21 @@ $appPadding--right: 20px;
 $appPadding--left:  20px;
 
 // Media query breakpoints
-$breakpoint--xSmall: 320px; // iPhone 5
-$breakpoint--small: 375px; // iPhone 6
-$breakpoint--medium: 414px; // iPhone 6+
+$breakpoint--widthXSmall: 320px; // iPhone 5
+$breakpoint--widthSmall: 375px; // iPhone 6
+$breakpoint--widthMedium: 414px; // iPhone 6+
+
+$breakpoint--heightXSmall: 610px; // iPhone 5
+$breakpoint--heightSmall: 730px; // iPhone 6
+$breakpoint--heightMedium: 1222px; // iPhone 6+
 
 // Media queries
 $mediaQuery--xSmallUp: "only screen";
-$mediaQuery--xSmallOnly: "only screen and (max-width: #{$breakpoint--xSmall})";
-$mediaQuery--smallUp: "only screen and (min-width: #{$breakpoint--small})";
-$mediaQuery--smallOnly: "only screen and (min-width: #{$breakpoint--xSmall}) and (max-width: #{$breakpoint--small})";
-$mediaQuery--mediumUp: "only screen and (min-width: #{$breakpoint--medium})";
-$mediaQuery--mediumOnly: "only screen and (min-width: #{$breakpoint--small}) and (max-width: #{$breakpoint--medium})";
+$mediaQuery--xSmallOnly: "only screen and (max-width: #{$breakpoint--widthXSmall})";
+$mediaQuery--smallUp: "only screen and (min-width: #{$breakpoint--widthSmall})";
+$mediaQuery--smallOnly: "only screen and (min-width: #{$breakpoint--widthXSmall}) and (max-width: #{$breakpoint--widthSmall})";
+$mediaQuery--mediumUp: "only screen and (min-width: #{$breakpoint--widthMedium})";
+$mediaQuery--mediumOnly: "only screen and (min-width: #{$breakpoint--widthSmall}) and (max-width: #{$breakpoint--widthMedium})";
+
+$mediaQuery--heightSmallUp: "only screen and (min-height: #{$breakpoint--heightSmall})";
+$mediaQuery--heightMediumUp: "only screen and (min-height: #{$breakpoint--heightMedium})";
