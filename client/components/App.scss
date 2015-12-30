@@ -5,8 +5,10 @@
 .App > div,
 .App > div > div {
   height: 100%;
-  max-width: $breakpoint--medium;
   margin: 0 auto;
+  width: $breakpoint--xSmall;
+  @media #{$mediaQuery--smallUp} { width: $breakpoint--small; }
+  @media #{$mediaQuery--mediumUp} { width: $breakpoint--medium; }  
 }
 
 .App {
