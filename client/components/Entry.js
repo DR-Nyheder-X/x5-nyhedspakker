@@ -10,7 +10,7 @@ export default function Entry ({ entry, pos, modifiers }) {
   const { title, body, hashtag, nyhedensTal, nyhedensTalBeskrivelse, tekstafsnit2, quote, quoteSource } = entry.fields
 
   return <div className='Entry'>
-    <ArticleHeader title={title} backgroundImageFilename='blueToRedWelcomeHeader.jpg' pos={pos} hashtag={hashtag} modifiers={modifiers} subTitle="Hvem to underrubrikken? 😪" />
+    <ArticleHeader title={title} backgroundImageFilename='blueToRedWelcomeHeader.jpg' pos={pos} hashtag={hashtag} modifiers={modifiers} subTitle="Hvem tog underrubrikken? 😪" />
     <Paragraph modifiers={modifiers}>{body}</Paragraph>
     {quote && (
       <Quote
