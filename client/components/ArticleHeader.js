@@ -28,18 +28,18 @@ export default function ArticleHeader ({
         </Link>
       </div>
 
-        <div className={`${baseClass}-tagAndPager`}>
-          <Tag modifiers={`blocky ${modifiers}`}>{hashtag}</Tag>
-          <Pager total={pos.total} page={pos.page} />
-        </div>
+      <div className={`${baseClass}-tagAndPager`}>
+        <Tag modifiers={`blocky ${modifiers}`}>{hashtag}</Tag>
+        <Pager total={pos.total} page={pos.page} />
+      </div>
 
-        <h1 className={`${baseClass}-heading`}>
-          {title}
-        </h1>
+      <h1 className={`${baseClass}-heading`}>
+        {title}
+      </h1>
 
-        <h2 className={`${baseClass}-subHeading`}>
-          {subTitle}
-        </h2>
+      <h2 className={`${baseClass}-subHeading`}>
+        {subTitle}
+      </h2>
 
       <div className='DownButton'>
         <Link to='#'>
