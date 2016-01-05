@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
-import { updatePath } from 'redux-simple-router'
+import { pushPath } from 'redux-simple-router'
 import { connect } from 'react-redux'
 import SmallStoryList from './SmallStoryList'
 import SmallStory from './SmallStory'
@@ -22,7 +22,7 @@ class HomePage extends Component {
     const { entries, dispatch } = this.props
     const handlePlayButtonClick = (event) => {
       event.preventDefault()
-      dispatch(updatePath(`/entries/${entries[0].sys.id}`))
+      dispatch(pushPath(`/entries/${entries[0].sys.id}`))
     }
 
     return <div className='HomePage'>

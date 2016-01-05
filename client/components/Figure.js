@@ -4,7 +4,6 @@ import './Figure.scss'
 
 export default function Figure ({ children, className, modifiers, description }) {
   const cls = formatClassModifiers('Figure', modifiers, className)
-  console.log(cls)
 
   return <div className={cls}>
     <div className='Figure-figure'>{children}</div>
