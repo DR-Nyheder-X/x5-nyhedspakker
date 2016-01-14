@@ -17,10 +17,11 @@ class ViewController: UIViewController, UIWebViewDelegate {
         activityIndicator.hidesWhenStopped = true
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        webView.reload()
     }
-    
+
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
         presentViewController(UIAlertController(title: "Fejl", message: "Kunne ikke loade indhold\n\(error?.description)", preferredStyle: UIAlertControllerStyle.Alert), animated: true, completion: nil)
     }
