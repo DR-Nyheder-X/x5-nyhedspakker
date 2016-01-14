@@ -8,7 +8,7 @@
         <!--DR-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Nyhedspakker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Nyhedspakken" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -24,17 +24,23 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="AAf-YF-gcp"/>
                                 </connections>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Dsq-VW-vbw">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d0c-O4-4V9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="36Z-5E-zny"/>
                             <constraint firstItem="d0c-O4-4V9" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="UBv-17-5fO"/>
+                            <constraint firstItem="Dsq-VW-vbw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XfZ-bD-Mfy"/>
                             <constraint firstItem="d0c-O4-4V9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bH9-a7-kkc"/>
+                            <constraint firstItem="Dsq-VW-vbw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cGY-Yg-x0c"/>
                             <constraint firstAttribute="trailing" secondItem="d0c-O4-4V9" secondAttribute="trailing" id="zpn-ik-vHr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="DR" id="iZM-im-vwk"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Dsq-VW-vbw" id="vCO-0a-qj3"/>
                         <outlet property="webView" destination="d0c-O4-4V9" id="t9a-Sw-M1d"/>
                     </connections>
                 </viewController>

@@ -4,6 +4,7 @@ import WebKit
 class ViewController: UIViewController, UIWebViewDelegate {
     
     @IBOutlet var webView: UIWebView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,10 +12,21 @@ class ViewController: UIViewController, UIWebViewDelegate {
         let url = NSURL(string: "http://np.drdinstem.me")!
         let req = NSURLRequest(URL: url)
         webView.loadRequest(req)
+        
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+        presentViewController(UIAlertController(title: "Fejl", message: "Kunne ikke loade indhold\n\(error?.description)", preferredStyle: UIAlertControllerStyle.Alert), animated: true, completion: nil)
+    }
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        activityIndicator.stopAnimating()
     }
 
 }
