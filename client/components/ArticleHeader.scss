@@ -2,9 +2,6 @@
 @import '../utilities/mixins';
 @import '../utilities/type';
 
-// TODO: This component is not done at all
-// $ArticleHeader--tilt: 8.35deg;
-
 @mixin articleHeaderHeadingStyle($color, $accentColor) {
   .ArticleHeader-tiltedCropper { background-color: $color; }
   .ArticleHeader-heading em { color: $accentColor; }
@@ -21,7 +18,7 @@
   background-size: cover;
   overflow: hidden;
   height: $breakpoint--heightXSmall*.9;
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 90.9%);
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 90.6%);
 
   @media #{$mediaQuery--smallUp} {
     height: $breakpoint--heightSmall*.9;
@@ -46,10 +43,10 @@
   width: 100%;
   @include backgroundImage('welcomeHeaderShadow.png', 375px);
   position: absolute;
-  bottom: -13px;
+  bottom: -11px;
 
-  @media #{$mediaQuery--smallUp}  { bottom: -5px; }
-  @media #{$mediaQuery--mediumUp} { bottom: 1px; }
+  @media #{$mediaQuery--smallUp}  { bottom: -3px; }
+  @media #{$mediaQuery--mediumUp} { bottom: 3px; }
 }
 
 // Put these things on top of the image
