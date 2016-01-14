@@ -10,18 +10,25 @@ import WelcomeHeader from './WelcomeHeader'
 const stateToProps = state => ({
   pkg: state.pkg.item,
   entries: state.pkg.entries,
-  lastUpdated: state.pkg.lastUpdated
+  lastUpdated: state.pkg.lastUpdated,
+  readIds: state.readStates.ids
 })
 
 class HomePage extends Component {
   static propTypes = {
     pkg: PropTypes.object,
     entries: PropTypes.arrayOf(PropTypes.object),
-    dispatch: PropTypes.func
+    dispatch: PropTypes.func,
+    readIds: PropTypes.arrayOf(PropTypes.string)
   }
 
   render () {
-    const { pkg, entries, dispatch } = this.props
+    const {
+      pkg,
+      entries,
+      dispatch,
+      readIds
+    } = this.props
 
     if (!pkg) {
       return <h1>Loading</h1>
@@ -35,14 +42,15 @@ class HomePage extends Component {
     return <div className='HomePage'>
       <WelcomeHeader greeting={pkg.fields.is_morning ? 'Godmorgen' : 'Godaften'} title='Her er dagens nyheder' ctaLabel='Læsetid:' duration='ca 5 min' backgroundImageFilename={pkg.fields.featured_image.fields.file.url} onPlayButtonClick={handlePlayButtonClick} />
       <SmallStoryList>
-        {entries.map(entry => (
-          <SmallStory key={entry.sys.id}>
+        {entries.map(entry => {
+          const read = readIds.indexOf(entry.sys.id) > -1
+          return <SmallStory key={entry.sys.id} modifiers={read ? 'done' : undefined}>
             <Link to={`/entries/${entry.sys.id}`}>
               <Tag>{entry.fields.hashtag}</Tag>
               {entry.fields.title}
             </Link>
           </SmallStory>
-        ))}
+        })}
       </SmallStoryList>
     </div>
   }

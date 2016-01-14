@@ -4,6 +4,7 @@ import Entry from './Entry'
 import SwiperComponent from './SwiperComponent'
 import colorOrder from '../utilities/colorOrder'
 import './EntryPage.scss'
+import { markAsRead } from '../actions'
 
 const stateToProps = state => ({
   entries: state.pkg.entries
@@ -13,18 +14,32 @@ class EntryPage extends Component {
   static propTypes = {
     params: PropTypes.object,
     entries: PropTypes.arrayOf(PropTypes.object),
-    dispatch: PropTypes.func
+    dispatch: PropTypes.func,
+    markAsRead: PropTypes.func
+  }
+
+  componentDidMount () {
+    const { dispatch, params } = this.props
+    dispatch(markAsRead(params.id))
+  }
+
+  handleSwipe (swiper) {
+    const { dispatch, entries } = this.props
+    const { activeIndex } = swiper
+    dispatch(markAsRead(entries[activeIndex].sys.id))
   }
 
   render () {
     const { entries } = this.props
     const { id } = this.props.params
     const entry = entries.find(entry => entry.sys.id === id)
+    const handleSwipe = this.handleSwipe.bind(this)
 
     return <div className='EntryPage'>
       <TiledEntries
         entries={entries}
         selectedEntry={entry}
+        onSwipe={handleSwipe}
       />
     </div>
   }
