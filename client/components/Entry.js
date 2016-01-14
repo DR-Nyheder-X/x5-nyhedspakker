@@ -3,8 +3,9 @@ import ArticleHeader from './ArticleHeader'
 import Figure from './Figure'
 import Paragraph from './Paragraph'
 import Quote from './Quote'
+import Next from './Next'
 
-export default function Entry ({ entry, pos, modifiers }) {
+export default function Entry ({ entry, pos, modifiers, nextEntry }) {
   console.log(entry)
 
   const {
@@ -18,7 +19,7 @@ export default function Entry ({ entry, pos, modifiers }) {
     quoteSource,
     rubrik,
     featuredImage
-    } = entry.fields
+  } = entry.fields
 
   return <div className='Entry'>
     <ArticleHeader title={title} backgroundImageFilename={featuredImage.fields.file.url} pos={pos} hashtag={hashtag} modifiers={modifiers} subTitle={rubrik} />
@@ -37,6 +38,11 @@ export default function Entry ({ entry, pos, modifiers }) {
         description={nyhedensTalBeskrivelse}
         modifiers={modifiers}
       >{nyhedensTal}</Figure>
+    )}
+    {nextEntry && (
+      <Next to={`/entries/${nextEntry.sys.id}`} modifer='blue' backgroundImageFilename={nextEntry.fields.featuredImage.fields.file.url}>
+        {nextEntry.fields.title}
+      </Next>
     )}
   </div>
 }

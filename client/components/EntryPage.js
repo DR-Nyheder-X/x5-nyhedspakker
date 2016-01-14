@@ -43,6 +43,7 @@ function TiledEntries ({ entries, onSwipe, selectedEntry }) {
           entry={entry}
           pos={{total: entries.length, page: i}}
           modifiers={colorOrder[i]}
+          nextEntry={entries[i + 1]}
         />
       </div>
     ))}
