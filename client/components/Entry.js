@@ -7,10 +7,21 @@ import Quote from './Quote'
 export default function Entry ({ entry, pos, modifiers }) {
   console.log(entry)
 
-  const { title, body, hashtag, nyhedensTal, nyhedensTalBeskrivelse, tekstafsnit2, quote, quoteSource } = entry.fields
+  const {
+    title,
+    body,
+    hashtag,
+    nyhedensTal,
+    nyhedensTalBeskrivelse,
+    tekstafsnit2,
+    quote,
+    quoteSource,
+    rubrik,
+    featuredImage
+    } = entry.fields
 
   return <div className='Entry'>
-    <ArticleHeader title={title} backgroundImageFilename='hotRed.jpg' pos={pos} hashtag={hashtag} modifiers={modifiers} subTitle='Hvem tog underrubrikken? 😪' />
+    <ArticleHeader title={title} backgroundImageFilename={featuredImage.fields.file.url} pos={pos} hashtag={hashtag} modifiers={modifiers} subTitle={rubrik} />
     <Paragraph modifiers={modifiers}>{body}</Paragraph>
     {quote && (
       <Quote
