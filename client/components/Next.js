@@ -11,7 +11,7 @@ export default class Next extends Component {
     modifiers: PropTypes.string,
     backgroundImageFilename: PropTypes.string,
     to: PropTypes.string
-  }
+  };
 
   render () {
     const cls = classnames(

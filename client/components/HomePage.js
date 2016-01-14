@@ -20,7 +20,7 @@ class HomePage extends Component {
     entries: PropTypes.arrayOf(PropTypes.object),
     dispatch: PropTypes.func,
     readIds: PropTypes.arrayOf(PropTypes.string)
-  }
+  };
 
   render () {
     const {

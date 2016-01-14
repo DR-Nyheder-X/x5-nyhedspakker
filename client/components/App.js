@@ -9,7 +9,7 @@ class App extends Component {
   static propTypes = {
     fetchPackage: PropTypes.func,
     children: PropTypes.node
-  }
+  };
 
   componentDidMount () {
     this.props.fetchPackage()

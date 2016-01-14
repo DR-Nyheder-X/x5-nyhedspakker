@@ -21,7 +21,7 @@ class RouteCSSTransitionGroup extends Component {
   static propTypes = {
     path: PropTypes.string,
     children: PropTypes.node
-  }
+  };
 
   constructor (props) {
     super(props)

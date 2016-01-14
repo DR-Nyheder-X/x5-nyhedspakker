@@ -16,7 +16,7 @@ class EntryPage extends Component {
     entries: PropTypes.arrayOf(PropTypes.object),
     dispatch: PropTypes.func,
     markAsRead: PropTypes.func
-  }
+  };
 
   componentDidMount () {
     const { dispatch, params } = this.props

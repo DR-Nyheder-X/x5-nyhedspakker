@@ -13,7 +13,7 @@ export default class WelcomeHeader extends Component {
     duration: PropTypes.string,
     backgroundImageFilename: PropTypes.string,
     onPlayButtonClick: PropTypes.func
-  }
+  };
 
   render () {
     const baseClass = 'WelcomeHeader'

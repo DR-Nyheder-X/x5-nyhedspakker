@@ -18,7 +18,7 @@ export default class ArticleHeader extends Component {
     pos: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
     subTitle: PropTypes.string.isRequired
-  }
+  };
 
   scrollToContent (e) {
     e.preventDefault()

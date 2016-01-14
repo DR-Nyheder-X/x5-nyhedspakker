@@ -25,7 +25,7 @@ export default class SwiperComponent extends Component {
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
     onSlideChangeEnd: PropTypes.func,
     slide: PropTypes.number
-  }
+  };
 
   constructor (props) {
     super(props)

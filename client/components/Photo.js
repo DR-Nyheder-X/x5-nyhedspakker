@@ -10,7 +10,7 @@ export default class Photo extends Component {
     modifiers: PropTypes.string,
     imageUrl: PropTypes.string,
     caption: PropTypes.string
-  }
+  };
 
   render () {
     const cls = classnames(
