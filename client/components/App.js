@@ -1,18 +1,18 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { fetchEntries } from '../actions'
+import { fetchPackage } from '../actions'
 import RouteCSSTransitionGroup from './RouteCSSTransitionGroup'
 
 import './App.scss'
 
 class App extends Component {
   static propTypes = {
-    fetchEntries: PropTypes.func,
+    fetchPackage: PropTypes.func,
     children: PropTypes.node
   }
 
   componentDidMount () {
-    this.props.fetchEntries()
+    this.props.fetchPackage()
   }
 
   render () {
@@ -30,4 +30,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, { fetchEntries })(App)
+export default connect(null, { fetchPackage })(App)

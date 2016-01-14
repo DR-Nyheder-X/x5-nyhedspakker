@@ -13,7 +13,7 @@ export const history = createBrowserHistory()
 export default function configureStore () {
   const middleware = __DEVELOPMENT ? applyMiddleware(
     thunk,
-    createLogger({ collapsed: true })
+    createLogger({ collapsed: false })
   ) : applyMiddleware(
     thunk
   )

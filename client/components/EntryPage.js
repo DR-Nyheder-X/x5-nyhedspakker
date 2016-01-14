@@ -6,7 +6,7 @@ import colorOrder from '../utilities/colorOrder'
 import './EntryPage.scss'
 
 const stateToProps = state => ({
-  entries: state.entries.items
+  entries: state.pkg.entries
 })
 
 class EntryPage extends Component {

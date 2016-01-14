@@ -20,7 +20,7 @@ export default class WelcomeHeader extends Component {
     const cls = classnames(baseClass, this.props.className, formatClassModifiers(baseClass, this.props.modifier))
 
     return <header className={cls} {...this.props}>
-      <div className={`${baseClass}-image`} style={{backgroundImage: `url(/dummy-content/${this.props.backgroundImageFilename})`}}></div>
+      <div className={`${baseClass}-image`} style={{backgroundImage: `url(${this.props.backgroundImageFilename})`}}></div>
       <div className={`${baseClass}-inner`}>
         <h1 className={`${baseClass}-heading`}>
           <span className={`${baseClass}-greeting`}>{this.props.greeting}</span>

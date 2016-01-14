@@ -8,25 +8,32 @@ import Tag from './Tag'
 import WelcomeHeader from './WelcomeHeader'
 
 const stateToProps = state => ({
-  entries: state.entries.items,
-  lastUpdated: state.entries.lastUpdated
+  pkg: state.pkg.item,
+  entries: state.pkg.entries,
+  lastUpdated: state.pkg.lastUpdated
 })
 
 class HomePage extends Component {
   static propTypes = {
+    pkg: PropTypes.object,
     entries: PropTypes.arrayOf(PropTypes.object),
     dispatch: PropTypes.func
   }
 
   render () {
-    const { entries, dispatch } = this.props
+    const { pkg, entries, dispatch } = this.props
+
+    if (!pkg) {
+      return <h1>Loading</h1>
+    }
+
     const handlePlayButtonClick = (event) => {
       event.preventDefault()
       dispatch(pushPath(`/entries/${entries[0].sys.id}`))
     }
 
     return <div className='HomePage'>
-      <WelcomeHeader greeting='Godaften' title='Her er dagens nyheder' ctaLabel='Læsetid:' duration='3m 34s' backgroundImageFilename='blueToRedWelcomeHeader.jpg' onPlayButtonClick={handlePlayButtonClick} />
+      <WelcomeHeader greeting={pkg.fields.is_morning ? 'Godmorgen' : 'Godaften'} title='Her er dagens nyheder' ctaLabel='Læsetid:' duration='ca 5 min' backgroundImageFilename={pkg.fields.featured_image.fields.file.url} onPlayButtonClick={handlePlayButtonClick} />
       <SmallStoryList>
         {entries.map(entry => (
           <SmallStory key={entry.sys.id}>
