@@ -18,7 +18,12 @@ class App extends Component {
   render () {
     const duration = 250
 
-    return <div className='App'>
+    var iosVersion = parseFloat(
+    	('' + (/CPU.*OS ([0-9_]{1,5})|(CPU like).*AppleWebKit.*Mobile/i.exec(navigator.userAgent) || [0,''])[1])
+    	.replace('undefined', '3_2').replace('_', '.').replace('_', '')
+    ) || false;
+
+    return <div className='App' data-ios-version={`${iosVersion}`}>
       <RouteCSSTransitionGroup
         component='div' transitionName='page-transition'
         transitionEnterTimeout={duration}
