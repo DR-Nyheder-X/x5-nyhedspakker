@@ -3,7 +3,7 @@
 @import '../utilities/type';
 
 @mixin articleHeaderHeadingStyle($color, $accentColor) {
-  .ArticleHeader-tiltedCropper { background-color: $color; }
+  .ArticleHeader-backgroundColor { background-color: $color; }
   .ArticleHeader-heading em { color: $accentColor; }
 }
 
@@ -13,9 +13,10 @@
   @media #{$mediaQuery--smallUp} { margin-bottom: 2em; }
 }
 
+.ArticleHeader-backgroundColor,
+.ArticleHeader-image,
 .ArticleHeader-inner {
   position: relative;
-  background-size: cover;
   overflow: hidden;
   height: $breakpoint--heightXSmall*.9;
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 90.6%);
@@ -32,6 +33,21 @@
   //   height: $breakpoint--heightMedium*.9;
   //   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 91%);
   // }
+}
+
+.ArticleHeader-image {
+  background-size: cover;
+  background-position: center center;
+  -webkit-filter: grayscale(100%);
+  mix-blend-mode: multiply;
+}
+
+// Move 'layers' on top of eachother
+.ArticleHeader-image,
+.ArticleHeader-inner {
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 // Shadow
