@@ -35,6 +35,21 @@
   // }
 }
 
+// Shadow
+// .ArticleHeader:after {
+//   content: "";
+//   display: block;
+//   // background-color: pink;
+//   height: 58px;
+//   width: 100%;
+//   @include backgroundImage('welcomeHeaderShadow.png', 375px);
+//   position: absolute;
+//   bottom: -11px;
+//
+//   @media #{$mediaQuery--smallUp}  { bottom: -3px; }
+//   @media #{$mediaQuery--mediumUp} { bottom: 3px; }
+// }
+
 .ArticleHeader-image {
   background-size: cover;
   background-position: center center;
@@ -43,9 +58,7 @@
 }
 
 // Hide image on ios7 devices (they don't support this nizzleness)
-.App[data-ios-version^='7'] .ArticleHeader-image {
-  display: none;
-}
+.App[data-ios-version^='7'] .ArticleHeader-image { display: none; }
 
 // Move 'layers' on top of eachother
 .ArticleHeader-image,
@@ -53,21 +66,6 @@
   position: absolute;
   top: 0;
   width: 100%;
-}
-
-// Shadow
-.ArticleHeader:after {
-  content: "";
-  display: block;
-  // background-color: pink;
-  height: 58px;
-  width: 100%;
-  @include backgroundImage('welcomeHeaderShadow.png', 375px);
-  position: absolute;
-  bottom: -11px;
-
-  @media #{$mediaQuery--smallUp}  { bottom: -3px; }
-  @media #{$mediaQuery--mediumUp} { bottom: 3px; }
 }
 
 // Put these things on top of the image

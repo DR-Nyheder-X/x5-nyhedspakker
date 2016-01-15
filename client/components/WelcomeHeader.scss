@@ -3,42 +3,55 @@
 @import '../utilities/type';
 
 $WelcomeHeader--height: 280px;
-$WelcomeHeader--tilt: 8.35deg;
 $WelcomeHeader--playHeight: 47px;
 
-.WelcomeHeader {
+@mixin welcomeHeaderHeadingStyle($color, $accentColor) {
+  .WelcomeHeader-backgroundColor { background-color: $color; }
+}
+
+.WelcomeHeader,
+.WelcomeHeader-backgroundColor,
+.WelcomeHeader-image,
+.WelcomeHeader-inner, {
   overflow: hidden;
-  height: $WelcomeHeader--height;
   position: relative;
+  height: $WelcomeHeader--height;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 90.6%);
   z-index: 999;
-  @include backgroundImage('welcomeHeaderShadow.png', 375px);
-  background-position: 0 232px;
-  @media #{$mediaQuery--smallUp} { background-position-y: 224px; }
-  @media #{$mediaQuery--mediumUp} { background-position-y: 218px; }
+}
+
+.WelcomeHeader-backgroundColor {
+  background: $gradient--diagonalBlueToRed;
 }
 
 .WelcomeHeader-image {
   // background-image is set in WelcomeHeader.js
-  background: $gradient--diagonalBlueToRed;
   background-repeat: no-repeat;
   background-size: cover;
-  transform: rotate($WelcomeHeader--tilt);
-  height: $WelcomeHeader--height*1.1;
-  position: absolute;
-  right: -28px;
-  bottom: 25px;
-  left: -18px;
-
-  @media #{$mediaQuery--smallUp}{  bottom: 29px; }
-  @media #{$mediaQuery--mediumUp}{ bottom: 32px; }
+  background-position: center  center;
 }
 
 .WelcomeHeader-inner {
-  position: relative;
-  height: $WelcomeHeader--height;
   padding-top: $appPadding--top;
   padding-right: $appPadding--right;
   padding-left: $appPadding--left;
+  z-index: 9999;
+}
+
+.WelcomeHeader-image {
+  background-size: cover;
+  background-position: center center;
+  -webkit-filter: grayscale(100%);
+  mix-blend-mode: multiply;
+}
+
+// Move 'layers' on top of eachother
+.WelcomeHeader-backgroundColor,
+.WelcomeHeader-image,
+.WelcomeHeader-inner {
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .WelcomeHeader-heading {
@@ -64,6 +77,7 @@ $WelcomeHeader--playHeight: 47px;
     line-height: $WelcomeHeader--playHeight;
     padding-right: .75em;
     display: inline-block;
+    z-index: 9999;
   }
 
   // Duration
@@ -95,22 +109,21 @@ $WelcomeHeader--playHeight: 47px;
 
 // Morning theme
 .WelcomeHeader--morning {
-  .WelcomeHeader-image {
-    background: $gradient--diagonalPurpleToOrange;
-    background-size: cover;
-  }
+  .WelcomeHeader-backgroundColor { background: $gradient--diagonalPurpleToOrange; }
   .WelcomeHeader-greeting { color: $tealAccent; }
   .WelcomeHeader-play a:hover { background-color: $tealAccent; }
 }
 
 // Done theme (when all news stories are read)
 .WelcomeHeader--done {
-  .WelcomeHeader-image {
+  .WelcomeHeader-backgroundColor {
     background: $gradient--diagonalGrayToDarkGray;
-    background-size: cover;
     filter: grayscale(100%);
   }
   .WelcomeHeader-heading {
     padding-right: 2em;
   }
 }
+
+// Hide image on ios7 devices (they don't support this nizzleness)
+.App[data-ios-version^='7'] .WelcomeHeader-image { display: none; }
