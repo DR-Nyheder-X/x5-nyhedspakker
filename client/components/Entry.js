@@ -40,7 +40,7 @@ export default function Entry ({ entry, pos, modifiers, nextEntry }) {
       >{nyhedensTal}</Figure>
     )}
     {nextEntry && (
-      <Next to={`/entries/${nextEntry.sys.id}`} modifer='blue' backgroundImageFilename={nextEntry.fields.featuredImage.fields.file.url}>
+      <Next to={`/entries/${nextEntry.sys.id}`} modifiers={modifiers} backgroundImageFilename={nextEntry.fields.featuredImage.fields.file.url}>
         {nextEntry.fields.title}
       </Next>
     )}

@@ -2,28 +2,25 @@
 @import '../utilities/mixins';
 @import '../utilities/type';
 
-@mixin nextStyle($color) {
-  h2 { color: $color; }
-  svg path { fill: $color; }
+@mixin nextStyle($color, $accentColor) {
+  .Next-backgroundColor { background-color: $color; }
+  // h2 { color: $accentColor; }
+  // svg path { fill: $accentColor; }
 }
 
 %Next {
-  @include nextStyle(#fff);
+  @include nextStyle($blue, #fff);
   display: block;
-  padding-right: $appPadding--right;
-  padding-left: $appPadding--left;
-  padding-top: 2.1em;
-  padding-bottom: 2em;
   position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  height: 10em;
 
   h2 {
-    padding-right: $appPadding--right*2;
-    padding-left: $appPadding--left*2;
+    padding-right: $appPadding--right*2.5;
+    padding-left: $appPadding--left*2.5;
     @extend %heading--medium;
     text-align: center;
+    margin-bottom: -.3em;
+    color: #fff;
   }
 
   .Next-arrowRight {
@@ -31,19 +28,50 @@
     right: $appPadding--right;
     top: 50%;
     margin-top: -11px;
+
+    path { fill: #fff; }
   }
 }
 
-.Next { @extend %Next; }
+.Next {
+  margin-top: 3em;
+}
 
-.Next--blue       { @include nextStyle($blueAccent); }
-.Next--hotRed     { @include nextStyle($hotRedAccent); }
-.Next--teal       { @include nextStyle($tealAccent); }
-.Next--orange     { @include nextStyle($orangeAccent); }
-.Next--deepPurple { @include nextStyle($deepPurpleAccent); }
-.Next--seaGreen   { @include nextStyle($seaGreenAccent); }
-.Next--magenta    { @include nextStyle($magentaAccent); }
-.Next--hotBlue    { @include nextStyle($hotBlueAccent); }
-.Next--purple     { @include nextStyle($purpleAccent); }
-.Next--green      { @include nextStyle($greenAccent); }
-.Next--red        { @include nextStyle($redAccent); }
+.Next,
+.Next-inner,
+.Next-image,
+.Next-backgroundColor { @extend %Next; }
+
+.Next-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Move 'layers' on top of eachother
+.Next-image,
+.Next-inner,
+.Next-backgroundColor {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.Next-image {
+  background-size: cover;
+  background-position: center center;
+  -webkit-filter: grayscale(100%);
+  mix-blend-mode: multiply;
+}
+
+.Next--blue       { @include nextStyle($blue, $blueAccent); }
+.Next--hotRed     { @include nextStyle($hotRed, $hotRedAccent); }
+.Next--teal       { @include nextStyle($teal, $tealAccent); }
+.Next--orange     { @include nextStyle($orange, $orangeAccent); }
+.Next--deepPurple { @include nextStyle($deepPurple, $deepPurpleAccent); }
+.Next--seaGreen   { @include nextStyle($seaGreen, $seaGreenAccent); }
+.Next--magenta    { @include nextStyle($magenta, $magentaAccent); }
+.Next--hotBlue    { @include nextStyle($hotBlue, $hotBlueAccent); }
+.Next--purple     { @include nextStyle($purple, $purpleAccent); }
+.Next--green      { @include nextStyle($green, $greenAccent); }
+.Next--red        { @include nextStyle($red, $redAccent); }
