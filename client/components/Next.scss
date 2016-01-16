@@ -75,3 +75,6 @@
 .Next--purple     { @include nextStyle($purple, $purpleAccent); }
 .Next--green      { @include nextStyle($green, $greenAccent); }
 .Next--red        { @include nextStyle($red, $redAccent); }
+
+// Hide image on ios7 devices (they don't support this nizzleness)
+.App[data-ios-version^='7'] .Next-image { display: none; }

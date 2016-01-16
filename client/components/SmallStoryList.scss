@@ -40,8 +40,13 @@
     // Remove shadows
     background-image: none;
     &:after { background-image: none; }
+    // min-height: 140px;
+    margin-top: -2em;
+    padding-top: 3em;
+    padding-bottom: 2.35em;
 
-    padding-top: 85px;
-    margin-top: -62px;
+    &.SmallStory--done .Tag:after {
+      top: 3.25em;
+    }
   }
 }//.SmallStoryList

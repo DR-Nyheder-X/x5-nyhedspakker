@@ -14,7 +14,7 @@ $SmallStory--borderWidth:   7px;
   min-height: $SmallStory--minHeight;
   position: relative;
   background-color: #fff;
-  
+
   &:before {
     content: "";
     display: block;
@@ -45,10 +45,10 @@ $SmallStory--borderWidth:   7px;
 %SmallStory--done {
   background-color: $gray--light;
   color: darken($gray, 5%);
-  &:before { background-color: $gray; }
+  &:before { background-color: $gray !important; }
 
   .Tag {
-    color: $gray--darkest;
+    color: $gray--darkest !important;
     &:after {
       content: "";
       @include backgroundImageReplacement('tickmark.png', 14px, 13px);
