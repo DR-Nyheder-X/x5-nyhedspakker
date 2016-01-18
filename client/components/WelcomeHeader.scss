@@ -127,3 +127,4 @@ $WelcomeHeader--playHeight: 47px;
 
 // Hide image on ios7 devices (they don't support this nizzleness)
 .App[data-ios-version^='7'] .WelcomeHeader-image { display: none; }
+.WelcomeHeader-image { display: none; }

@@ -78,3 +78,4 @@
 
 // Hide image on ios7 devices (they don't support this nizzleness)
 .App[data-ios-version^='7'] .Next-image { display: none; }
+.Next-image { display: none; }

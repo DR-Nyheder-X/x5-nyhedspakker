@@ -59,6 +59,7 @@
 
 // Hide image on ios7 devices (they don't support this nizzleness)
 .App[data-ios-version^='7'] .ArticleHeader-image { display: none; }
+.ArticleHeader-image { display: none; }
 
 // Move 'layers' on top of eachother
 .ArticleHeader-image,
