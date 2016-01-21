@@ -11,7 +11,6 @@ import './GalleryButton.scss'
 
 export default class ArticleHeader extends Component {
   static propTypes = {
-    backgroundImageFilename: PropTypes.string,
     className: PropTypes.string,
     hashtag: PropTypes.string.isRequired,
     modifiers: PropTypes.string,
@@ -32,7 +31,6 @@ export default class ArticleHeader extends Component {
 
   render () {
     const {
-      backgroundImageFilename,
       className,
       hashtag,
       modifiers,
