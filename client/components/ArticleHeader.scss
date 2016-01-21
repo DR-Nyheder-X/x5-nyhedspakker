@@ -53,13 +53,13 @@
 .ArticleHeader-image {
   background-size: cover;
   background-position: center center;
-  -webkit-filter: grayscale(100%);
-  mix-blend-mode: multiply;
+  // -webkit-filter: grayscale(100%);
+  // mix-blend-mode: multiply;
 }
 
 // Hide image on ios7 devices (they don't support this nizzleness)
-.App[data-ios-version^='7'] .ArticleHeader-image { display: none; }
-.ArticleHeader-image { display: none; }
+// .App[data-ios-version^='7'] .ArticleHeader-image { display: none; }
+// .ArticleHeader-image { display: none; }
 
 // Move 'layers' on top of eachother
 .ArticleHeader-image,

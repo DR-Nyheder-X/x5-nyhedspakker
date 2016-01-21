@@ -60,8 +60,8 @@
 .Next-image {
   background-size: cover;
   background-position: center center;
-  -webkit-filter: grayscale(100%);
-  mix-blend-mode: multiply;
+  // -webkit-filter: grayscale(100%);
+  // mix-blend-mode: multiply;
 }
 
 .Next--blue       { @include nextStyle($blue, $blueAccent); }
@@ -77,5 +77,5 @@
 .Next--red        { @include nextStyle($red, $redAccent); }
 
 // Hide image on ios7 devices (they don't support this nizzleness)
-.App[data-ios-version^='7'] .Next-image { display: none; }
-.Next-image { display: none; }
+// .App[data-ios-version^='7'] .Next-image { display: none; }
+// .Next-image { display: none; }

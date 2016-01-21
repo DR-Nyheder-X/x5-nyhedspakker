@@ -42,10 +42,11 @@ export default class ArticleHeader extends Component {
     } = this.props
     const baseClass = 'ArticleHeader'
     const cls = formatClassModifiers(baseClass, modifiers, className)
+    const imgixTestImage = 'http://thunderfluff.imgix.net/a.jpg?w=621&bw=621&sat=-100&blend=blue.jpg&bm=multiply&bf=scale'
 
     return <header className={cls}>
       <div className={`${baseClass}-backgroundColor`}></div>
-      <div className={`${baseClass}-image`} style={{backgroundImage: `url(${backgroundImageFilename})`}}></div>
+      <div className={`${baseClass}-image`} style={{backgroundImage: `url(${imgixTestImage})`}}></div>
       <div className={`${baseClass}-inner`}>
         <div className='BackButton'>
           <Link to='/'>

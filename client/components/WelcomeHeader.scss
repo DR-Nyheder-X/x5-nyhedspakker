@@ -41,8 +41,8 @@ $WelcomeHeader--playHeight: 47px;
 .WelcomeHeader-image {
   background-size: cover;
   background-position: center center;
-  -webkit-filter: grayscale(100%);
-  mix-blend-mode: multiply;
+  // -webkit-filter: grayscale(100%);
+  // mix-blend-mode: multiply;
 }
 
 // Move 'layers' on top of eachother
@@ -126,5 +126,5 @@ $WelcomeHeader--playHeight: 47px;
 }
 
 // Hide image on ios7 devices (they don't support this nizzleness)
-.App[data-ios-version^='7'] .WelcomeHeader-image { display: none; }
-.WelcomeHeader-image { display: none; }
+// .App[data-ios-version^='7'] .WelcomeHeader-image { display: none; }
+// .WelcomeHeader-image { display: none; }

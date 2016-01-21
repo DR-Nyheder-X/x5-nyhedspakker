@@ -18,10 +18,11 @@ export default class WelcomeHeader extends Component {
   render () {
     const baseClass = 'WelcomeHeader'
     const cls = classnames(baseClass, this.props.className, formatClassModifiers(baseClass, this.props.modifier))
+    const imgixTestImage = 'http://thunderfluff.imgix.net/a.jpg?w=621&bw=621&sat=-100&blend=morningGradient.jpg&bm=multiply&bf=scale'
 
     return <header className={cls} {...this.props}>
       <div className={`${baseClass}-backgroundColor`}></div>
-      <div className={`${baseClass}-image`} style={{backgroundImage: `url(${this.props.backgroundImageFilename})`}}></div>
+      <div className={`${baseClass}-image`} style={{backgroundImage: `url(${imgixTestImage})`}}></div>
       <div className={`${baseClass}-inner`}>
         <h1 className={`${baseClass}-heading`}>
           <span className={`${baseClass}-greeting`}>{this.props.greeting}</span>
@@ -32,6 +33,7 @@ export default class WelcomeHeader extends Component {
           <a onClick={this.props.onPlayButtonClick}>Play <i></i></a>
         </div>
       </div>
+      {this.props.backgroundImageFilename}
     </header>
   }
 }
