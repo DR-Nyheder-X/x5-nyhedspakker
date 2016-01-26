@@ -42,7 +42,7 @@ class HomePage extends Component {
     }
 
     return <div className='HomePage'>
-      <WelcomeHeader greeting={pkg.fields.is_morning ? 'Godmorgen' : 'Godaften'} title='Her er dagens nyheder' ctaLabel='Læsetid:' duration={pkg.fields.reading_time} backgroundImageFilename={pkg.fields.featured_image.fields.file.url} onPlayButtonClick={handlePlayButtonClick} isMorning={pkg.fields.is_morning} done={done} />
+      <WelcomeHeader greeting={pkg.fields.is_morning ? 'Godmorgen' : 'Godaften'} title='Her er dagens nyheder' ctaLabel='Læsetid:' duration={pkg.fields.reading_time} backgroundImageFilename={pkg.fields.featured_image.fields && pkg.fields.featured_image.fields.file.url} onPlayButtonClick={handlePlayButtonClick} isMorning={pkg.fields.is_morning} done={done} />
       <SmallStoryList>
         {entries.map(entry => {
           const read = readIds.indexOf(entry.sys.id) > -1

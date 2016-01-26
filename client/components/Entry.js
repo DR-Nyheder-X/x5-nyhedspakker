@@ -22,7 +22,7 @@ export default function Entry ({ entry, pos, modifiers, nextEntry }) {
   } = entry.fields
 
   return <div className='Entry'>
-    <ArticleHeader title={title} backgroundImageFilename={featuredImage.fields.file.url} pos={pos} hashtag={hashtag} modifiers={modifiers} subTitle={rubrik} />
+    <ArticleHeader title={title} backgroundImageFilename={featuredImage && featuredImage.fields.file.url} pos={pos} hashtag={hashtag} modifiers={modifiers} subTitle={rubrik} />
     <Paragraph modifiers={modifiers}>{body}</Paragraph>
     {quote && (
       <Quote
@@ -40,7 +40,7 @@ export default function Entry ({ entry, pos, modifiers, nextEntry }) {
       >{nyhedensTal}</Figure>
     )}
     {nextEntry && (
-      <Next to={`/entries/${nextEntry.sys.id}`} modifiers={modifiers} backgroundImageFilename={nextEntry.fields.featuredImage.fields.file.url}>
+      <Next to={`/entries/${nextEntry.sys.id}`} modifiers={modifiers} backgroundImageFilename={nextEntry.fields.featuredImage && nextEntry.fields.featuredImage.fields.file.url}>
         {nextEntry.fields.title}
       </Next>
     )}
