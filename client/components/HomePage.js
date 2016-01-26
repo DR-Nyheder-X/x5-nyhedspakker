@@ -30,6 +30,8 @@ class HomePage extends Component {
       readIds
     } = this.props
 
+    const done = !entries.find(e => readIds.indexOf(e.sys.id) === -1)
+
     if (!pkg) {
       return <h1>Loading</h1>
     }
@@ -40,7 +42,7 @@ class HomePage extends Component {
     }
 
     return <div className='HomePage'>
-      <WelcomeHeader greeting={pkg.fields.is_morning ? 'Godmorgen' : 'Godaften'} title='Her er dagens nyheder' ctaLabel='Læsetid:' duration={pkg.fields.reading_time} backgroundImageFilename={pkg.fields.featured_image.fields.file.url} onPlayButtonClick={handlePlayButtonClick} />
+      <WelcomeHeader greeting={pkg.fields.is_morning ? 'Godmorgen' : 'Godaften'} title='Her er dagens nyheder' ctaLabel='Læsetid:' duration={pkg.fields.reading_time} backgroundImageFilename={pkg.fields.featured_image.fields.file.url} onPlayButtonClick={handlePlayButtonClick} isMorning={pkg.fields.is_morning} done={done} />
       <SmallStoryList>
         {entries.map(entry => {
           const read = readIds.indexOf(entry.sys.id) > -1

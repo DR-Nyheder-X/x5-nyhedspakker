@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import classnames from 'classnames'
 import formatClassModifiers from '../utilities/formatClassModifiers'
 import './WelcomeHeader.scss'
+import imgix from '../utilities/imgix'
 
 export default class WelcomeHeader extends Component {
   static propTypes = {
@@ -12,17 +13,26 @@ export default class WelcomeHeader extends Component {
     ctaLabel: PropTypes.string,
     duration: PropTypes.string,
     backgroundImageFilename: PropTypes.string,
-    onPlayButtonClick: PropTypes.func
+    onPlayButtonClick: PropTypes.func,
+    isMorning: PropTypes.bool,
+    done: PropTypes.bool
   };
 
   render () {
     const baseClass = 'WelcomeHeader'
     const cls = classnames(baseClass, this.props.className, formatClassModifiers(baseClass, this.props.modifier))
-    const imgixTestImage = 'http://thunderfluff.imgix.net/a.jpg?w=621&bw=621&sat=-100&blend=morningGradient.jpg&bm=multiply&bf=scale'
+
+    let blend
+    if (this.props.done) {
+      blend = 'doneGradient'
+    } else {
+      blend = this.props.isMorning ? 'morningGradient' : 'eveningGradient'
+    }
+    const img = imgix(this.props.backgroundImageFilename, blend)
 
     return <header className={cls} {...this.props}>
       <div className={`${baseClass}-backgroundColor`}></div>
-      <div className={`${baseClass}-image`} style={{backgroundImage: `url(${imgixTestImage})`}}></div>
+      <div className={`${baseClass}-image`} style={{backgroundImage: `url(${img})`}}></div>
       <div className={`${baseClass}-inner`}>
         <h1 className={`${baseClass}-heading`}>
           <span className={`${baseClass}-greeting`}>{this.props.greeting}</span>

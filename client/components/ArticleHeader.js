@@ -8,6 +8,7 @@ import './ArticleHeader.scss'
 import './BackButton.scss'
 import './DownButton.scss'
 import './GalleryButton.scss'
+import imgix from '../utilities/imgix'
 
 export default class ArticleHeader extends Component {
   static propTypes = {
@@ -16,7 +17,8 @@ export default class ArticleHeader extends Component {
     modifiers: PropTypes.string,
     pos: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
-    subTitle: PropTypes.string.isRequired
+    subTitle: PropTypes.string.isRequired,
+    backgroundImageFilename: PropTypes.string
   };
 
   scrollToContent (e) {
@@ -36,15 +38,18 @@ export default class ArticleHeader extends Component {
       modifiers,
       pos,
       title,
-      subTitle
+      subTitle,
+      backgroundImageFilename
     } = this.props
     const baseClass = 'ArticleHeader'
     const cls = formatClassModifiers(baseClass, modifiers, className)
-    const imgixTestImage = 'http://thunderfluff.imgix.net/a.jpg?w=621&bw=621&sat=-100&blend=blue.jpg&bm=multiply&bf=scale'
+    const image = imgix(backgroundImageFilename, null, {
+      blend: blendColors[modifiers.split(' ')[0]]
+    })
 
     return <header className={cls}>
       <div className={`${baseClass}-backgroundColor`}></div>
-      <div className={`${baseClass}-image`} style={{backgroundImage: `url(${imgixTestImage})`}}></div>
+      <div className={`${baseClass}-image`} style={{backgroundImage: `url(${image})`}}></div>
       <div className={`${baseClass}-inner`}>
         <div className='BackButton'>
           <Link to='/'>
@@ -78,4 +83,18 @@ export default class ArticleHeader extends Component {
       </div>
     </header>
   }
+}
+
+const blendColors = {
+  blue: '256BBE',
+  deepPurple: '8F4CCD',
+  green: '49C067',
+  hotBlue: '197FFF',
+  hotRed: 'FF4879',
+  magenta: 'FB4FB4',
+  orange: 'FFBD00',
+  purple: 'DC66DA',
+  red: 'FF4B45',
+  seaGreen: '0EC29E',
+  teal: '0DD8C0'
 }
