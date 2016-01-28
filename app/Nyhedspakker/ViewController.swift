@@ -15,8 +15,16 @@ class ViewController: UIViewController, UIWebViewDelegate {
         
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationDidBecomeActiveNotification, object: nil, queue: nil) { _ in 
+            self.webView.reload()
+        }
     }
-
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         webView.reload()
