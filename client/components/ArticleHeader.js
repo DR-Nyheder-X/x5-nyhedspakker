@@ -92,7 +92,7 @@ const blendColors = {
   hotBlue: '197FFF',
   hotRed: 'FF4879',
   magenta: 'FB4FB4',
-  orange: 'FFBD00',
+  orange: 'FF9700',
   purple: 'DC66DA',
   red: 'FF4B45',
   seaGreen: '0EC29E',
