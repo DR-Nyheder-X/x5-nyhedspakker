@@ -6,8 +6,6 @@ import Quote from './Quote'
 import Next from './Next'
 
 export default function Entry ({ entry, pos, modifiers, nextEntry }) {
-  console.log(entry)
-
   const {
     title,
     body,
