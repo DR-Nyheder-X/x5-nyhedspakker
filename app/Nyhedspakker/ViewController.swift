@@ -31,7 +31,7 @@ class ViewController: UIViewController, UIWebViewDelegate {
     }
 
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
-        presentViewController(UIAlertController(title: "Fejl", message: "Kunne ikke loade indhold\n\(error?.description)", preferredStyle: UIAlertControllerStyle.Alert), animated: true, completion: nil)
+//        presentViewController(UIAlertController(title: "Fejl", message: "Kunne ikke loade indhold\n\(error?.description)", preferredStyle: UIAlertControllerStyle.Alert), animated: true, completion: nil)
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
