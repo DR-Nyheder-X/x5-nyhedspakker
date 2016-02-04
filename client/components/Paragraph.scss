@@ -12,7 +12,9 @@
 %Paragraph {
   padding-right: $appPadding--right;
   padding-left: $appPadding--left;
-  margin-bottom: 2em;
+}
+%Paragraph p {
+  margin-bottom: 1em;
   @include paragraphLinkStyle($blue);
 }
 
