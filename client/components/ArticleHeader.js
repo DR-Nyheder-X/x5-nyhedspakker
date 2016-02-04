@@ -85,7 +85,7 @@ export default class ArticleHeader extends Component {
   }
 }
 
-const blendColors = {
+export const blendColors = {
   blue: '256BBE',
   deepPurple: '8F4CCD',
   green: '49C067',
