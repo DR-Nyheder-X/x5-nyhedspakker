@@ -1,6 +1,13 @@
 import marked from 'marked'
-import React from 'react'
+import React, { PropTypes } from 'react'
 
-export default function Markdown ({ text }) {
-  return <div dangerouslySetInnerHTML={{__html: marked(text)}} />
+export default function Markdown (props) {
+  return <div
+    dangerouslySetInnerHTML={{__html: marked(props.text)}}
+    {...props}
+  />
+}
+
+Markdown.propTypes = {
+  text: PropTypes.string.isRequired
 }

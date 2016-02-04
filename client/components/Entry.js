@@ -21,7 +21,7 @@ export default function Entry ({ entry, pos, modifiers, nextEntry }) {
 
   return <div className='Entry'>
     <ArticleHeader title={title} backgroundImageFilename={featuredImage && featuredImage.fields.file.url} pos={pos} hashtag={hashtag} modifiers={modifiers} subTitle={rubrik} />
-    <Paragraph modifiers={modifiers}>{body}</Paragraph>
+    <Paragraph modifiers={modifiers} body={body} />
     {quote && (
       <Quote
         cite={quoteSource}
@@ -29,7 +29,7 @@ export default function Entry ({ entry, pos, modifiers, nextEntry }) {
       >{quote}</Quote>
     )}
     {tekstafsnit2 && (
-      <Paragraph modifiers={modifiers}>{tekstafsnit2}</Paragraph>
+      <Paragraph modifiers={modifiers} body={tekstafsnit2} />
     )}
     {nyhedensTal && (
       <Figure
