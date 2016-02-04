@@ -9,10 +9,6 @@ class ViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = NSURL(string: "http://np.drdinstem.me")!
-        let req = NSURLRequest(URL: url)
-        webView.loadRequest(req)
-        
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         
@@ -25,13 +21,21 @@ class ViewController: UIViewController, UIWebViewDelegate {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    func reloadIndex() {
+        let url = NSURL(string: "http://np.drdinstem.me")!
+        let req = NSURLRequest(URL: url)
+        webView.loadRequest(req)
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        webView.reload()
+        reloadIndex()
     }
 
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
-//        presentViewController(UIAlertController(title: "Fejl", message: "Kunne ikke loade indhold\n\(error?.description)", preferredStyle: UIAlertControllerStyle.Alert), animated: true, completion: nil)
+        let alert = UIAlertController(title: "Fejl", message: "Kunne ikke loade indhold\n\(error?.description)", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
