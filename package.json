@@ -39,7 +39,7 @@
     "morgan": "^1.6.1",
     "node-sass": "^3.4.2",
     "normalize-scss": "^4.0.3",
-    "opbeat": "^3.1.4",
+    "opbeat": "^3.3.0",
     "parse": "^1.6.11",
     "react": "^0.14.3",
     "react-addons-css-transition-group": "^0.14.3",
