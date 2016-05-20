@@ -1,0 +1,16 @@
+.BackButton {
+  z-index: 999;
+  position: relative;
+  padding-top: 16px;
+
+  a {
+    display: block;
+    text-align: center;
+    padding: 12px 0 18px;
+    color: white;
+  }
+
+  svg {
+    transform: rotate(-90deg);
+  }
+}

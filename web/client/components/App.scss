@@ -1,0 +1,38 @@
+@import '../utilities/base';
+
+#root,
+.App,
+.App > div,
+.App > div > div {
+  height: 100%;
+  margin: 0 auto;
+  width: $breakpoint--widthXSmall;
+  @media #{$mediaQuery--smallUp}  { width: $breakpoint--widthSmall; }
+  @media #{$mediaQuery--mediumUp} { width: $breakpoint--widthMedium; }
+}
+
+.App {
+}
+
+.page-transition-enter {
+  position: absolute;
+  width: 100%;
+  transform: translateY(50px);
+  opacity: 0.01;
+}
+
+.page-transition-enter.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 250ms ease;
+}
+
+.page-transition-leave {
+  opacity: 1;
+}
+
+.page-transition-leave.page-transition-leave-active {
+  opacity: 0.01;
+  transform: translateY(50px);
+  transition: all 250ms ease;
+}

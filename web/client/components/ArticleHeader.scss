@@ -1,0 +1,141 @@
+@import '../utilities/variables';
+@import '../utilities/mixins';
+@import '../utilities/type';
+
+@mixin articleHeaderHeadingStyle($color, $accentColor) {
+  .ArticleHeader-backgroundColor { background-color: $color; }
+  .ArticleHeader-heading em { color: $accentColor; }
+}
+
+.ArticleHeader {
+  position: relative;
+  margin-bottom: 1.5em;
+  @media #{$mediaQuery--smallUp} { margin-bottom: 2em; }
+}
+
+.ArticleHeader-backgroundColor,
+.ArticleHeader-image,
+.ArticleHeader-inner {
+  position: relative;
+  overflow: hidden;
+  height: $breakpoint--heightXSmall*.9;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 90.6%);
+
+  @media #{$mediaQuery--smallUp} {
+    height: $breakpoint--heightSmall*.9;
+  }
+
+  @media #{$mediaQuery--mediumUp} {
+    height: $breakpoint--heightMedium*.9;
+  }
+
+  // @media #{$mediaQuery--iPhone6Plus} {
+  //   height: $breakpoint--heightMedium*.9;
+  //   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 91%);
+  // }
+}
+
+// Shadow
+// .ArticleHeader:after {
+//   content: "";
+//   display: block;
+//   // background-color: pink;
+//   height: 58px;
+//   width: 100%;
+//   @include backgroundImage('welcomeHeaderShadow.png', 375px);
+//   position: absolute;
+//   bottom: -11px;
+//
+//   @media #{$mediaQuery--smallUp}  { bottom: -3px; }
+//   @media #{$mediaQuery--mediumUp} { bottom: 3px; }
+// }
+
+.ArticleHeader-image {
+  background-size: cover;
+  background-position: center center;
+  // -webkit-filter: grayscale(100%);
+  // mix-blend-mode: multiply;
+}
+
+// Hide image on ios7 devices (they don't support this nizzleness)
+// .App[data-ios-version^='7'] .ArticleHeader-image { display: none; }
+// .ArticleHeader-image { display: none; }
+
+// Move 'layers' on top of eachother
+.ArticleHeader-image,
+.ArticleHeader-inner {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+// Put these things on top of the image
+.ArticleHeader .ArticleHeader-heading,
+.ArticleHeader .Tag,
+.ArticleHeader .Pager,
+.ArticleHeader .Pager i {
+  z-index: 2;
+}
+
+.ArticleHeader-tagAndPager {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ArticleHeader .Tag {
+  width: 50%;
+  @media #{$mediaQuery--smallUp} {  width: 45%; }
+}
+
+.ArticleHeader .Pager {
+  width: 50%;
+  padding-right: $appPadding--right;
+  padding-left: 3%;
+  @media #{$mediaQuery--smallUp} {  width: 55%; }
+}
+
+.ArticleHeader-heading {
+  position: relative;
+  @extend %heading--huge;
+  padding-top: .65em;
+  padding-right: $appPadding--right;
+  padding-left: $appPadding--left;
+  color: #fff;
+}
+
+.ArticleHeader-subHeading {
+  color: #fff;
+  padding-right: $appPadding--right;
+  padding-left: $appPadding--left;
+  margin-top: 1.35em;
+  @media #{$mediaQuery--mediumUp} {  font-size: $fontSize--large; }
+}
+
+// Accent colors for the heading hightlight and bg color
+.ArticleHeader { @include articleHeaderHeadingStyle($blue, $blueAccent); }
+.ArticleHeader.ArticleHeader--blue       { @include articleHeaderHeadingStyle($blue, $blueAccent); }
+.ArticleHeader.ArticleHeader--hotRed     { @include articleHeaderHeadingStyle($hotRed, $hotRedAccent); }
+.ArticleHeader.ArticleHeader--teal       { @include articleHeaderHeadingStyle($teal, $tealAccent); }
+.ArticleHeader.ArticleHeader--orange     { @include articleHeaderHeadingStyle($orange, $orangeAccent); }
+.ArticleHeader.ArticleHeader--deepPurple { @include articleHeaderHeadingStyle($deepPurple, $deepPurpleAccent); }
+.ArticleHeader.ArticleHeader--seaGreen   { @include articleHeaderHeadingStyle($seaGreen, $seaGreenAccent); }
+.ArticleHeader.ArticleHeader--magenta    { @include articleHeaderHeadingStyle($magenta, $magentaAccent); }
+.ArticleHeader.ArticleHeader--hotBlue    { @include articleHeaderHeadingStyle($hotBlue, $hotBlueAccent); }
+.ArticleHeader.ArticleHeader--purple     { @include articleHeaderHeadingStyle($purple, $purpleAccent); }
+.ArticleHeader.ArticleHeader--green      { @include articleHeaderHeadingStyle($green, $greenAccent); }
+.ArticleHeader.ArticleHeader--red        { @include articleHeaderHeadingStyle($red, $redAccent); }
+
+.ArticleHeader .DownButton {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -21px;
+  @media #{$mediaQuery--smallUp} {  bottom: 33px; }
+  @media #{$mediaQuery--mediumUp} {  bottom: 36px; }
+}
+
+.ArticleHeader .GalleryButton {
+  position: absolute;
+  bottom: 10px;
+  right: 8px;
+}

@@ -1,0 +1,99 @@
+// Grays
+$gray:          #A7A7A7;
+$gray--light:   #F1F1F1;
+$gray--darkest: #484848;
+
+// Colors
+$black:      #000;
+$blue:       #2A6DBB;
+$hotBlue:    #2384FF;
+$green:      #50BF6B;
+$seaGreen:   #24C19F;
+$red:        #FF4D4B;
+$hotRed:     #FF4B7B;
+$purple:     #DA6AD7;
+$deepPurple: #8F51CA;
+$teal:       #27D7C0;
+$orange:     #FFBC17;
+$magenta:    #F954B3;
+
+// Accent colors
+$blueAccent:       #5FF7FF;
+$hotBlueAccent:    #DBFF53;
+$greenAccent:      #7DFF86;
+$seaGreenAccent:   #4BFFBD;
+$redAccent:        #FFFB73;
+$hotRedAccent:     #00FFDC;
+$purpleAccent:     #FF7BFC;
+$deepPurpleAccent: #6DF18D;
+$tealAccent:       #00FFDC;
+$orangeAccent:     #FFF436;
+$magentaAccent:    #36FFFC;
+
+// Link colors
+$blueLinkColor:       $blue;
+$hotBlueLinkColor:    $hotBlue;
+$greenLinkColor:      $green;
+$seaGreenLinkColor:   $seaGreen;
+$redLinkColor:        $red;
+$hotRedLinkColor:     $hotRed;
+$purpleLinkColor:     $purple;
+$deepPurpleLinkColor: $deepPurple;
+$tealLinkColor:       #21C3AD;
+$orangeLinkColor:     #FFA800;
+$magentaLinkColor:    $magenta;
+
+
+// Gradient colors
+$gradientColor--blue:     #0094FF;
+$gradientColor--red:      #EB1D53;
+$gradientColor--purple:   #C92DC6;
+$gradientColor--orange:   #FFA900;
+$gradientColor--gray:     #B5B5B5;
+$gradientColor--darkGray: #484848;
+
+// Gradients
+$gradient--diagonalBlueToRed:      linear-gradient(135deg, #{$gradientColor--blue} 0%, #{$gradientColor--red} 100%);
+$gradient--diagonalPurpleToOrange: linear-gradient(135deg, #{$gradientColor--purple} 0%, #{$gradientColor--orange} 100%);
+$gradient--diagonalGrayToDarkGray: linear-gradient(135deg, #{$gradientColor--gray} 0%, #{$gradientColor--darkGray} 100%);
+
+// Font sizes
+$fontSize: 14.5px;
+$fontSize--small:  12.5px;
+$fontSize--medium: $fontSize;
+$fontSize--large:  17px;
+
+// Type
+$fontColor: $black;
+$lineHeight: 1.4;
+
+// Font families
+$fontFamily: 'avenir medium', sans-serif;
+$fontFamily--regular: $fontFamily;
+$fontFamily--heavy: 'avenir heavy condensed italic', sans-serif;
+$fontFamily--bold: 'avenir bold condensed italic', sans-serif;
+$fontFamily--demibold: 'avenir demibold condensed italic', sans-serif;
+$fontFamily--drRegular: 'gibson regular', sans-serif;
+$fontFamily--drSemibold: 'gibson semibold', sans-serif;
+
+// Layout
+$appPadding--top: 46px;
+$appPadding--right: 20px;
+$appPadding--left:  20px;
+
+// Media query breakpoints
+$breakpoint--widthXSmall: 320px; // iPhone 5
+$breakpoint--widthSmall: 375px; // iPhone 6
+$breakpoint--widthMedium: 414px; // iPhone 6+
+
+$breakpoint--heightXSmall: 548px; // iPhone 5
+$breakpoint--heightSmall: 647px; // iPhone 6
+$breakpoint--heightMedium: 716px; // iPhone 6+
+
+// Media queries
+$mediaQuery--xSmallUp: "only screen";
+$mediaQuery--xSmallOnly: "only screen and (max-width: #{$breakpoint--widthXSmall})";
+$mediaQuery--smallUp: "only screen and (min-width: #{$breakpoint--widthSmall})";
+$mediaQuery--smallOnly: "only screen and (min-width: #{$breakpoint--widthXSmall}) and (max-width: #{$breakpoint--widthSmall})";
+$mediaQuery--mediumUp: "only screen and (min-width: #{$breakpoint--widthMedium})";
+$mediaQuery--mediumOnly: "only screen and (min-width: #{$breakpoint--widthSmall}) and (max-width: #{$breakpoint--widthMedium})";

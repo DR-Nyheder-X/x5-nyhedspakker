@@ -1,0 +1,19 @@
+<h1>Entries</h1>
+
+<% packages.forEach(function (pkg) { %>
+  <h3><%= pkg.fields.title %></h3>
+  <ul>
+    <% pkg.entries.forEach(function (entry) { %>
+      <li>
+        <%= entry.fields.title %>
+      </li>
+    <% }) %>
+  </ul>
+<% }) %>
+
+<h1>Push</h1>
+
+<form action="/admin/send" method="post">
+  <input type="text" class="text" value="" name="alert">
+  <button type="submit">Send</button>
+</form>

@@ -1,0 +1,48 @@
+@import '../utilities/variables';
+@import '../utilities/mixins';
+@import '../utilities/type';
+
+@mixin quoteStyle($color) {
+  p { color: $color }
+}
+
+%Quote {
+  padding-right: $appPadding--right;
+  padding-left: $appPadding--left;
+  margin-bottom: 2em;
+
+  p {
+    @extend %heading--medium;
+    position: relative;
+    color: $blue;
+    padding-left: 2.15em;
+
+    // Quote graphic
+    &:before {
+      @include backgroundImageReplacement('quote.png', 40px, 26px);
+      position: absolute;
+      top: .175em;
+      left: -.2em;
+    }
+  }
+
+  cite {
+    @extend %smallUppercase;
+    display: block;
+    margin-bottom: .25em;
+  }
+}
+
+.Quote { @extend %Quote; }
+
+.Quote.Quote--blue       { @include quoteStyle($blue); }
+.Quote.Quote--hotRed     { @include quoteStyle($hotRed); }
+.Quote.Quote--teal       { @include quoteStyle($teal); }
+.Quote.Quote--orange     { @include quoteStyle($orange); }
+.Quote.Quote--deepPurple { @include quoteStyle($deepPurple); }
+.Quote.Quote--seaGreen   { @include quoteStyle($seaGreen); }
+.Quote.Quote--magenta    { @include quoteStyle($magenta); }
+.Quote.Quote--hotBlue    { @include quoteStyle($hotBlue); }
+.Quote.Quote--purple     { @include quoteStyle($purple); }
+.Quote.Quote--green      { @include quoteStyle($green); }
+.Quote.Quote--red        { @include quoteStyle($red); }

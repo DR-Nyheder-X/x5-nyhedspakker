@@ -1,0 +1,33 @@
+@import '../utilities/variables';
+@import '../utilities/mixins';
+@import '../utilities/type';
+
+@mixin paragraphLinkStyle($color) {
+  a {
+    border-bottom: 1px solid $color;
+    color: $color;
+  }
+}
+
+%Paragraph {
+  padding-right: $appPadding--right;
+  padding-left: $appPadding--left;
+}
+%Paragraph p {
+  margin-bottom: 1em;
+  @include paragraphLinkStyle($blue);
+}
+
+.Paragraph { @extend %Paragraph; }
+
+.Paragraph.Paragraph--blue       { @include paragraphLinkStyle($blueLinkColor); }
+.Paragraph.Paragraph--hotRed     { @include paragraphLinkStyle($hotRedLinkColor); }
+.Paragraph.Paragraph--teal       { @include paragraphLinkStyle($tealLinkColor); }
+.Paragraph.Paragraph--orange     { @include paragraphLinkStyle($orangeLinkColor); }
+.Paragraph.Paragraph--deepPurple { @include paragraphLinkStyle($deepPurpleLinkColor); }
+.Paragraph.Paragraph--seaGreen   { @include paragraphLinkStyle($seaGreenLinkColor); }
+.Paragraph.Paragraph--magenta    { @include paragraphLinkStyle($magentaLinkColor); }
+.Paragraph.Paragraph--hotBlue    { @include paragraphLinkStyle($hotBlueLinkColor); }
+.Paragraph.Paragraph--purple     { @include paragraphLinkStyle($purpleLinkColor); }
+.Paragraph.Paragraph--green      { @include paragraphLinkStyle($greenLinkColor); }
+.Paragraph.Paragraph--red        { @include paragraphLinkStyle($redLinkColor); }

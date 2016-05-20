@@ -1,0 +1,4 @@
+#!/bin/bash
+if [ "$NPM_CONFIG_PRODUCTION" != "" ]; then
+  npm run build
+fi
