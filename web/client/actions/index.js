@@ -20,7 +20,7 @@ export function receivePackage (pkg, entries) {
     type: RECEIVE_PACKAGE,
     pkg: pkg,
     entries: entries,
-    receivedAt: Date.now()
+    receivedAt: new Date()
   }
 }
 
@@ -30,7 +30,7 @@ export function receivePackageFail (msg) {
     type: RECEIVE_PACKAGE_FAIL,
     pkg: null,
     entries: [],
-    receivedAt: Date.now(),
+    receivedAt: new Date(),
     error: msg
   }
 }
@@ -50,7 +50,7 @@ export function fetchPackage () {
     if (preview && preview[1]) {
       opts['sys.id'] = preview[1]
     } else {
-      opts['fields.published_at[lt]'] = Date.now()
+      // opts['fields.published_at[lt]'] = new Date()
     }
 
     return client.entries(opts).then(packages => {
